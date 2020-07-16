@@ -1,0 +1,9 @@
+image: Visual Studio 2019
+skip_commits:
+  message: /doco|Merge pull request.*/
+build_script:
+- ps: >-
+    dotnet build src --configuration Release
+test: off
+artifacts:
+- path: nugets\*.nupkg
