@@ -1,6 +1,6 @@
 # <img src="/src/icon.png" height="30px"> Verify.Selenium
 
-[![Build status](https://ci.appveyor.com/api/projects/status/rbkfpdk6o1cc3ih9?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-uno)
+[![Build status](https://ci.appveyor.com/api/projects/status/xbfm80k15vfqosnd?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-selenium)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Selenium.svg)](https://www.nuget.org/packages/Verify.Selenium/)
 
 Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs [Selenium](https://www.selenium.dev/).
