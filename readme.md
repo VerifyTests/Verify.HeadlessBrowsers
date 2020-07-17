@@ -40,6 +40,14 @@ https://nuget.org/packages/Verify.Selenium/
 
 Enable VerifySelenium once at assembly load time:
 
+<!-- snippet: Enable -->
+<a id='snippet-enable'/></a>
+```cs
+VerifySelenium.Enable();
+```
+<sup><a href='/src/Tests/TheTests.cs#L63-L67' title='File snippet `enable` was extracted from'>snippet source</a> | <a href='#snippet-enable' title='Navigate to start of snippet `enable`'>anchor</a></sup>
+<!-- endsnippet -->
+
 
 ### Build WebDriver
 
