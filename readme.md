@@ -20,7 +20,10 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 ## Contents
 
   * [Usage](#usage)
-    * [Testing](#testing)
+    * [Enable](#enable)
+    * [Build WebDriver](#build-webdriver)
+    * [Page test](#page-test)
+    * [Element test](#element-test)
   * [OS specific rendering](#os-specific-rendering)
   * [Security contact information](#security-contact-information)<!-- endtoc -->
 
@@ -33,21 +36,37 @@ https://nuget.org/packages/Verify.Selenium/
 ## Usage
 
 
-### Testing
+### Enable
 
 Enable VerifySelenium once at assembly load time:
 
 
-#### Page test
+### Build WebDriver
 
-The current app state can then be verified as follows:
+<!-- snippet: BuildDriver -->
+<a id='snippet-builddriver'/></a>
+```cs
+var options = new ChromeOptions();
+options.AddArgument("--no-sandbox");
+options.AddArgument("--headless");
+driver = new ChromeDriver(options);
+driver.Manage().Window.Size = new Size(1024, 768);
+driver.Navigate().GoToUrl("http://localhost:5000");
+```
+<sup><a href='/src/Tests/TheTests.cs#L28-L37' title='File snippet `builddriver` was extracted from'>snippet source</a> | <a href='#snippet-builddriver' title='Navigate to start of snippet `builddriver`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
+### Page test
+
+The current page state can be verified as follows:
 
 <!-- snippet: PageUsage -->
 <a id='snippet-pageusage'/></a>
 ```cs
 await Verifier.Verify(driver);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L37-L41' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L43-L47' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -60,14 +79,17 @@ With the state of the element being rendered as a verified files:
   <title>The Title</title>
   <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <body>
-    <main role="main" class="container">
-      <h1>Some content</h1>
-      <p id="someId">Some other content.</p>
-    </main>
+    <div class="jumbotron">
+      <h1 class="display-4">Hello, world!</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
   </body>
 </html>
 ```
-<sup><a href='/src/Tests/TheTests.PageUsage.00.verified.html#L1-L11' title='File snippet `TheTests.PageUsage.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.PageUsage.00.verified.html' title='Navigate to start of snippet `TheTests.PageUsage.00.verified.html`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.PageUsage.00.verified.html#L1-L14' title='File snippet `TheTests.PageUsage.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.PageUsage.00.verified.html' title='Navigate to start of snippet `TheTests.PageUsage.00.verified.html`'>anchor</a></sup>
 <!-- endsnippet -->
 
 [TheTests.PageUsage.01.verified.png](/src/Tests/TheTests.PageUsage.01.verified.png):
@@ -75,7 +97,7 @@ With the state of the element being rendered as a verified files:
 <img src="/src/Tests/TheTests.PageUsage.01.verified.png" width="400px">
 
 
-#### Element test
+### Element test
 
 An element can be verified as follows:
 
@@ -85,7 +107,7 @@ An element can be verified as follows:
 var element = driver.FindElement(By.Id("someId"));
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L47-L52' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L53-L58' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -95,7 +117,7 @@ With the state of the element being rendered as a verified files:
 ```html
 <html>
   <body>
-    <p id="someId">Some other content.</p>
+    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </body>
 </html>
 ```
@@ -104,14 +126,12 @@ With the state of the element being rendered as a verified files:
 
 [TheTests.ElementUsage.01.verified.png](/src/Tests/TheTests.ElementUsage.01.verified.png):
 
-<img src="/src/Tests/TheTests.ElementUsage.01.verified.png" width="400px">
+<img src="/src/Tests/TheTests.ElementUsage.01.verified.png">
 
 
 ## OS specific rendering
 
-The rendering of Form elements can very slightly between different OS versions. This can make verification on different machines (eg CI) problematic. There are several approaches to mitigate this:
-
- * Using a [custom comparer](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md)
+The rendering can very slightly between different OS versions. This can make verification on different machines (eg CI) problematic. A [custom comparer](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md) can to mitigate this.
 
 
 ## Security contact information

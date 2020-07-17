@@ -20,14 +20,19 @@ https://nuget.org/packages/Verify.Selenium/
 ## Usage
 
 
-### Testing
+### Enable
 
 Enable VerifySelenium once at assembly load time:
 
 
-#### Page test
+### Build WebDriver
 
-The current app state can then be verified as follows:
+snippet: BuildDriver
+
+
+### Page test
+
+The current page state can be verified as follows:
 
 snippet: PageUsage
 
@@ -40,7 +45,7 @@ snippet: TheTests.PageUsage.00.verified.html
 <img src="/src/Tests/TheTests.PageUsage.01.verified.png" width="400px">
 
 
-#### Element test
+### Element test
 
 An element can be verified as follows:
 
@@ -52,14 +57,12 @@ snippet: TheTests.ElementUsage.00.verified.html
 
 [TheTests.ElementUsage.01.verified.png](/src/Tests/TheTests.ElementUsage.01.verified.png):
 
-<img src="/src/Tests/TheTests.ElementUsage.01.verified.png" width="400px">
+<img src="/src/Tests/TheTests.ElementUsage.01.verified.png">
 
 
 ## OS specific rendering
 
-The rendering of Form elements can very slightly between different OS versions. This can make verification on different machines (eg CI) problematic. There are several approaches to mitigate this:
-
- * Using a [custom comparer](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md)
+The rendering can very slightly between different OS versions. This can make verification on different machines (eg CI) problematic. A [custom comparer](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md) can to mitigate this.
 
 
 ## Security contact information

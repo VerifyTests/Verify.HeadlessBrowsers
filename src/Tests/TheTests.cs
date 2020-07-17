@@ -24,12 +24,17 @@ public class TheTests : IDisposable
         webBuilder.UseKestrel();
         server = webBuilder.Build();
         server.Start();
+
+        #region BuildDriver
+
         var options = new ChromeOptions();
         options.AddArgument("--no-sandbox");
         options.AddArgument("--headless");
         driver = new ChromeDriver(options);
         driver.Manage().Window.Size = new Size(1024, 768);
         driver.Navigate().GoToUrl("http://localhost:5000");
+
+        #endregion
     }
 
     [Test]
