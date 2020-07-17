@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using AngleSharp.Html.Parser;
 using OpenQA.Selenium.Remote;
 
 namespace VerifyTests
 {
     public static class VerifySelenium
     {
-
         public static void Enable()
         {
             VerifierSettings.RegisterFileConverter<RemoteWebDriver>(DriverToImage);

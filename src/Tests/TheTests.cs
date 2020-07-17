@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.TestHost;
 using VerifyTests;
 using VerifyNUnit;
 using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using WebApplication;
 
 [TestFixture]
@@ -16,11 +17,13 @@ public class TheTests
     public async Task PageUsage()
     {
         using var server = BuildTestServer();
-        using var driver = new ChromeDriver
         {
-            Url = server.BaseAddress.AbsoluteUri
-        };
-        await Verifier.Verify(driver);
+            var options = new FirefoxOptions();
+            options.AddArgument("--headless");
+            using var driver = new FirefoxDriver(options);
+            driver.Navigate().GoToUrl("http://localhost:5000");
+            await Verifier.Verify(driver);
+        }
     }
 
     #endregion
@@ -48,12 +51,15 @@ public class TheTests
 
     #region Setup
 
-    static TestServer BuildTestServer()
+    static async Task<IWebHost> BuildTestServer()
     {
         var webBuilder = new WebHostBuilder();
 
         webBuilder.UseStartup<Startup>();
-        return new TestServer(webBuilder);
+        webBuilder.UseKestrel();
+        var webHost = webBuilder.Build();
+        await webHost.StartAsync();
+        return webHost;
     }
 
     #endregion

@@ -5,18 +5,16 @@ Source File: /readme.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-# <img src="/src/icon.png" height="30px"> Verify.Uno
+# <img src="/src/icon.png" height="30px"> Verify.Selenium
 
 [![Build status](https://ci.appveyor.com/api/projects/status/rbkfpdk6o1cc3ih9?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-uno)
-[![NuGet Status](https://img.shields.io/nuget/v/Verify.Uno.svg)](https://www.nuget.org/packages/Verify.Uno/)
+[![NuGet Status](https://img.shields.io/nuget/v/Verify.Selenium.svg)](https://www.nuget.org/packages/Verify.Selenium/)
 
-Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of [Uno UIs](https://platform.uno/).
+Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs [Selenium](https://www.selenium.dev/).
 
-Leverages the [Uno.UITest](https://github.com/unoplatform/Uno.UITest).
 
-Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-verify.uno?utm_source=nuget-verify.uno&utm_medium=referral&utm_campaign=enterprise).
+Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-verify.selenium?utm_source=nuget-verify.selenium&utm_medium=referral&utm_campaign=enterprise).
 
-**Currently only supported for Uno Wasm projects**
 
 <!-- toc -->
 ## Contents
@@ -30,7 +28,7 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 
 ## NuGet package
 
-https://nuget.org/packages/Verify.Uno/
+https://nuget.org/packages/Verify.Selenium/
 
 
 ## Usage
@@ -40,28 +38,38 @@ https://nuget.org/packages/Verify.Uno/
 
 Given the following page
 
-<!-- snippet: MainPage.xaml -->
-<a id='snippet-MainPage.xaml'/></a>
-```xaml
-<Page
-    x:Class="SampleApp.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <TextBlock x:Uid="first" Text="The first element" Margin="20" FontSize="30" />
-            <TextBlock x:Uid="second" Text="The second element" Margin="20" FontSize="30" />
-        </StackPanel>
-    </Grid>
-</Page>
+<!-- snippet: Index.cshtml -->
+<a id='snippet-Index.cshtml'/></a>
+```cshtml
+@page
+@model IndexModel
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Title</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Begin page content -->
+<main role="main" class="container">
+    <h1 class="mt-5">Some content</h1>
+    <p class="lead">Some other content.</p>
+</main>
+
+</body>
+</html>
 ```
-<sup><a href='/src/SampleApp.Wasm/MainPage.xaml#L1-L11' title='File snippet `MainPage.xaml` was extracted from'>snippet source</a> | <a href='#snippet-MainPage.xaml' title='Navigate to start of snippet `MainPage.xaml`'>anchor</a></sup>
+<sup><a href='/src/WebApplication/Pages/Index.cshtml#L1-L21' title='File snippet `Index.cshtml` was extracted from'>snippet source</a> | <a href='#snippet-Index.cshtml' title='Navigate to start of snippet `Index.cshtml`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
 ### Testing
 
-Enable VerifyUno once at assembly load time:
+Enable VerifySelenium once at assembly load time:
 
 
 #### Setup
@@ -69,68 +77,61 @@ Enable VerifyUno once at assembly load time:
 <!-- snippet: Enable -->
 <a id='snippet-enable'/></a>
 ```cs
-VerifyUno.Enable();
+VerifySelenium.Enable();
 ```
-<sup><a href='/src/Tests/TheTests.cs#L46-L48' title='File snippet `enable` was extracted from'>snippet source</a> | <a href='#snippet-enable' title='Navigate to start of snippet `enable`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L44-L48' title='File snippet `enable` was extracted from'>snippet source</a> | <a href='#snippet-enable' title='Navigate to start of snippet `enable`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Setup the Uno app
+Setup the app
 
-<!-- snippet: UnoAppSetup -->
-<a id='snippet-unoappsetup'/></a>
+<!-- snippet: Setup -->
+<a id='snippet-setup'/></a>
 ```cs
-var environment = AppInitializer.TestEnvironment;
-environment.WebAssemblyDefaultUri = "http://localhost:57416";
-environment.CurrentPlatform = Platform.Browser;
+static async Task<IWebHost> BuildTestServer()
+{
+    var webBuilder = new WebHostBuilder();
 
-app = AppInitializer.AttachToApp();
+    webBuilder.UseStartup<Startup>();
+    webBuilder.UseKestrel();
+    var webHost = webBuilder.Build();
+    await webHost.StartAsync();
+    return webHost;
+}
 ```
-<sup><a href='/src/Tests/TheTests.cs#L35-L41' title='File snippet `unoappsetup` was extracted from'>snippet source</a> | <a href='#snippet-unoappsetup' title='Navigate to start of snippet `unoappsetup`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L52-L65' title='File snippet `setup` was extracted from'>snippet source</a> | <a href='#snippet-setup' title='Navigate to start of snippet `setup`'>anchor</a></sup>
 <!-- endsnippet -->
-
-For information on scoping and re-use of the App and Uno.UITest helpers see https://github.com/unoplatform/Uno.UITest
 
 
 #### App test
 
 The current app state can then be verified as follows:
 
-<!-- snippet: AppUsage -->
-<a id='snippet-appusage'/></a>
+<!-- snippet: PageUsage -->
+<a id='snippet-pageusage'/></a>
 ```cs
 [Test]
-public async Task AppUsage()
+public async Task PageUsage()
 {
-    await Verifier.Verify(app);
+    using var server = BuildTestServer();
+    {
+        var options = new FirefoxOptions();
+        options.AddArgument("--headless");
+        using var driver = new FirefoxDriver(options);
+        driver.Navigate().GoToUrl("http://localhost:5000");
+        await Verifier.Verify(driver);
+    }
 }
 ```
-<sup><a href='/src/Tests/TheTests.cs#L16-L22' title='File snippet `appusage` was extracted from'>snippet source</a> | <a href='#snippet-appusage' title='Navigate to start of snippet `appusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L14-L29' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
 
-<!-- snippet: TheTests.AppUsage.Net.00.verified.html -->
-<a id='snippet-TheTests.AppUsage.Net.00.verified.html'/></a>
-```html
-<html>
-  <body>
-    <div xaml="MainPage"  tabindex="0" style="width: 1024px; height: 768px">
-      <div xaml="Grid"  style="width: 1024px; height: 768px">
-        <div xaml="StackPanel"  style="width: 1024px; height: 768px">
-          <p xaml="TextBlock"  id="first" wrap="off" style="font-size: 30px; top: 20px; left: 20px; width: 984px; height: 40px">The first element</p>
-          <p xaml="TextBlock"  id="second" wrap="off" style="font-size: 30px; top: 100px; left: 20px; width: 984px; height: 40px">The second element</p>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
-```
-<sup><a href='/src/Tests/TheTests.AppUsage.Net.00.verified.html#L1-L12' title='File snippet `TheTests.AppUsage.Net.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.AppUsage.Net.00.verified.html' title='Navigate to start of snippet `TheTests.AppUsage.Net.00.verified.html`'>anchor</a></sup>
-<!-- endsnippet -->
+//snippet: TheTests.PageUsage.Net.00.verified.html
 
-[TheTests.AppUsage.Net.01.verified.png](/src/Tests/TheTests.AppUsage.Net.01.verified.png):
+[TheTests.PageUsage.Net.01.verified.png](/src/Tests/TheTests.PageUsage.Net.01.verified.png):
 
-<img src="/src/Tests/TheTests.AppUsage.Net.01.verified.png" width="400px">
+<img src="/src/Tests/TheTests.PageUsage.Net.01.verified.png" width="400px">
 
 
 #### Element test
@@ -140,29 +141,19 @@ An element can be verified as follows:
 <!-- snippet: ElementUsage -->
 <a id='snippet-elementusage'/></a>
 ```cs
-[Test]
-public async Task ElementUsage()
-{
-    var element = app.WaitForElement(query => query.Marked("second"))!;
-    await Verifier.Verify(element.Single());
-}
+//[Test]
+//public async Task ElementUsage()
+//{
+//    var element = app.WaitForElement(query => query.Marked("second"))!;
+//    await Verifier.Verify(element.Single());
+//}
 ```
-<sup><a href='/src/Tests/TheTests.cs#L24-L31' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L31-L40' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
 
-<!-- snippet: TheTests.ElementUsage.Net.00.verified.html -->
-<a id='snippet-TheTests.ElementUsage.Net.00.verified.html'/></a>
-```html
-<html>
-  <body>
-    <p xaml="TextBlock"  id="second" wrap="off" style="font-size: 30px; top: 100px; left: 20px; width: 984px; height: 40px">The second element</p>
-  </body>
-</html>
-```
-<sup><a href='/src/Tests/TheTests.ElementUsage.Net.00.verified.html#L1-L5' title='File snippet `TheTests.ElementUsage.Net.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.ElementUsage.Net.00.verified.html' title='Navigate to start of snippet `TheTests.ElementUsage.Net.00.verified.html`'>anchor</a></sup>
-<!-- endsnippet -->
+//snippet: TheTests.ElementUsage.Net.00.verified.html
 
 [TheTests.ElementUsage.Net.01.verified.png](/src/Tests/TheTests.ElementUsage.Net.01.verified.png):
 

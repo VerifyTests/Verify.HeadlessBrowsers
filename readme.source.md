@@ -49,7 +49,7 @@ snippet: PageUsage
 
 With the state of the element being rendered as a verified files:
 
-snippet: TheTests.PageUsage.Net.00.verified.html
+//snippet: TheTests.PageUsage.Net.00.verified.html
 
 [TheTests.PageUsage.Net.01.verified.png](/src/Tests/TheTests.PageUsage.Net.01.verified.png):
 
@@ -64,7 +64,7 @@ snippet: ElementUsage
 
 With the state of the element being rendered as a verified files:
 
-snippet: TheTests.ElementUsage.Net.00.verified.html
+//snippet: TheTests.ElementUsage.Net.00.verified.html
 
 [TheTests.ElementUsage.Net.01.verified.png](/src/Tests/TheTests.ElementUsage.Net.01.verified.png):
 
