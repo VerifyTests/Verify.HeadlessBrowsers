@@ -79,7 +79,7 @@ Enable VerifySelenium once at assembly load time:
 ```cs
 VerifySelenium.Enable();
 ```
-<sup><a href='/src/Tests/TheTests.cs#L44-L48' title='File snippet `enable` was extracted from'>snippet source</a> | <a href='#snippet-enable' title='Navigate to start of snippet `enable`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L46-L50' title='File snippet `enable` was extracted from'>snippet source</a> | <a href='#snippet-enable' title='Navigate to start of snippet `enable`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Setup the app
@@ -98,7 +98,7 @@ static async Task<IWebHost> BuildTestServer()
     return webHost;
 }
 ```
-<sup><a href='/src/Tests/TheTests.cs#L52-L65' title='File snippet `setup` was extracted from'>snippet source</a> | <a href='#snippet-setup' title='Navigate to start of snippet `setup`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L54-L67' title='File snippet `setup` was extracted from'>snippet source</a> | <a href='#snippet-setup' title='Navigate to start of snippet `setup`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -117,12 +117,13 @@ public async Task PageUsage()
         var options = new FirefoxOptions();
         options.AddArgument("--headless");
         using var driver = new FirefoxDriver(options);
+        driver.Manage().Window.Size = new Size(1024, 768);
         driver.Navigate().GoToUrl("http://localhost:5000");
         await Verifier.Verify(driver);
     }
 }
 ```
-<sup><a href='/src/Tests/TheTests.cs#L14-L29' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L15-L31' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -148,7 +149,7 @@ An element can be verified as follows:
 //    await Verifier.Verify(element.Single());
 //}
 ```
-<sup><a href='/src/Tests/TheTests.cs#L31-L40' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L33-L42' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:

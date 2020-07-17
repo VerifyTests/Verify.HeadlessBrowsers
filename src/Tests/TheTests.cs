@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +22,7 @@ public class TheTests
             var options = new FirefoxOptions();
             options.AddArgument("--headless");
             using var driver = new FirefoxDriver(options);
+            driver.Manage().Window.Size = new Size(1024, 768);
             driver.Navigate().GoToUrl("http://localhost:5000");
             await Verifier.Verify(driver);
         }
