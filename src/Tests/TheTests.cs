@@ -25,6 +25,7 @@ public class TheTests : IDisposable
         server = webBuilder.Build();
         server.Start();
         var options = new ChromeOptions();
+        options.AddArgument("--no-sandbox");
         options.AddArgument("--headless");
         driver = new ChromeDriver(options);
         driver.Manage().Window.Size = new Size(1024, 768);
