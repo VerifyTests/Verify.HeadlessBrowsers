@@ -24,6 +24,8 @@ https://nuget.org/packages/Verify.Selenium/
 
 Enable VerifySelenium once at assembly load time:
 
+snippet: Enable
+
 
 ### Build WebDriver
 
