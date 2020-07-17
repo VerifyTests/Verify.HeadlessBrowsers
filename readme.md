@@ -20,7 +20,6 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 ## Contents
 
   * [Usage](#usage)
-    * [Target page](#target-page)
     * [Testing](#testing)
   * [OS specific rendering](#os-specific-rendering)
   * [Security contact information](#security-contact-information)<!-- endtoc -->
@@ -34,105 +33,51 @@ https://nuget.org/packages/Verify.Selenium/
 ## Usage
 
 
-### Target page
-
-Given the following page
-
-<!-- snippet: Index.cshtml -->
-<a id='snippet-Index.cshtml'/></a>
-```cshtml
-@page
-@model IndexModel
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>The Title</title>
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-
-<!-- Begin page content -->
-<main role="main" class="container">
-    <h1 class="mt-5">Some content</h1>
-    <p class="lead">Some other content.</p>
-</main>
-
-</body>
-</html>
-```
-<sup><a href='/src/WebApplication/Pages/Index.cshtml#L1-L21' title='File snippet `Index.cshtml` was extracted from'>snippet source</a> | <a href='#snippet-Index.cshtml' title='Navigate to start of snippet `Index.cshtml`'>anchor</a></sup>
-<!-- endsnippet -->
-
-
 ### Testing
 
 Enable VerifySelenium once at assembly load time:
 
 
-#### Setup
-
-<!-- snippet: Enable -->
-<a id='snippet-enable'/></a>
-```cs
-VerifySelenium.Enable();
-```
-<sup><a href='/src/Tests/TheTests.cs#L46-L50' title='File snippet `enable` was extracted from'>snippet source</a> | <a href='#snippet-enable' title='Navigate to start of snippet `enable`'>anchor</a></sup>
-<!-- endsnippet -->
-
-Setup the app
-
-<!-- snippet: Setup -->
-<a id='snippet-setup'/></a>
-```cs
-static async Task<IWebHost> BuildTestServer()
-{
-    var webBuilder = new WebHostBuilder();
-
-    webBuilder.UseStartup<Startup>();
-    webBuilder.UseKestrel();
-    var webHost = webBuilder.Build();
-    await webHost.StartAsync();
-    return webHost;
-}
-```
-<sup><a href='/src/Tests/TheTests.cs#L54-L67' title='File snippet `setup` was extracted from'>snippet source</a> | <a href='#snippet-setup' title='Navigate to start of snippet `setup`'>anchor</a></sup>
-<!-- endsnippet -->
-
-
-#### App test
+#### Page test
 
 The current app state can then be verified as follows:
 
 <!-- snippet: PageUsage -->
 <a id='snippet-pageusage'/></a>
 ```cs
-[Test]
-public async Task PageUsage()
-{
-    using var server = BuildTestServer();
-    {
-        var options = new FirefoxOptions();
-        options.AddArgument("--headless");
-        using var driver = new FirefoxDriver(options);
-        driver.Manage().Window.Size = new Size(1024, 768);
-        driver.Navigate().GoToUrl("http://localhost:5000");
-        await Verifier.Verify(driver);
-    }
-}
+var options = new FirefoxOptions();
+options.AddArgument("--headless");
+using var driver = new FirefoxDriver(options);
+driver.Manage().Window.Size = new Size(1024, 768);
+driver.Navigate().GoToUrl("http://localhost:5000");
+await Verifier.Verify(driver);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L15-L31' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L19-L28' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
 
-//snippet: TheTests.PageUsage.Net.00.verified.html
+<!-- snippet: TheTests.PageUsage.00.verified.html -->
+<a id='snippet-TheTests.PageUsage.00.verified.html'/></a>
+```html
+<html lang="en">
+  <meta charset="utf-8">
+  <title>The Title</title>
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <body>
+    <main role="main" class="container">
+      <h1>Some content</h1>
+      <p id="someId">Some other content.</p>
+    </main>
+  </body>
+</html>
+```
+<sup><a href='/src/Tests/TheTests.PageUsage.00.verified.html#L1-L11' title='File snippet `TheTests.PageUsage.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.PageUsage.00.verified.html' title='Navigate to start of snippet `TheTests.PageUsage.00.verified.html`'>anchor</a></sup>
+<!-- endsnippet -->
 
-[TheTests.PageUsage.Net.01.verified.png](/src/Tests/TheTests.PageUsage.Net.01.verified.png):
+[TheTests.PageUsage.01.verified.png](/src/Tests/TheTests.PageUsage.01.verified.png):
 
-<img src="/src/Tests/TheTests.PageUsage.Net.01.verified.png" width="400px">
+<img src="/src/Tests/TheTests.PageUsage.01.verified.png" width="400px">
 
 
 #### Element test
@@ -142,23 +87,34 @@ An element can be verified as follows:
 <!-- snippet: ElementUsage -->
 <a id='snippet-elementusage'/></a>
 ```cs
-//[Test]
-//public async Task ElementUsage()
-//{
-//    var element = app.WaitForElement(query => query.Marked("second"))!;
-//    await Verifier.Verify(element.Single());
-//}
+var options = new FirefoxOptions();
+options.AddArgument("--headless");
+using var driver = new FirefoxDriver(options);
+driver.Manage().Window.Size = new Size(1024, 768);
+driver.Navigate().GoToUrl("http://localhost:5000");
+var element = driver.FindElement(By.Id("someId"));
+await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L33-L42' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L38-L48' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
 
-//snippet: TheTests.ElementUsage.Net.00.verified.html
+<!-- snippet: TheTests.ElementUsage.00.verified.html -->
+<a id='snippet-TheTests.ElementUsage.00.verified.html'/></a>
+```html
+<html>
+  <body>
+    <p id="someId">Some other content.</p>
+  </body>
+</html>
+```
+<sup><a href='/src/Tests/TheTests.ElementUsage.00.verified.html#L1-L5' title='File snippet `TheTests.ElementUsage.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.ElementUsage.00.verified.html' title='Navigate to start of snippet `TheTests.ElementUsage.00.verified.html`'>anchor</a></sup>
+<!-- endsnippet -->
 
-[TheTests.ElementUsage.Net.01.verified.png](/src/Tests/TheTests.ElementUsage.Net.01.verified.png):
+[TheTests.ElementUsage.01.verified.png](/src/Tests/TheTests.ElementUsage.01.verified.png):
 
-<img src="/src/Tests/TheTests.ElementUsage.Net.01.verified.png" width="400px">
+<img src="/src/Tests/TheTests.ElementUsage.01.verified.png" width="400px">
 
 
 ## OS specific rendering

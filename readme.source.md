@@ -20,28 +20,12 @@ https://nuget.org/packages/Verify.Selenium/
 ## Usage
 
 
-### Target page
-
-Given the following page
-
-snippet: Index.cshtml
-
-
 ### Testing
 
 Enable VerifySelenium once at assembly load time:
 
 
-#### Setup
-
-snippet: Enable
-
-Setup the app
-
-snippet: Setup
-
-
-#### App test
+#### Page test
 
 The current app state can then be verified as follows:
 
@@ -49,11 +33,11 @@ snippet: PageUsage
 
 With the state of the element being rendered as a verified files:
 
-//snippet: TheTests.PageUsage.Net.00.verified.html
+snippet: TheTests.PageUsage.00.verified.html
 
-[TheTests.PageUsage.Net.01.verified.png](/src/Tests/TheTests.PageUsage.Net.01.verified.png):
+[TheTests.PageUsage.01.verified.png](/src/Tests/TheTests.PageUsage.01.verified.png):
 
-<img src="/src/Tests/TheTests.PageUsage.Net.01.verified.png" width="400px">
+<img src="/src/Tests/TheTests.PageUsage.01.verified.png" width="400px">
 
 
 #### Element test
@@ -64,11 +48,11 @@ snippet: ElementUsage
 
 With the state of the element being rendered as a verified files:
 
-//snippet: TheTests.ElementUsage.Net.00.verified.html
+snippet: TheTests.ElementUsage.00.verified.html
 
-[TheTests.ElementUsage.Net.01.verified.png](/src/Tests/TheTests.ElementUsage.Net.01.verified.png):
+[TheTests.ElementUsage.01.verified.png](/src/Tests/TheTests.ElementUsage.01.verified.png):
 
-<img src="/src/Tests/TheTests.ElementUsage.Net.01.verified.png" width="400px">
+<img src="/src/Tests/TheTests.ElementUsage.01.verified.png" width="400px">
 
 
 ## OS specific rendering
