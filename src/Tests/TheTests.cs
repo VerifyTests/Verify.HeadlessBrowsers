@@ -46,7 +46,7 @@ public class TheTests
         VerifySelenium.Enable();
 
         #endregion
-
+        VerifyPhash.RegisterComparer("png", .99f);
     }
 
     #region Setup
