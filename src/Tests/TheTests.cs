@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using VerifyTests;
@@ -6,47 +7,48 @@ using VerifyNUnit;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-using WebApplication;
+using OpenQA.Selenium.Remote;
 
 [TestFixture]
-public class TheTests
+public class TheTests : IDisposable
 {
+    IWebHost server;
+    RemoteWebDriver driver;
+
+    public TheTests()
+    {
+        var webBuilder = new WebHostBuilder();
+
+        webBuilder.UseStartup<Startup>();
+        webBuilder.UseKestrel();
+        server = webBuilder.Build();
+        server.Start();
+        var options = new FirefoxOptions();
+        options.AddArgument("--headless");
+        driver = new FirefoxDriver(options);
+        driver.Manage().Window.Size = new Size(1024, 768);
+        driver.Navigate().GoToUrl("http://localhost:5000");
+    }
+
     [Test]
     public async Task PageUsage()
     {
-        using var server = BuildTestServer();
-        {
-            #region PageUsage
+        #region PageUsage
 
-            var options = new FirefoxOptions();
-            options.AddArgument("--headless");
-            using var driver = new FirefoxDriver(options);
-            driver.Manage().Window.Size = new Size(1024, 768);
-            driver.Navigate().GoToUrl("http://localhost:5000");
-            await Verifier.Verify(driver);
+        await Verifier.Verify(driver);
 
-            #endregion
-        }
+        #endregion
     }
-
 
     [Test]
     public async Task ElementUsage()
     {
-        using var server = BuildTestServer();
-        {
-            #region ElementUsage
+        #region ElementUsage
 
-            var options = new FirefoxOptions();
-            options.AddArgument("--headless");
-            using var driver = new FirefoxDriver(options);
-            driver.Manage().Window.Size = new Size(1024, 768);
-            driver.Navigate().GoToUrl("http://localhost:5000");
-            var element = driver.FindElement(By.Id("someId"));
-            await Verifier.Verify(element);
+        var element = driver.FindElement(By.Id("someId"));
+        await Verifier.Verify(element);
 
-            #endregion
-        }
+        #endregion
     }
 
     static TheTests()
@@ -56,21 +58,13 @@ public class TheTests
         VerifySelenium.Enable();
 
         #endregion
+
         VerifyPhash.RegisterComparer("png", .99f);
     }
 
-    #region Setup
-
-    static async Task<IWebHost> BuildTestServer()
+    public void Dispose()
     {
-        var webBuilder = new WebHostBuilder();
-
-        webBuilder.UseStartup<Startup>();
-        webBuilder.UseKestrel();
-        var webHost = webBuilder.Build();
-        await webHost.StartAsync();
-        return webHost;
+        server.Dispose();
+        driver.Dispose();
     }
-
-    #endregion
 }

@@ -45,14 +45,9 @@ The current app state can then be verified as follows:
 <!-- snippet: PageUsage -->
 <a id='snippet-pageusage'/></a>
 ```cs
-var options = new FirefoxOptions();
-options.AddArgument("--headless");
-using var driver = new FirefoxDriver(options);
-driver.Manage().Window.Size = new Size(1024, 768);
-driver.Navigate().GoToUrl("http://localhost:5000");
 await Verifier.Verify(driver);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L19-L28' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L36-L40' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -87,15 +82,10 @@ An element can be verified as follows:
 <!-- snippet: ElementUsage -->
 <a id='snippet-elementusage'/></a>
 ```cs
-var options = new FirefoxOptions();
-options.AddArgument("--headless");
-using var driver = new FirefoxDriver(options);
-driver.Manage().Window.Size = new Size(1024, 768);
-driver.Navigate().GoToUrl("http://localhost:5000");
 var element = driver.FindElement(By.Id("someId"));
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L38-L48' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L46-L51' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 With the state of the element being rendered as a verified files:
