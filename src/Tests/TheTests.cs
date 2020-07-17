@@ -6,6 +6,7 @@ using VerifyTests;
 using VerifyNUnit;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 
@@ -23,9 +24,9 @@ public class TheTests : IDisposable
         webBuilder.UseKestrel();
         server = webBuilder.Build();
         server.Start();
-        var options = new FirefoxOptions();
+        var options = new ChromeOptions();
         options.AddArgument("--headless");
-        driver = new FirefoxDriver(options);
+        driver = new ChromeDriver(options);
         driver.Manage().Window.Size = new Size(1024, 768);
         driver.Navigate().GoToUrl("http://localhost:5000");
     }
