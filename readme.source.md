@@ -5,8 +5,7 @@
 
 Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs using [Selenium](https://www.selenium.dev/).
 
-
-Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-verify.selenium?utm_source=nuget-verify.selenium&utm_medium=referral&utm_campaign=enterprise).
+Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-verify?utm_source=nuget-verify&utm_medium=referral&utm_campaign=enterprise).
 
 
 toc
