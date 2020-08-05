@@ -42,7 +42,7 @@ https://nuget.org/packages/Verify.Selenium/
 Enable VerifySelenium once at assembly load time:
 
 <!-- snippet: Enable -->
-<a id='snippet-enable'/></a>
+<a id='snippet-enable'></a>
 ```cs
 VerifySelenium.Enable();
 ```
@@ -53,7 +53,7 @@ VerifySelenium.Enable();
 ### Build WebDriver
 
 <!-- snippet: BuildDriver -->
-<a id='snippet-builddriver'/></a>
+<a id='snippet-builddriver'></a>
 ```cs
 var options = new ChromeOptions();
 options.AddArgument("--no-sandbox");
@@ -71,7 +71,7 @@ driver.Navigate().GoToUrl("http://localhost:5000");
 The current page state can be verified as follows:
 
 <!-- snippet: PageUsage -->
-<a id='snippet-pageusage'/></a>
+<a id='snippet-pageusage'></a>
 ```cs
 await Verifier.Verify(driver);
 ```
@@ -81,7 +81,7 @@ await Verifier.Verify(driver);
 With the state of the element being rendered as a verified files:
 
 <!-- snippet: TheTests.PageUsage.00.verified.html -->
-<a id='snippet-TheTests.PageUsage.00.verified.html'/></a>
+<a id='snippet-TheTests.PageUsage.00.verified.html'></a>
 ```html
 <html lang="en">
   <meta charset="utf-8">
@@ -123,7 +123,7 @@ With the state of the element being rendered as a verified files:
 An element can be verified as follows:
 
 <!-- snippet: ElementUsage -->
-<a id='snippet-elementusage'/></a>
+<a id='snippet-elementusage'></a>
 ```cs
 var element = driver.FindElement(By.Id("someId"));
 await Verifier.Verify(element);
@@ -134,7 +134,7 @@ await Verifier.Verify(element);
 With the state of the element being rendered as a verified files:
 
 <!-- snippet: TheTests.ElementUsage.00.verified.html -->
-<a id='snippet-TheTests.ElementUsage.00.verified.html'/></a>
+<a id='snippet-TheTests.ElementUsage.00.verified.html'></a>
 ```html
 <html>
   <body>
