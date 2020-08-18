@@ -26,7 +26,7 @@ Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
     * [Page test](#page-test)
     * [Element test](#element-test)
   * [OS specific rendering](#os-specific-rendering)
-  * [Security contact information](#security-contact-information)<!-- endtoc -->
+  * [Security contact information](#security-contact-information)<!-- endToc -->
 
 
 ## NuGet package
@@ -47,7 +47,7 @@ Enable VerifySelenium once at assembly load time:
 VerifySelenium.Enable();
 ```
 <sup><a href='/src/Tests/TheTests.cs#L63-L67' title='File snippet `enable` was extracted from'>snippet source</a> | <a href='#snippet-enable' title='Navigate to start of snippet `enable`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Build WebDriver
@@ -63,7 +63,7 @@ driver.Manage().Window.Size = new Size(1024, 768);
 driver.Navigate().GoToUrl("http://localhost:5000");
 ```
 <sup><a href='/src/Tests/TheTests.cs#L28-L37' title='File snippet `builddriver` was extracted from'>snippet source</a> | <a href='#snippet-builddriver' title='Navigate to start of snippet `builddriver`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Page test
@@ -76,7 +76,7 @@ The current page state can be verified as follows:
 await Verifier.Verify(driver);
 ```
 <sup><a href='/src/Tests/TheTests.cs#L43-L47' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
 
@@ -111,7 +111,7 @@ With the state of the element being rendered as a verified files:
 </html>
 ```
 <sup><a href='/src/Tests/TheTests.PageUsage.00.verified.html#L1-L26' title='File snippet `TheTests.PageUsage.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.PageUsage.00.verified.html' title='Navigate to start of snippet `TheTests.PageUsage.00.verified.html`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 [TheTests.PageUsage.01.verified.png](/src/Tests/TheTests.PageUsage.01.verified.png):
 
@@ -129,7 +129,7 @@ var element = driver.FindElement(By.Id("someId"));
 await Verifier.Verify(element);
 ```
 <sup><a href='/src/Tests/TheTests.cs#L53-L58' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
 
@@ -145,7 +145,7 @@ With the state of the element being rendered as a verified files:
 </html>
 ```
 <sup><a href='/src/Tests/TheTests.ElementUsage.00.verified.html#L1-L7' title='File snippet `TheTests.ElementUsage.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.ElementUsage.00.verified.html' title='Navigate to start of snippet `TheTests.ElementUsage.00.verified.html`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 [TheTests.ElementUsage.01.verified.png](/src/Tests/TheTests.ElementUsage.01.verified.png):
 
