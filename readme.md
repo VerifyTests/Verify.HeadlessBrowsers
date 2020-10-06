@@ -42,18 +42,18 @@ https://nuget.org/packages/Verify.Selenium/
 Enable VerifySelenium once at assembly load time:
 
 <!-- snippet: Enable -->
-<a id='snippet-enable'></a>
+<a id='9905c339'></a>
 ```cs
 VerifySelenium.Enable();
 ```
-<sup><a href='/src/Tests/TheTests.cs#L63-L67' title='File snippet `enable` was extracted from'>snippet source</a> | <a href='#snippet-enable' title='Navigate to start of snippet `enable`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L63-L67' title='Snippet source file'>snippet source</a> | <a href='#9905c339' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 ### Build WebDriver
 
 <!-- snippet: BuildDriver -->
-<a id='snippet-builddriver'></a>
+<a id='453bfd89'></a>
 ```cs
 var options = new ChromeOptions();
 options.AddArgument("--no-sandbox");
@@ -62,7 +62,7 @@ driver = new ChromeDriver(options);
 driver.Manage().Window.Size = new Size(1024, 768);
 driver.Navigate().GoToUrl("http://localhost:5000");
 ```
-<sup><a href='/src/Tests/TheTests.cs#L28-L37' title='File snippet `builddriver` was extracted from'>snippet source</a> | <a href='#snippet-builddriver' title='Navigate to start of snippet `builddriver`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L28-L37' title='Snippet source file'>snippet source</a> | <a href='#453bfd89' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -71,17 +71,17 @@ driver.Navigate().GoToUrl("http://localhost:5000");
 The current page state can be verified as follows:
 
 <!-- snippet: PageUsage -->
-<a id='snippet-pageusage'></a>
+<a id='8456dfbd'></a>
 ```cs
 await Verifier.Verify(driver);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L43-L47' title='File snippet `pageusage` was extracted from'>snippet source</a> | <a href='#snippet-pageusage' title='Navigate to start of snippet `pageusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L43-L47' title='Snippet source file'>snippet source</a> | <a href='#8456dfbd' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
 
 <!-- snippet: TheTests.PageUsage.00.verified.html -->
-<a id='snippet-TheTests.PageUsage.00.verified.html'></a>
+<a id='2edc4620'></a>
 ```html
 <html lang="en">
   <meta charset="utf-8">
@@ -110,7 +110,7 @@ With the state of the element being rendered as a verified files:
   </body>
 </html>
 ```
-<sup><a href='/src/Tests/TheTests.PageUsage.00.verified.html#L1-L26' title='File snippet `TheTests.PageUsage.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.PageUsage.00.verified.html' title='Navigate to start of snippet `TheTests.PageUsage.00.verified.html`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.PageUsage.00.verified.html#L1-L26' title='Snippet source file'>snippet source</a> | <a href='#2edc4620' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [TheTests.PageUsage.01.verified.png](/src/Tests/TheTests.PageUsage.01.verified.png):
@@ -123,18 +123,18 @@ With the state of the element being rendered as a verified files:
 An element can be verified as follows:
 
 <!-- snippet: ElementUsage -->
-<a id='snippet-elementusage'></a>
+<a id='bee20e2a'></a>
 ```cs
 var element = driver.FindElement(By.Id("someId"));
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L53-L58' title='File snippet `elementusage` was extracted from'>snippet source</a> | <a href='#snippet-elementusage' title='Navigate to start of snippet `elementusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L53-L58' title='Snippet source file'>snippet source</a> | <a href='#bee20e2a' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
 
 <!-- snippet: TheTests.ElementUsage.00.verified.html -->
-<a id='snippet-TheTests.ElementUsage.00.verified.html'></a>
+<a id='b84ae0da'></a>
 ```html
 <html>
   <body>
@@ -144,7 +144,7 @@ With the state of the element being rendered as a verified files:
   </body>
 </html>
 ```
-<sup><a href='/src/Tests/TheTests.ElementUsage.00.verified.html#L1-L7' title='File snippet `TheTests.ElementUsage.00.verified.html` was extracted from'>snippet source</a> | <a href='#snippet-TheTests.ElementUsage.00.verified.html' title='Navigate to start of snippet `TheTests.ElementUsage.00.verified.html`'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.ElementUsage.00.verified.html#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#b84ae0da' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [TheTests.ElementUsage.01.verified.png](/src/Tests/TheTests.ElementUsage.01.verified.png):
