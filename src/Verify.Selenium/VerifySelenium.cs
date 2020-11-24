@@ -13,7 +13,7 @@ namespace VerifyTests
             VerifierSettings.RegisterFileConverter<IWebElement>(ElementToImage);
         }
 
-        static ConversionResult ElementToImage(IWebElement target, VerifySettings settings)
+        static ConversionResult ElementToImage(IWebElement target, IReadOnlyDictionary<string, object> context)
         {
             var element = (RemoteWebElement)target;
             var driver = (RemoteWebDriver)element.WrappedDriver;
@@ -29,7 +29,7 @@ namespace VerifyTests
             );
         }
 
-        static ConversionResult DriverToImage(RemoteWebDriver driver, VerifySettings settings)
+        static ConversionResult DriverToImage(RemoteWebDriver driver, IReadOnlyDictionary<string, object> context)
         {
             driver.WaitForIsReady();
             var bytes = driver.GetScreenshot().AsByteArray;
