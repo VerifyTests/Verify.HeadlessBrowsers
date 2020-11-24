@@ -31,11 +31,11 @@ static class SeleniumExtensions
 
     static Stream CleanSource(string html)
     {
-        var parser = new HtmlParser();
+        HtmlParser parser = new();
         var document = parser.ParseFragment(html, null);
 
-        var stream = new MemoryStream();
-        using var writer = new StreamWriter(stream, Encoding.UTF8, 1000, true);
+        MemoryStream stream = new();
+        using StreamWriter writer = new(stream, Encoding.UTF8, 1000, true);
         document.ToHtml(writer, new MarkupFormatter());
         return stream;
     }

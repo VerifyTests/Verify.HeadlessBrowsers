@@ -48,7 +48,7 @@ VerifySelenium.Enable();
 <!-- snippet: BuildDriver -->
 <a id='snippet-builddriver'></a>
 ```cs
-var options = new ChromeOptions();
+ChromeOptions options = new();
 options.AddArgument("--no-sandbox");
 options.AddArgument("--headless");
 driver = new ChromeDriver(options);

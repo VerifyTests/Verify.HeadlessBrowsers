@@ -19,12 +19,12 @@ namespace VerifyTests
             var driver = (RemoteWebDriver)element.WrappedDriver;
             driver.WaitForIsReady();
             var bytes = element.GetScreenshot().AsByteArray;
-            return new ConversionResult(
+            return new(
                 null,
                 new List<ConversionStream>
                 {
-                    new ConversionStream("html", element.GetSource()),
-                    new ConversionStream("png", new MemoryStream(bytes))
+                    new("html", element.GetSource()),
+                    new("png", new MemoryStream(bytes))
                 }
             );
         }
@@ -33,12 +33,12 @@ namespace VerifyTests
         {
             driver.WaitForIsReady();
             var bytes = driver.GetScreenshot().AsByteArray;
-            return new ConversionResult(
+            return new(
                 null,
                 new List<ConversionStream>
                 {
-                    new ConversionStream("html", driver.GetSource()),
-                    new ConversionStream("png", new MemoryStream(bytes))
+                    new("html", driver.GetSource()),
+                    new("png", new MemoryStream(bytes))
                 }
             );
         }

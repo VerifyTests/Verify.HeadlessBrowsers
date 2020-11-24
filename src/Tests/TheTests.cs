@@ -26,7 +26,7 @@ public class TheTests : IDisposable
 
         #region BuildDriver
 
-        var options = new ChromeOptions();
+        ChromeOptions options = new();
         options.AddArgument("--no-sandbox");
         options.AddArgument("--headless");
         driver = new ChromeDriver(options);
