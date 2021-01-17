@@ -18,25 +18,25 @@ static class SeleniumExtensions
         });
     }
 
-    public static Stream GetSource(this IWebElement element)
+    public static string GetSource(this IWebElement element)
     {
         var html = element.GetAttribute("outerHTML");
         return CleanSource(html);
     }
 
-    public static Stream GetSource(this RemoteWebDriver element)
+    public static string GetSource(this RemoteWebDriver element)
     {
         return CleanSource(element.PageSource);
     }
 
-    static Stream CleanSource(string html)
+    static string CleanSource(string html)
     {
         HtmlParser parser = new();
         var document = parser.ParseFragment(html, null);
 
-        MemoryStream stream = new();
-        using StreamWriter writer = new(stream, Encoding.UTF8, 1000, true);
+        StringBuilder builder = new();
+        using StringWriter writer = new(builder);
         document.ToHtml(writer, new MarkupFormatter());
-        return stream;
+        return builder.ToString();
     }
 }
