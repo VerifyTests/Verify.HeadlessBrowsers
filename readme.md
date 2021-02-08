@@ -77,9 +77,11 @@ With the state of the element being rendered as a verified files:
 <a id='snippet-TheTests.PageUsage.00.verified.html'></a>
 ```html
 <html lang="en">
-  <meta charset="utf-8">
-  <title>The Title</title>
-  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <title>The Title</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
   <body>
     <div class="jumbotron">
       <h1 class="display-4">The Awareness Of Relative Idealism</h1>
@@ -103,7 +105,7 @@ With the state of the element being rendered as a verified files:
   </body>
 </html>
 ```
-<sup><a href='/src/Tests/TheTests.PageUsage.00.verified.html#L1-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-TheTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.PageUsage.00.verified.html#L1-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-TheTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [TheTests.PageUsage.01.verified.png](/src/Tests/TheTests.PageUsage.01.verified.png):
@@ -130,6 +132,7 @@ With the state of the element being rendered as a verified files:
 <a id='snippet-TheTests.ElementUsage.00.verified.html'></a>
 ```html
 <html>
+  <head></head>
   <body>
     <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">
       Learn more
@@ -137,7 +140,7 @@ With the state of the element being rendered as a verified files:
   </body>
 </html>
 ```
-<sup><a href='/src/Tests/TheTests.ElementUsage.00.verified.html#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-TheTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.ElementUsage.00.verified.html#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-TheTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [TheTests.ElementUsage.01.verified.png](/src/Tests/TheTests.ElementUsage.01.verified.png):

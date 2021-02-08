@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using AngleSharp.Html;
 using AngleSharp.Html.Parser;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -29,6 +30,12 @@ static class SeleniumExtensions
         return CleanSource(element.PageSource);
     }
 
+    static PrettyMarkupFormatter formatter = new()
+    {
+        Indentation = "  ",
+        NewLine = "\n"
+    };
+
     static string CleanSource(string html)
     {
         HtmlParser parser = new();
@@ -36,7 +43,7 @@ static class SeleniumExtensions
 
         StringBuilder builder = new();
         using StringWriter writer = new(builder);
-        document.ToHtml(writer, new MarkupFormatter());
+        document.ToHtml(writer, formatter);
         return builder.ToString();
     }
 }
