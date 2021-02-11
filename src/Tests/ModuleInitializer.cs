@@ -6,9 +6,15 @@ public static class ModuleInitializer
     [ModuleInitializer]
     public static void Init()
     {
-        #region Enable
+        #region SeleniumEnable
 
         VerifySelenium.Enable();
+
+        #endregion
+
+        #region PlaywrightEnable
+
+        VerifyPlaywright.Enable();
 
         #endregion
 

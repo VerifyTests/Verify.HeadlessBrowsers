@@ -13,7 +13,7 @@ Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
 <!-- toc -->
 ## Contents
 
-  * [Usage](#usage)
+  * [Selenium Usage](#selenium-usage)
     * [Enable](#enable)
     * [Build WebDriver](#build-webdriver)
     * [Page test](#page-test)
@@ -22,31 +22,31 @@ Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
   * [Security contact information](#security-contact-information)<!-- endToc -->
 
 
-## NuGet package
+## Selenium Usage
+
+
+### NuGet package
 
 https://nuget.org/packages/Verify.Selenium/
-
-
-## Usage
 
 
 ### Enable
 
 Enable VerifySelenium once at assembly load time:
 
-<!-- snippet: Enable -->
-<a id='snippet-enable'></a>
+<!-- snippet: SeleniumEnable -->
+<a id='snippet-seleniumenable'></a>
 ```cs
 VerifySelenium.Enable();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L9-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L9-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 ### Build WebDriver
 
-<!-- snippet: BuildDriver -->
-<a id='snippet-builddriver'></a>
+<!-- snippet: SeleniumBuildDriver -->
+<a id='snippet-seleniumbuilddriver'></a>
 ```cs
 ChromeOptions options = new();
 options.AddArgument("--no-sandbox");
@@ -55,7 +55,7 @@ Driver = new(options);
 Driver.Manage().Window.Size = new(1024, 768);
 Driver.Navigate().GoToUrl("http://localhost:5000");
 ```
-<sup><a href='/src/Tests/SeleniumFixture.cs#L13-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-builddriver' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumFixture.cs#L12-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumbuilddriver' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -63,43 +63,89 @@ Driver.Navigate().GoToUrl("http://localhost:5000");
 
 The current page state can be verified as follows:
 
-<!-- snippet: PageUsage -->
-<a id='snippet-pageusage'></a>
+<!-- snippet: SeleniumPageUsage -->
+<a id='snippet-seleniumpageusage'></a>
 ```cs
 await Verifier.Verify(driver);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L22-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-pageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L21-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
 
-//snippet: TheTests.PageUsage.00.verified.html
+<!-- snippet: SeleniumTests.PageUsage.00.verified.html -->
+<a id='snippet-SeleniumTests.PageUsage.00.verified.html'></a>
+```html
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Title</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-4">The Awareness Of Relative Idealism</h1>
+      <p class="lead">
+        One hears it stated that a factor within the logical radical priority embodies the key principles behind the best practice marginalised certification project. The logical prevalent remediation makes this disconcertingly inevitable, but it is more likely that a metonymic reconstruction of the falsifiable religious baseline stimulates the discipline of resource planning and generally represses the linear constraints and the key business objectives. The item is of a monitored nature.
+      </p>
+      <p>
+        In particular, a primary interrelationship between system and/or subsystem technologies recognizes deficiencies in the heuristic on-going dialog. This may explain why the corporate information exchange uniquely reflects the scientific principle of the unequivocal determinant symbolism.
+      </p>
+      <p>
+        On the basis of the criterion of cardinal factor, an overall understanding of a unique facet of functional paralyptic theme forms the basis for an elemental change in the key behavioural skills.
+      </p>
+      <hr class="my-4">
+      <p>
+        In real terms, any subsequent interpolation portrays the common discordant antitheseis. This may be due to a lack of a empirical correspondence.
+      </p>
+      <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">
+        Learn more
+      </a>
+    </div>
+  </body>
+</html>
+```
+<sup><a href='/src/Tests/SeleniumTests.PageUsage.00.verified.html#L1-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
-[TheTests.PageUsage.01.verified.png](/src/Tests/TheTests.PageUsage.01.verified.png):
+[SeleniumTests.PageUsage.01.verified.png](/src/Tests/SeleniumTests.PageUsage.01.verified.png):
 
-<img src="/src/Tests/TheTests.PageUsage.01.verified.png" width="400px">
+<img src="/src/Tests/SeleniumTests.PageUsage.01.verified.png" width="400px">
 
 
 ### Element test
 
 An element can be verified as follows:
 
-<!-- snippet: ElementUsage -->
-<a id='snippet-elementusage'></a>
+<!-- snippet: SeleniumElementUsage -->
+<a id='snippet-seleniumelementusage'></a>
 ```cs
 var element = driver.FindElement(By.Id("someId"));
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L32-L37' title='Snippet source file'>snippet source</a> | <a href='#snippet-elementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L31-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
 
-//snippet: TheTests.ElementUsage.00.verified.html
+<!-- snippet: SeleniumTests.ElementUsage.00.verified.html -->
+<a id='snippet-SeleniumTests.ElementUsage.00.verified.html'></a>
+```html
+<html>
+  <head></head>
+  <body>
+    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">
+      Learn more
+    </a>
+  </body>
+</html>
+```
+<sup><a href='/src/Tests/SeleniumTests.ElementUsage.00.verified.html#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
-[TheTests.ElementUsage.01.verified.png](/src/Tests/TheTests.ElementUsage.01.verified.png):
+[SeleniumTests.ElementUsage.01.verified.png](/src/Tests/SeleniumTests.ElementUsage.01.verified.png):
 
-<img src="/src/Tests/TheTests.ElementUsage.01.verified.png">
+<img src="/src/Tests/SeleniumTests.ElementUsage.01.verified.png">
 
 
 ## OS specific rendering

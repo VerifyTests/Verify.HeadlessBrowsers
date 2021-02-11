@@ -3,14 +3,13 @@ using OpenQA.Selenium.Chrome;
 using Xunit;
 
 public class SeleniumFixture :
-    IClassFixture<WebStartupFixture>,
     IAsyncLifetime
 {
     public ChromeDriver Driver { get; private set; } = null!;
 
     public Task InitializeAsync()
     {
-        #region BuildDriver
+        #region SeleniumBuildDriver
 
         ChromeOptions options = new();
         options.AddArgument("--no-sandbox");

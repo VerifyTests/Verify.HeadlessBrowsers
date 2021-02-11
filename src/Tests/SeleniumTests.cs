@@ -6,20 +6,19 @@ using Xunit;
 
 [UsesVerify]
 public class SeleniumTests :
-    IClassFixture<WebStartupFixture>,
     IClassFixture<SeleniumFixture>
 {
     ChromeDriver driver;
 
-    public SeleniumTests(SeleniumFixture seleniumFixture)
+    public SeleniumTests(SeleniumFixture fixture)
     {
-        driver = seleniumFixture.Driver;
+        driver = fixture.Driver;
     }
 
     [Fact]
     public async Task PageUsage()
     {
-        #region PageUsage
+        #region SeleniumPageUsage
 
         await Verifier.Verify(driver);
 
@@ -29,7 +28,7 @@ public class SeleniumTests :
     [Fact]
     public async Task ElementUsage()
     {
-        #region ElementUsage
+        #region SeleniumElementUsage
 
         var element = driver.FindElement(By.Id("someId"));
         await Verifier.Verify(element);
