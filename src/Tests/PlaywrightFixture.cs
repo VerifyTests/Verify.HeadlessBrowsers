@@ -13,7 +13,7 @@ public class PlaywrightFixture :
 
     public async Task InitializeAsync()
     {
-        #region PlaywrightBuildDriver
+        #region PlaywrightBuild
 
         playwright = await Playwright.CreateAsync();
         browser = await playwright.Chromium.LaunchAsync();
