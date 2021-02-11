@@ -36,6 +36,8 @@ Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
 
 ## Playwright Usage
 
+Verification of Web UIs via [Playwright](https://github.com/microsoft/playwright-sharp).
+
 
 ### NuGet package
 
@@ -150,6 +152,8 @@ Learn more
 
 
 ## Puppeteer Usage
+
+Verification of Web UIs via [Puppeteer](https://github.com/hardkoded/puppeteer-sharp)
 
 
 ### NuGet package
@@ -269,6 +273,8 @@ Learn more
 
 
 ## Selenium Usage
+
+Verification of Web UIs via [Selenium](https://www.selenium.dev).
 
 
 ### NuGet package
