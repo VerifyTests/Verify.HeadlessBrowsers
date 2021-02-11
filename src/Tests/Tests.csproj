@@ -18,15 +18,8 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
     <PackageReference Include="ProjectDefaults" Version="1.0.53" PrivateAssets="All" />
     <ProjectReference Include="..\Verify.Playwright\Verify.Playwright.csproj" />
+    <ProjectReference Include="..\Verify.Puppeteer\Verify.Puppeteer.csproj" />
     <ProjectReference Include="..\Verify.Selenium\Verify.Selenium.csproj" />
     <ProjectReference Include="..\WebApplication\WebApplication.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="PlaywrightTests.ElementUsage.00.verified.html">
-      <DependentUpon>PlaywrightTests.cs</DependentUpon>
-    </None>
-    <None Update="PlaywrightTests.PageUsage.00.verified.html">
-      <DependentUpon>PlaywrightTests.cs</DependentUpon>
-    </None>
   </ItemGroup>
 </Project>

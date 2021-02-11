@@ -18,6 +18,12 @@ public static class ModuleInitializer
 
         #endregion
 
+        #region VerifyPuppeteerEnable
+
+        VerifyPuppeteer.Enable();
+
+        #endregion
+
         VerifyPhash.RegisterComparer("png", .99f);
     }
 }
