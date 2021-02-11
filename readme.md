@@ -80,35 +80,27 @@ With the state of the element being rendered as a verified files:
 <a id='snippet-PlaywrightTests.PageUsage.00.verified.html'></a>
 ```html
 <!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <title>The Title</title>
-    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>The Title</title>
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-    <div class="jumbotron">
-        <h1 class="display-4">The Awareness Of Relative Idealism</h1>
-        <p class="lead">
-            One hears it stated that a factor within the logical radical priority embodies the key principles behind the best practice marginalised certification project. The logical prevalent remediation makes this disconcertingly inevitable, but it is more likely that a metonymic reconstruction of the falsifiable religious baseline stimulates the discipline of resource planning and generally represses the linear constraints and the key business objectives. The item is of a monitored nature.
-        </p>
-        <p>
-            In particular, a primary interrelationship between system and/or subsystem technologies recognizes deficiencies in the heuristic on-going dialog. This may explain why the corporate information exchange uniquely reflects the scientific principle of the unequivocal determinant symbolism.
-        </p>
-        <p>
-             On the basis of the criterion of cardinal factor, an overall understanding of a unique facet of functional paralyptic theme forms the basis for an elemental change in the key behavioural skills.
-        </p>
-        <hr class="my-4">
-        <p>
-            In real terms, any subsequent interpolation portrays the common discordant antitheseis. This may be due to a lack of a empirical correspondence.
-        </p>
-        <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">
-            Learn more
-        </a>
-    </div>
+  <div class="jumbotron">
+    <h1 class="display-4">The Awareness Of Relative Idealism</h1>
+    <p class="lead">
+      One hears it stated that a factor within the logical radical priority embodies the
+      key principles behind the best practice marginalised certification project. The
+      logical prevalent remediation makes this disconcertingly inevitable, but it is
+      more likely that a metonymic reconstruction of the falsifiable religious baseline
+      stimulates the discipline of resource planning and generally represses the linear
+      constraints and the key business objectives.
+    </p>
+    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
 
 </body></html>
 ```
-<sup><a href='/src/Tests/PlaywrightTests.PageUsage.00.verified.html#L1-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.PageUsage.00.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [PlaywrightTests.PageUsage.01.verified.png](/src/Tests/PlaywrightTests.PageUsage.01.verified.png):
@@ -137,11 +129,9 @@ With the state of the element being rendered as a verified files:
 <!-- snippet: PlaywrightTests.ElementUsage.00.verified.html -->
 <a id='snippet-PlaywrightTests.ElementUsage.00.verified.html'></a>
 ```html
-
-            Learn more
-        
+Learn more
 ```
-<sup><a href='/src/Tests/PlaywrightTests.ElementUsage.00.verified.html#L1-L3' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.ElementUsage.00.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [PlaywrightTests.ElementUsage.01.verified.png](/src/Tests/PlaywrightTests.ElementUsage.01.verified.png):
@@ -213,26 +203,14 @@ With the state of the element being rendered as a verified files:
     <div class="jumbotron">
       <h1 class="display-4">The Awareness Of Relative Idealism</h1>
       <p class="lead">
-        One hears it stated that a factor within the logical radical priority embodies the key principles behind the best practice marginalised certification project. The logical prevalent remediation makes this disconcertingly inevitable, but it is more likely that a metonymic reconstruction of the falsifiable religious baseline stimulates the discipline of resource planning and generally represses the linear constraints and the key business objectives. The item is of a monitored nature.
+        One hears it stated that a factor within the logical radical priority embodies the       key principles behind the best practice marginalised certification project. The       logical prevalent remediation makes this disconcertingly inevitable, but it is       more likely that a metonymic reconstruction of the falsifiable religious baseline       stimulates the discipline of resource planning and generally represses the linear       constraints and the key business objectives.
       </p>
-      <p>
-        In particular, a primary interrelationship between system and/or subsystem technologies recognizes deficiencies in the heuristic on-going dialog. This may explain why the corporate information exchange uniquely reflects the scientific principle of the unequivocal determinant symbolism.
-      </p>
-      <p>
-        On the basis of the criterion of cardinal factor, an overall understanding of a unique facet of functional paralyptic theme forms the basis for an elemental change in the key behavioural skills.
-      </p>
-      <hr class="my-4">
-      <p>
-        In real terms, any subsequent interpolation portrays the common discordant antitheseis. This may be due to a lack of a empirical correspondence.
-      </p>
-      <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">
-        Learn more
-      </a>
+      <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
   </body>
 </html>
 ```
-<sup><a href='/src/Tests/SeleniumTests.PageUsage.00.verified.html#L1-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.PageUsage.00.verified.html#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [SeleniumTests.PageUsage.01.verified.png](/src/Tests/SeleniumTests.PageUsage.01.verified.png):
@@ -261,13 +239,11 @@ With the state of the element being rendered as a verified files:
 <html>
   <head></head>
   <body>
-    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">
-      Learn more
-    </a>
+    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </body>
 </html>
 ```
-<sup><a href='/src/Tests/SeleniumTests.ElementUsage.00.verified.html#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.ElementUsage.00.verified.html#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [SeleniumTests.ElementUsage.01.verified.png](/src/Tests/SeleniumTests.ElementUsage.01.verified.png):
