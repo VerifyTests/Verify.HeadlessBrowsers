@@ -39,7 +39,7 @@ Enable VerifySelenium once at assembly load time:
 ```cs
 VerifySelenium.Enable();
 ```
-<sup><a href='/src/Tests/TheTests.cs#L62-L66' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L61-L65' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -51,11 +51,11 @@ VerifySelenium.Enable();
 ChromeOptions options = new();
 options.AddArgument("--no-sandbox");
 options.AddArgument("--headless");
-driver = new ChromeDriver(options);
-driver.Manage().Window.Size = new Size(1024, 768);
+driver = new(options);
+driver.Manage().Window.Size = new(1024, 768);
 driver.Navigate().GoToUrl("http://localhost:5000");
 ```
-<sup><a href='/src/Tests/TheTests.cs#L27-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-builddriver' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L26-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-builddriver' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -68,7 +68,7 @@ The current page state can be verified as follows:
 ```cs
 await Verifier.Verify(driver);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L42-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-pageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L41-L45' title='Snippet source file'>snippet source</a> | <a href='#snippet-pageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -123,7 +123,7 @@ An element can be verified as follows:
 var element = driver.FindElement(By.Id("someId"));
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/TheTests.cs#L52-L57' title='Snippet source file'>snippet source</a> | <a href='#snippet-elementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/TheTests.cs#L51-L56' title='Snippet source file'>snippet source</a> | <a href='#snippet-elementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
