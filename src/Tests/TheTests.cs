@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using VerifyTests;
@@ -17,7 +16,7 @@ public class TheTests : IDisposable
 
     public TheTests()
     {
-        var webBuilder = new WebHostBuilder();
+        WebHostBuilder webBuilder = new();
 
         webBuilder.UseStartup<Startup>();
         webBuilder.UseKestrel();
@@ -29,8 +28,8 @@ public class TheTests : IDisposable
         ChromeOptions options = new();
         options.AddArgument("--no-sandbox");
         options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
-        driver.Manage().Window.Size = new Size(1024, 768);
+        driver = new(options);
+        driver.Manage().Window.Size = new(1024, 768);
         driver.Navigate().GoToUrl("http://localhost:5000");
 
         #endregion

@@ -11,7 +11,7 @@ static class SeleniumExtensions
 {
     public static void WaitForIsReady(this RemoteWebDriver driver)
     {
-        var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        WebDriverWait wait = new(driver, TimeSpan.FromSeconds(10));
         wait.Until(_ =>
         {
             var readyState = driver.ExecuteScript("return document.readyState").ToString();
