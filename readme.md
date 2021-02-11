@@ -1,9 +1,11 @@
-# <img src="/src/icon.png" height="30px"> Verify.Selenium
+# <img src="/src/icon.png" height="30px"> Verify Headless Browsers
 
-[![Build status](https://ci.appveyor.com/api/projects/status/xbfm80k15vfqosnd?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-selenium)
-[![NuGet Status](https://img.shields.io/nuget/v/Verify.Selenium.svg)](https://www.nuget.org/packages/Verify.Selenium/)
+[![Build status](https://ci.appveyor.com/api/projects/status/xbfm80k15vfqosnd?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-headlessbrowsers)
+[![NuGet Status](https://img.shields.io/nuget/v/Verify.Playwright.svg?label=Verify.Playwright)](https://www.nuget.org/packages/Verify.Playwright/)
+[![NuGet Status](https://img.shields.io/nuget/v/Verify.Puppeteer.svg?label=Verify.Puppeteer)](https://www.nuget.org/packages/Verify.Puppeteer/)
+[![NuGet Status](https://img.shields.io/nuget/v/Verify.Selenium.svg?label=Verify.Selenium)](https://www.nuget.org/packages/Verify.Selenium/)
 
-Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs using [Selenium](https://www.selenium.dev/).
+Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs using [headless browsers.
 
 Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-verify?utm_source=nuget-verify&utm_medium=referral&utm_campaign=enterprise).
 
@@ -18,11 +20,16 @@ Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
     * [Build](#build)
     * [Page test](#page-test)
     * [Element test](#element-test)
-  * [Selenium Usage](#selenium-usage)
+  * [Puppeteer Usage](#puppeteer-usage)
     * [Enable](#enable-1)
-    * [Build WebDriver](#build-webdriver)
+    * [Build](#build-1)
     * [Page test](#page-test-1)
     * [Element test](#element-test-1)
+  * [Selenium Usage](#selenium-usage)
+    * [Enable](#enable-2)
+    * [Build WebDriver](#build-webdriver)
+    * [Page test](#page-test-2)
+    * [Element test](#element-test-2)
   * [OS specific rendering](#os-specific-rendering)
   * [Security contact information](#security-contact-information)<!-- endToc -->
 
@@ -137,6 +144,122 @@ Learn more
 [PlaywrightTests.ElementUsage.01.verified.png](/src/Tests/PlaywrightTests.ElementUsage.01.verified.png):
 
 <img src="/src/Tests/PlaywrightTests.ElementUsage.01.verified.png">
+
+
+## Puppeteer Usage
+
+
+### NuGet package
+
+https://nuget.org/packages/Verify.Puppeteer/
+
+
+### Enable
+
+Enable VerifyPuppeteer once at assembly load time:
+
+<!-- snippet: PuppeteerEnable -->
+<a id='snippet-puppeteerenable'></a>
+```cs
+VerifyPuppeteer.Enable();
+```
+<sup><a href='/src/Tests/ModuleInitializer.cs#L21-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerenable' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+
+### Build
+
+<!-- snippet: PuppeteerBuild -->
+<a id='snippet-puppeteerbuild'></a>
+```cs
+var browserFetcher = new BrowserFetcher();
+await browserFetcher.DownloadAsync(BrowserFetcher.DefaultRevision);
+browser = await Puppeteer.LaunchAsync(
+    new LaunchOptions
+    {
+        Headless = true
+    });
+```
+<sup><a href='/src/Tests/PuppeteerFixture.cs#L13-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerbuild' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+
+### Page test
+
+The current page state can be verified as follows:
+
+<!-- snippet: PuppeteerPageUsage -->
+<a id='snippet-puppeteerpageusage'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GoToAsync("http://localhost:5000");
+await Verifier.Verify(page);
+```
+<sup><a href='/src/Tests/PuppeteerTests.cs#L20-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+With the state of the element being rendered as a verified files:
+
+<!-- snippet: PuppeteerTests.PageUsage.00.verified.html -->
+<a id='snippet-PuppeteerTests.PageUsage.00.verified.html'></a>
+```html
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>The Title</title>
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="jumbotron">
+    <h1 class="display-4">The Awareness Of Relative Idealism</h1>
+    <p class="lead">
+      One hears it stated that a factor within the logical radical priority embodies the
+      key principles behind the best practice marginalised certification project. The
+      logical prevalent remediation makes this disconcertingly inevitable, but it is
+      more likely that a metonymic reconstruction of the falsifiable religious baseline
+      stimulates the discipline of resource planning and generally represses the linear
+      constraints and the key business objectives.
+    </p>
+    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+
+</body></html>
+```
+<sup><a href='/src/Tests/PuppeteerTests.PageUsage.00.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+[PuppeteerTests.PageUsage.01.verified.png](/src/Tests/PuppeteerTests.PageUsage.01.verified.png):
+
+<img src="/src/Tests/PuppeteerTests.PageUsage.01.verified.png" width="400px">
+
+
+### Element test
+
+An element can be verified as follows:
+
+<!-- snippet: PuppeteerElementUsage -->
+<a id='snippet-puppeteerelementusage'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GoToAsync("http://localhost:5000");
+var element = await page.QuerySelectorAsync("#someId");
+await Verifier.Verify(element);
+```
+<sup><a href='/src/Tests/PuppeteerTests.cs#L32-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+With the state of the element being rendered as a verified files:
+
+<!-- snippet: PuppeteerTests.ElementUsage.00.verified.html -->
+<a id='snippet-PuppeteerTests.ElementUsage.00.verified.html'></a>
+```html
+Learn more
+```
+<sup><a href='/src/Tests/PuppeteerTests.ElementUsage.00.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+[PuppeteerTests.ElementUsage.01.verified.png](/src/Tests/PuppeteerTests.ElementUsage.01.verified.png):
+
+<img src="/src/Tests/PuppeteerTests.ElementUsage.01.verified.png">
 
 
 ## Selenium Usage

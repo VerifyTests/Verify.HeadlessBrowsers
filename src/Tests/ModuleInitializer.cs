@@ -18,7 +18,7 @@ public static class ModuleInitializer
 
         #endregion
 
-        #region VerifyPuppeteerEnable
+        #region PuppeteerEnable
 
         VerifyPuppeteer.Enable();
 
