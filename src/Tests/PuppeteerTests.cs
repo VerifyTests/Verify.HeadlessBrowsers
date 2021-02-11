@@ -20,6 +20,8 @@ public class PuppeteerTests :
         #region PuppeteerPageUsage
 
         var page = await browser.NewPageAsync();
+        page.Viewport.Width = 1024;
+        page.Viewport.Height = 768;
         await page.GoToAsync("http://localhost:5000");
         await Verifier.Verify(page);
 
