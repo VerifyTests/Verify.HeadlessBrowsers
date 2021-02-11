@@ -21,8 +21,11 @@ public class PlaywrightTests :
         #region PlaywrightPageUsage
 
         var page = await browser.NewPageAsync();
+        page.ViewportSize.Height = 768;
+        page.ViewportSize.Width = 1024;
         await page.GoToAsync("http://localhost:5000");
-        await Verifier.Verify(page);
+        await Verifier.Verify(page)
+            .AutoVerify();
 
         #endregion
     }

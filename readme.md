@@ -75,10 +75,13 @@ The current page state can be verified as follows:
 <a id='snippet-playwrightpageusage'></a>
 ```cs
 var page = await browser.NewPageAsync();
+page.ViewportSize.Height = 768;
+page.ViewportSize.Width = 1024;
 await page.GoToAsync("http://localhost:5000");
-await Verifier.Verify(page);
+await Verifier.Verify(page)
+    .AutoVerify();
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L21-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L21-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -128,7 +131,7 @@ await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
 var element = await page.QuerySelectorAsync("#someId");
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L33-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L36-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -195,9 +198,10 @@ var page = await browser.NewPageAsync();
 page.Viewport.Width = 1024;
 page.Viewport.Height = 768;
 await page.GoToAsync("http://localhost:5000");
-await Verifier.Verify(page);
+await Verifier.Verify(page)
+    .AutoVerify();
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L20-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L20-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -246,7 +250,7 @@ await page.GoToAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L34-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L35-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
