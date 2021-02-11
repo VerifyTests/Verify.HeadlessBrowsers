@@ -24,6 +24,6 @@ public static class ModuleInitializer
 
         #endregion
 
-        VerifyPhash.RegisterComparer("png", .99f);
+        VerifyPhash.RegisterComparer("png", .7f);
     }
 }
