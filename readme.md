@@ -17,17 +17,17 @@ Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
 
   * [Playwright Usage](#playwright-usage)
     * [Enable](#enable)
-    * [Build](#build)
+    * [Instantiate browser](#instantiate-browser)
     * [Page test](#page-test)
     * [Element test](#element-test)
   * [Puppeteer Usage](#puppeteer-usage)
     * [Enable](#enable-1)
-    * [Build](#build-1)
+    * [Instantiate browser](#instantiate-browser-1)
     * [Page test](#page-test-1)
     * [Element test](#element-test-1)
   * [Selenium Usage](#selenium-usage)
     * [Enable](#enable-2)
-    * [Build WebDriver](#build-webdriver)
+    * [Instantiate browser](#instantiate-browser-2)
     * [Page test](#page-test-2)
     * [Element test](#element-test-2)
   * [OS specific rendering](#os-specific-rendering)
@@ -55,7 +55,7 @@ VerifyPlaywright.Enable();
 <!-- endSnippet -->
 
 
-### Build
+### Instantiate browser
 
 <!-- snippet: PlaywrightBuild -->
 <a id='snippet-playwrightbuild'></a>
@@ -170,7 +170,7 @@ VerifyPuppeteer.Enable();
 <!-- endSnippet -->
 
 
-### Build
+### Instantiate browser
 
 <!-- snippet: PuppeteerBuild -->
 <a id='snippet-puppeteerbuild'></a>
@@ -289,7 +289,7 @@ VerifySelenium.Enable();
 <!-- endSnippet -->
 
 
-### Build WebDriver
+### Instantiate browser
 
 <!-- snippet: SeleniumBuildDriver -->
 <a id='snippet-seleniumbuilddriver'></a>
