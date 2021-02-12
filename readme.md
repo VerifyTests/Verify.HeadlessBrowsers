@@ -5,7 +5,7 @@
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Puppeteer.svg?label=Verify.Puppeteer)](https://www.nuget.org/packages/Verify.Puppeteer/)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Selenium.svg?label=Verify.Selenium)](https://www.nuget.org/packages/Verify.Selenium/)
 
-Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs using [headless browsers.
+Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs using headless browsers.
 
 Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-verify?utm_source=nuget-verify&utm_medium=referral&utm_campaign=enterprise).
 
