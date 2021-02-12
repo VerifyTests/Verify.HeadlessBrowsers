@@ -53,7 +53,7 @@ Enable VerifyPlaywright once at assembly load time:
 ```cs
 VerifyPlaywright.Enable();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L15-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightenable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L16-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -80,10 +80,9 @@ var page = await browser.NewPageAsync();
 page.ViewportSize.Height = 768;
 page.ViewportSize.Width = 1024;
 await page.GoToAsync("http://localhost:5000");
-await Verifier.Verify(page)
-    .AutoVerify();
+await Verifier.Verify(page);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L21-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L21-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -133,7 +132,7 @@ await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
 var element = await page.QuerySelectorAsync("#someId");
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L36-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L35-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -170,7 +169,7 @@ Enable VerifyPuppeteer once at assembly load time:
 ```cs
 VerifyPuppeteer.Enable();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L21-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerenable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L22-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -202,10 +201,9 @@ var page = await browser.NewPageAsync();
 page.Viewport.Width = 1024;
 page.Viewport.Height = 768;
 await page.GoToAsync("http://localhost:5000");
-await Verifier.Verify(page)
-    .AutoVerify();
+await Verifier.Verify(page);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L20-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L20-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -254,7 +252,7 @@ await page.GoToAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L35-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L34-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -291,7 +289,7 @@ Enable VerifySelenium once at assembly load time:
 ```cs
 VerifySelenium.Enable();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L9-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumenable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L10-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -328,24 +326,28 @@ With the state of the element being rendered as a verified files:
 <!-- snippet: SeleniumTests.PageUsage.00.verified.html -->
 <a id='snippet-SeleniumTests.PageUsage.00.verified.html'></a>
 ```html
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>The Title</title>
-    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="jumbotron">
-      <h1 class="display-4">The Awareness Of Relative Idealism</h1>
-      <p class="lead">
-        One hears it stated that a factor within the logical radical priority embodies the       key principles behind the best practice marginalised certification project. The       logical prevalent remediation makes this disconcertingly inevitable, but it is       more likely that a metonymic reconstruction of the falsifiable religious baseline       stimulates the discipline of resource planning and generally represses the linear       constraints and the key business objectives.
-      </p>
-      <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </div>
-  </body>
-</html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>The Title</title>
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="jumbotron">
+    <h1 class="display-4">The Awareness Of Relative Idealism</h1>
+    <p class="lead">
+      One hears it stated that a factor within the logical radical priority embodies the
+      key principles behind the best practice marginalised certification project. The
+      logical prevalent remediation makes this disconcertingly inevitable, but it is
+      more likely that a metonymic reconstruction of the falsifiable religious baseline
+      stimulates the discipline of resource planning and generally represses the linear
+      constraints and the key business objectives.
+    </p>
+    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+
+</body></html>
 ```
-<sup><a href='/src/Tests/SeleniumTests.PageUsage.00.verified.html#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.PageUsage.00.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [SeleniumTests.PageUsage.01.verified.png](/src/Tests/SeleniumTests.PageUsage.01.verified.png):
@@ -371,14 +373,9 @@ With the state of the element being rendered as a verified files:
 <!-- snippet: SeleniumTests.ElementUsage.00.verified.html -->
 <a id='snippet-SeleniumTests.ElementUsage.00.verified.html'></a>
 ```html
-<html>
-  <head></head>
-  <body>
-    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </body>
-</html>
+<a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 ```
-<sup><a href='/src/Tests/SeleniumTests.ElementUsage.00.verified.html#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.ElementUsage.00.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [SeleniumTests.ElementUsage.01.verified.png](/src/Tests/SeleniumTests.ElementUsage.01.verified.png):

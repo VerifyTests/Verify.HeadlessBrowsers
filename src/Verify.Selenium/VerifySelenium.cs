@@ -37,7 +37,7 @@ namespace VerifyTests
                 null,
                 new List<ConversionStream>
                 {
-                    new("html", driver.GetSource()),
+                    new("html", driver.PageSource),
                     new("png", new MemoryStream(bytes))
                 }
             );

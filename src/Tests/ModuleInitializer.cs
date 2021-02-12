@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using ImageMagick;
 using VerifyTests;
 
 public static class ModuleInitializer
@@ -24,6 +25,7 @@ public static class ModuleInitializer
 
         #endregion
 
-        VerifyPhash.RegisterComparer("png", .7f);
+        VerifyImageMagick.Initialize();
+        VerifyImageMagick.RegisterComparers(.01, ErrorMetric.Fuzz);
     }
 }

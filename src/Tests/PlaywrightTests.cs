@@ -24,8 +24,7 @@ public class PlaywrightTests :
         page.ViewportSize.Height = 768;
         page.ViewportSize.Width = 1024;
         await page.GoToAsync("http://localhost:5000");
-        await Verifier.Verify(page)
-            .AutoVerify();
+        await Verifier.Verify(page);
 
         #endregion
     }

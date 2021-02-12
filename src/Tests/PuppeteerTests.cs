@@ -23,8 +23,7 @@ public class PuppeteerTests :
         page.Viewport.Width = 1024;
         page.Viewport.Height = 768;
         await page.GoToAsync("http://localhost:5000");
-        await Verifier.Verify(page)
-            .AutoVerify();
+        await Verifier.Verify(page);
 
         #endregion
     }
