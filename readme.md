@@ -79,10 +79,11 @@ The current page state can be verified as follows:
 var page = await browser.NewPageAsync();
 page.ViewportSize.Height = 768;
 page.ViewportSize.Width = 1024;
+await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
 await page.GoToAsync("http://localhost:5000");
 await Verifier.Verify(page);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L21-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L21-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -132,7 +133,7 @@ await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
 var element = await page.QuerySelectorAsync("#someId");
 await Verifier.Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L35-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L36-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
