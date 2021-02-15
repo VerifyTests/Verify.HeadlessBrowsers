@@ -21,7 +21,7 @@ namespace VerifyTests
             var bytes = element.GetScreenshot().AsByteArray;
             return new(
                 null,
-                new List<ConversionStream>
+                new List<Target>
                 {
                     new("html", element.GetSource()),
                     new("png", new MemoryStream(bytes))
@@ -35,7 +35,7 @@ namespace VerifyTests
             var bytes = driver.GetScreenshot().AsByteArray;
             return new(
                 null,
-                new List<ConversionStream>
+                new List<Target>
                 {
                     new("html", driver.PageSource),
                     new("png", new MemoryStream(bytes))

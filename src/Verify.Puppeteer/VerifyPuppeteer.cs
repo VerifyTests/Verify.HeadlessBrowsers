@@ -19,7 +19,7 @@ namespace VerifyTests
 
             return new(
                 null,
-                new List<ConversionStream>
+                new List<Target>
                 {
                     new("html", html),
                     new("png", screenshot)
@@ -34,7 +34,7 @@ namespace VerifyTests
 
             return new(
                 null,
-                new List<ConversionStream>
+                new List<Target>
                 {
                     new("html", html),
                     new("png", screenshot)

@@ -20,7 +20,7 @@ namespace VerifyTests
             var html = await page.GetContentAsync();
             return new(
                 null,
-                new List<ConversionStream>
+                new List<Target>
                 {
                     new("html", html),
                     new("png", new MemoryStream(bytes))
@@ -34,7 +34,7 @@ namespace VerifyTests
             var html = await element.GetInnerHtmlAsync();
             return new(
                 null,
-                new List<ConversionStream>
+                new List<Target>
                 {
                     new("html", html),
                     new("png", new MemoryStream(bytes))
