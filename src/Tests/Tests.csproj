@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.0.2" />
+    <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.1.0" PrivateAssets="all" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="88.0.4324.9600" />
     <PackageReference Include="PlaywrightSharp" Version="0.191.1" />
