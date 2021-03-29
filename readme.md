@@ -180,7 +180,7 @@ VerifyPuppeteer.Enable();
 <a id='snippet-puppeteerbuild'></a>
 ```cs
 var browserFetcher = new BrowserFetcher();
-await browserFetcher.DownloadAsync(BrowserFetcher.DefaultRevision);
+await browserFetcher.DownloadAsync();
 browser = await Puppeteer.LaunchAsync(
     new LaunchOptions
     {
