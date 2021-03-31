@@ -28,9 +28,6 @@ public class PlaywrightFixture :
             await browser.DisposeAsync();
         }
 
-        if (playwright != null)
-        {
-            playwright.Dispose();
-        }
+        playwright?.Dispose();
     }
 }
