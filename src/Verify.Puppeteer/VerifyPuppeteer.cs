@@ -14,15 +14,15 @@ namespace VerifyTests
 
         static async Task<ConversionResult> PageToImage(Page page, IReadOnlyDictionary<string, object> context)
         {
-            var screenshot = await page.ScreenshotStreamAsync();
-            var html = await page.GetContentAsync();
+            var screenshot = page.ScreenshotStreamAsync();
+            var html = page.GetContentAsync();
 
             return new(
                 null,
                 new List<Target>
                 {
-                    new("html", html),
-                    new("png", screenshot)
+                    new("html", await html),
+                    new("png", await screenshot)
                 }
             );
         }

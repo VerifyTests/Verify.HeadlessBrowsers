@@ -16,28 +16,28 @@ namespace VerifyTests
         static async Task<ConversionResult> PageToImage(IPage page, IReadOnlyDictionary<string, object> context)
         {
             await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
-            var bytes = await page.ScreenshotAsync();
-            var html = await page.GetContentAsync();
+            var bytes = page.ScreenshotAsync();
+            var html = page.GetContentAsync();
             return new(
                 null,
                 new List<Target>
                 {
-                    new("html", html),
-                    new("png", new MemoryStream(bytes))
+                    new("html", await html),
+                    new("png", new MemoryStream(await bytes))
                 }
             );
         }
 
         static async Task<ConversionResult> ElementToImage(IElementHandle element, IReadOnlyDictionary<string, object> context)
         {
-            var bytes = await element.ScreenshotAsync();
-            var html = await element.GetInnerHtmlAsync();
+            var bytes = element.ScreenshotAsync();
+            var html = element.GetInnerHtmlAsync();
             return new(
                 null,
                 new List<Target>
                 {
-                    new("html", html),
-                    new("png", new MemoryStream(bytes))
+                    new("html", await html),
+                    new("png", new MemoryStream(await bytes))
                 }
             );
         }
