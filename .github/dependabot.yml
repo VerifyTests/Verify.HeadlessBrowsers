@@ -1,0 +1,66 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: Verify
+    versions:
+    - 10.5.0
+    - 10.5.1
+    - 10.6.2
+    - 10.9.1
+    - 11.0.0
+    - 11.0.1
+    - 11.0.2
+    - 11.2.0
+    - 11.4.0
+    - 11.5.0
+    - 11.6.0
+    - 11.7.0
+    - 11.8.0
+  - dependency-name: Verify.Xunit
+    versions:
+    - 10.9.1
+    - 11.0.0
+    - 11.0.1
+    - 11.0.2
+    - 11.2.0
+    - 11.4.0
+    - 11.5.0
+    - 11.6.0
+    - 11.7.0
+    - 11.8.0
+  - dependency-name: Selenium.WebDriver.ChromeDriver
+    versions:
+    - 89.0.4389.2300
+    - 90.0.4430.2400
+  - dependency-name: MarkdownSnippets.MsBuild
+    versions:
+    - 23.0.0
+    - 23.0.1
+    - 23.0.2
+    - 23.1.2
+  - dependency-name: Microsoft.NET.Test.Sdk
+    versions:
+    - 16.9.4
+  - dependency-name: PlaywrightSharp
+    versions:
+    - 0.191.2
+    - 0.192.0
+  - dependency-name: ProjectDefaults
+    versions:
+    - 1.0.54
+  - dependency-name: Microsoft.AspNetCore.TestHost
+    versions:
+    - 5.0.3
+  - dependency-name: NUnit
+    versions:
+    - 3.13.1
+  - dependency-name: Verify.NUnit
+    versions:
+    - 10.5.0
+    - 10.5.1
+    - 10.6.2
