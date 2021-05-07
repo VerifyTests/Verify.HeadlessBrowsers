@@ -12,27 +12,6 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 <a href='https://dotnetfoundation.org' alt='Part of the .NET Foundation'><img src='https://raw.githubusercontent.com/VerifyTests/Verify/master/docs/dotNetFoundation.svg' height='30px'></a><br>
 Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
 
-<!-- toc -->
-## Contents
-
-  * [Playwright Usage](#playwright-usage)
-    * [Enable](#enable)
-    * [Instantiate browser](#instantiate-browser)
-    * [Page test](#page-test)
-    * [Element test](#element-test)
-  * [Puppeteer Usage](#puppeteer-usage)
-    * [Enable](#enable-1)
-    * [Instantiate browser](#instantiate-browser-1)
-    * [Page test](#page-test-1)
-    * [Element test](#element-test-1)
-  * [Selenium Usage](#selenium-usage)
-    * [Enable](#enable-2)
-    * [Instantiate browser](#instantiate-browser-2)
-    * [Page test](#page-test-2)
-    * [Element test](#element-test-2)
-  * [OS specific rendering](#os-specific-rendering)
-  * [Security contact information](#security-contact-information)<!-- endToc -->
-
 
 ## Playwright Usage
 
