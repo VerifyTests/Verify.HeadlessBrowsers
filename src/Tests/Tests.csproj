@@ -11,7 +11,7 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="91.0.4472.1900" />
     <PackageReference Include="PlaywrightSharp" Version="0.192.0" />
     <PackageReference Include="Verify.ImageMagick" Version="2.7.1" />
-    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="7.24.0" />
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="7.24.1" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
     <PackageReference Include="Verify.Xunit" Version="11.18.0" />
