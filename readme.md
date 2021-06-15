@@ -13,11 +13,7 @@ Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
 
 ## Playwright Usage
 
-Verification of Web UIs via:
-
- * [Playwright](https://github.com/microsoft/playwright-sharp)
- * [Selenium](https://www.selenium.dev)
- * [PuppeteerSharp](https://github.com/hardkoded/puppeteer-sharp)
+Verification of Web UIs via [Playwright](https://github.com/microsoft/playwright-sharp).
 
 
 ### NuGet package
