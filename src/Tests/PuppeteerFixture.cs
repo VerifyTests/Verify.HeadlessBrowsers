@@ -12,7 +12,7 @@ public class PuppeteerFixture :
     {
         #region PuppeteerBuild
 
-        var browserFetcher = new BrowserFetcher();
+        var browserFetcher = new BrowserFetcher(Product.Chrome);
         await browserFetcher.DownloadAsync();
         browser = await Puppeteer.LaunchAsync(
             new LaunchOptions

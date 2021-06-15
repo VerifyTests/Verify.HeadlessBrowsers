@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using PlaywrightSharp;
+using Microsoft.Playwright;
 
 namespace VerifyTests
 {
@@ -15,9 +15,9 @@ namespace VerifyTests
 
         static async Task<ConversionResult> PageToImage(IPage page, IReadOnlyDictionary<string, object> context)
         {
-            await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
+            await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
             var bytes = page.ScreenshotAsync();
-            var html = page.GetContentAsync();
+            var html = page.ContentAsync();
             return new(
                 null,
                 new List<Target>
@@ -31,7 +31,7 @@ namespace VerifyTests
         static async Task<ConversionResult> ElementToImage(IElementHandle element, IReadOnlyDictionary<string, object> context)
         {
             var bytes = element.ScreenshotAsync();
-            var html = element.GetInnerHtmlAsync();
+            var html = element.InnerHTMLAsync();
             return new(
                 null,
                 new List<Target>

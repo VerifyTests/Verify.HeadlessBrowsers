@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
-using PlaywrightSharp;
-using PlaywrightSharp.Chromium;
+using Microsoft.Playwright;
 using VerifyXunit;
 using Xunit;
 
@@ -8,7 +7,7 @@ using Xunit;
 public class PlaywrightTests :
     IClassFixture<PlaywrightFixture>
 {
-    IChromiumBrowser browser;
+    IBrowser browser;
 
     public PlaywrightTests(PlaywrightFixture fixture)
     {
@@ -21,10 +20,11 @@ public class PlaywrightTests :
         #region PlaywrightPageUsage
 
         var page = await browser.NewPageAsync();
-        page.ViewportSize.Height = 768;
-        page.ViewportSize.Width = 1024;
-        await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
-        await page.GoToAsync("http://localhost:5000");
+        var size = page.ViewportSize!;
+        size.Height = 768;
+        size.Width = 1024;
+        await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+        await page.GotoAsync("http://localhost:5000");
         await Verifier.Verify(page);
 
         #endregion
@@ -36,8 +36,8 @@ public class PlaywrightTests :
         #region PlaywrightElementUsage
 
         var page = await browser.NewPageAsync();
-        await page.GoToAsync("http://localhost:5000");
-        await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
+        await page.GotoAsync("http://localhost:5000");
+        await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         var element = await page.QuerySelectorAsync("#someId");
         await Verifier.Verify(element);
 

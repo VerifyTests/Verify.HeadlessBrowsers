@@ -13,7 +13,11 @@ Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
 
 ## Playwright Usage
 
-Verification of Web UIs via [Playwright](https://github.com/microsoft/playwright-sharp).
+Verification of Web UIs via:
+
+ * [Playwright](https://github.com/microsoft/playwright-sharp)
+ * [Selenium](https://www.selenium.dev)
+ * [PuppeteerSharp](https://github.com/hardkoded/puppeteer-sharp)
 
 
 ### NuGet package
@@ -42,7 +46,7 @@ VerifyPlaywright.Enable();
 playwright = await Playwright.CreateAsync();
 browser = await playwright.Chromium.LaunchAsync();
 ```
-<sup><a href='/src/Tests/PlaywrightFixture.cs#L16-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightFixture.cs#L15-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -54,13 +58,14 @@ The current page state can be verified as follows:
 <a id='snippet-playwrightpageusage'></a>
 ```cs
 var page = await browser.NewPageAsync();
-page.ViewportSize.Height = 768;
-page.ViewportSize.Width = 1024;
-await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
-await page.GoToAsync("http://localhost:5000");
+var size = page.ViewportSize!;
+size.Height = 768;
+size.Width = 1024;
+await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+await page.GotoAsync("http://localhost:5000");
 await Verifier.Verify(page);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L21-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L20-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -105,8 +110,8 @@ An element can be verified as follows:
 <a id='snippet-playwrightelementusage'></a>
 ```cs
 var page = await browser.NewPageAsync();
-await page.GoToAsync("http://localhost:5000");
-await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
+await page.GotoAsync("http://localhost:5000");
+await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 var element = await page.QuerySelectorAsync("#someId");
 await Verifier.Verify(element);
 ```
@@ -156,7 +161,7 @@ VerifyPuppeteer.Enable();
 <!-- snippet: PuppeteerBuild -->
 <a id='snippet-puppeteerbuild'></a>
 ```cs
-var browserFetcher = new BrowserFetcher();
+var browserFetcher = new BrowserFetcher(Product.Chrome);
 await browserFetcher.DownloadAsync();
 browser = await Puppeteer.LaunchAsync(
     new LaunchOptions
