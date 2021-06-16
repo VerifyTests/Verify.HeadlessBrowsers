@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net5</TargetFrameworks>
     <SignAssembly>false</SignAssembly>
     <PackageTags>Selenium, Verify</PackageTags>
     <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow verification of Web UIs via Selenium (https://www.selenium.dev)</Description>
