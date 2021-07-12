@@ -6,7 +6,7 @@
     <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow verification of Web UIs via Puppeteer (https://github.com/hardkoded/puppeteer-sharp)</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="PuppeteerSharp" Version="4.0.0" />
+    <PackageReference Include="PuppeteerSharp" Version="5.0.0" />
     <PackageReference Include="Verify" Version="11.20.1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
