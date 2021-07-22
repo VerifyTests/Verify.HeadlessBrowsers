@@ -9,7 +9,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.1.4" PrivateAssets="all" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="91.0.4472.10100" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="92.0.4515.4300" />
     <PackageReference Include="Verify.ImageMagick" Version="2.7.1" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="8.0.1" />
     <PackageReference Include="Xunit" Version="2.4.1" />
