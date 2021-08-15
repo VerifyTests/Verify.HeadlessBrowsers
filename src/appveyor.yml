@@ -3,7 +3,7 @@ skip_commits:
   message: /docs|Merge pull request.*/
 init:
   - choco install googlechrome --ignorechecksum
-  - npm i -D playwright@1.13.1
+  - npx playwright install
 build_script:
 - ps: >-
     dotnet build src --configuration Release
