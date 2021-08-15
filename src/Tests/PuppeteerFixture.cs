@@ -15,7 +15,7 @@ public class PuppeteerFixture :
         var browserFetcher = new BrowserFetcher(Product.Chrome);
         await browserFetcher.DownloadAsync();
         browser = await Puppeteer.LaunchAsync(
-            new LaunchOptions
+            new()
             {
                 Headless = true
             });
