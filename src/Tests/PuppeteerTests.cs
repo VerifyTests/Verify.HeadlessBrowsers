@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using PuppeteerSharp;
+﻿using PuppeteerSharp;
 using VerifyXunit;
 using Xunit;
 
