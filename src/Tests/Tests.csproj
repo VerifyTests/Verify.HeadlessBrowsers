@@ -17,7 +17,7 @@
     <PackageReference Include="Verify.Xunit" Version="13.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="5.0.11" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.60" PrivateAssets="All" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.61" PrivateAssets="All" />
     <ProjectReference Include="..\Verify.Playwright\Verify.Playwright.csproj" />
     <ProjectReference Include="..\Verify.Puppeteer\Verify.Puppeteer.csproj" />
     <ProjectReference Include="..\Verify.Selenium\Verify.Selenium.csproj" />
