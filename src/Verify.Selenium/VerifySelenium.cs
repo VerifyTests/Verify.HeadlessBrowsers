@@ -13,7 +13,7 @@ public static class VerifySelenium
 
     static ConversionResult ElementToImage(IWebElement target, IReadOnlyDictionary<string, object> context)
     {
-        var element = (RemoteWebElement)target;
+        var element = (WebElement)target;
         var driver = (RemoteWebDriver)element.WrappedDriver;
         driver.WaitForIsReady();
         var bytes = element.GetScreenshot().AsByteArray;
