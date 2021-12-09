@@ -29,6 +29,7 @@ Enable VerifyPlaywright once at assembly load time:
 <a id='snippet-playwrightenable'></a>
 ```cs
 VerifyPlaywright.Enable();
+Microsoft.Playwright.Program.Main(new[] {"install"});
 ```
 <sup><a href='/src/Tests/ModuleInitializer.cs#L14-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
