@@ -15,6 +15,7 @@ public static class ModuleInitializer
 
         VerifyPlaywright.Enable();
         Microsoft.Playwright.Program.Main(new[] {"install"});
+
         #endregion
 
         #region PuppeteerEnable

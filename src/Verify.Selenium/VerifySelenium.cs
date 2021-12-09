@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
 
 namespace VerifyTests;
 
@@ -7,14 +6,14 @@ public static class VerifySelenium
 {
     public static void Enable()
     {
-        VerifierSettings.RegisterFileConverter<RemoteWebDriver>(DriverToImage);
+        VerifierSettings.RegisterFileConverter<WebDriver>(DriverToImage);
         VerifierSettings.RegisterFileConverter<IWebElement>(ElementToImage);
     }
 
     static ConversionResult ElementToImage(IWebElement target, IReadOnlyDictionary<string, object> context)
     {
         var element = (WebElement)target;
-        var driver = (RemoteWebDriver)element.WrappedDriver;
+        var driver = (WebDriver)element.WrappedDriver;
         driver.WaitForIsReady();
         var bytes = element.GetScreenshot().AsByteArray;
         return new(
@@ -27,7 +26,7 @@ public static class VerifySelenium
         );
     }
 
-    static ConversionResult DriverToImage(RemoteWebDriver driver, IReadOnlyDictionary<string, object> context)
+    static ConversionResult DriverToImage(WebDriver driver, IReadOnlyDictionary<string, object> context)
     {
         driver.WaitForIsReady();
         var bytes = driver.GetScreenshot().AsByteArray;

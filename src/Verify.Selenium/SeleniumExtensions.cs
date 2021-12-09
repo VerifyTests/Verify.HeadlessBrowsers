@@ -1,10 +1,9 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 
 static class SeleniumExtensions
 {
-    public static void WaitForIsReady(this RemoteWebDriver driver)
+    public static void WaitForIsReady(this WebDriver driver)
     {
         WebDriverWait wait = new(driver, TimeSpan.FromSeconds(10));
         wait.Until(_ =>

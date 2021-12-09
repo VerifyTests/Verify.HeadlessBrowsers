@@ -23,8 +23,8 @@ public class SeleniumFixture :
 
     public Task DisposeAsync()
     {
-        Driver.Quit();
-        Driver.Dispose();
+        Driver?.Quit();
+        Driver?.Dispose();
         return Task.CompletedTask;
     }
 }
