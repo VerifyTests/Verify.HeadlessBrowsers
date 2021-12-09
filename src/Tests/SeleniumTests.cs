@@ -1,7 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using VerifyXunit;
-using Xunit;
 
 [UsesVerify]
 public class SeleniumTests :

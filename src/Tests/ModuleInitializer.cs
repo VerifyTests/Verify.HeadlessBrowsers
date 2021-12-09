@@ -1,5 +1,4 @@
 ﻿using ImageMagick;
-using VerifyTests;
 
 public static class ModuleInitializer
 {
@@ -15,7 +14,7 @@ public static class ModuleInitializer
         #region PlaywrightEnable
 
         VerifyPlaywright.Enable();
-
+        Microsoft.Playwright.Program.Main(new[] {"install"});
         #endregion
 
         #region PuppeteerEnable

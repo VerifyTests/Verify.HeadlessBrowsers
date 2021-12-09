@@ -1,5 +1,4 @@
 ﻿using PuppeteerSharp;
-using Xunit;
 
 public class PuppeteerFixture :
     IAsyncLifetime

@@ -1,6 +1,4 @@
 ﻿using PuppeteerSharp;
-using VerifyXunit;
-using Xunit;
 
 [UsesVerify]
 public class PuppeteerTests :

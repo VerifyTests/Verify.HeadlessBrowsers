@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium.Chrome;
-using Xunit;
 
 public class SeleniumFixture :
     IAsyncLifetime
