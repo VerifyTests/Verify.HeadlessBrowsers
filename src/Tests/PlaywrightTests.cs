@@ -22,7 +22,7 @@ public class PlaywrightTests :
         size.Width = 1024;
         await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         await page.GotoAsync("http://localhost:5000");
-        await Verifier.Verify(page);
+        await Verify(page);
 
         #endregion
     }
@@ -36,7 +36,7 @@ public class PlaywrightTests :
         await page.GotoAsync("http://localhost:5000");
         await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         var element = await page.QuerySelectorAsync("#someId");
-        await Verifier.Verify(element);
+        await Verify(element);
 
         #endregion
     }

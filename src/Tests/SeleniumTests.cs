@@ -17,7 +17,7 @@ public class SeleniumTests :
     {
         #region SeleniumPageUsage
 
-        await Verifier.Verify(driver);
+        await Verify(driver);
 
         #endregion
     }
@@ -28,7 +28,7 @@ public class SeleniumTests :
         #region SeleniumElementUsage
 
         var element = driver.FindElement(By.Id("someId"));
-        await Verifier.Verify(element);
+        await Verify(element);
 
         #endregion
     }
