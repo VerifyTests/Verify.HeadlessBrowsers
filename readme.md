@@ -60,7 +60,7 @@ size.Height = 768;
 size.Width = 1024;
 await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 await page.GotoAsync("http://localhost:5000");
-await Verifier.Verify(page);
+await Verify(page);
 ```
 <sup><a href='/src/Tests/PlaywrightTests.cs#L17-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -110,7 +110,7 @@ var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
 await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 var element = await page.QuerySelectorAsync("#someId");
-await Verifier.Verify(element);
+await Verify(element);
 ```
 <sup><a href='/src/Tests/PlaywrightTests.cs#L33-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -181,7 +181,7 @@ var page = await browser.NewPageAsync();
 page.Viewport.Width = 1024;
 page.Viewport.Height = 768;
 await page.GoToAsync("http://localhost:5000");
-await Verifier.Verify(page);
+await Verify(page);
 ```
 <sup><a href='/src/Tests/PuppeteerTests.cs#L17-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -230,7 +230,7 @@ An element can be verified as follows:
 var page = await browser.NewPageAsync();
 await page.GoToAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
-await Verifier.Verify(element);
+await Verify(element);
 ```
 <sup><a href='/src/Tests/PuppeteerTests.cs#L31-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -296,7 +296,7 @@ The current page state can be verified as follows:
 <!-- snippet: SeleniumPageUsage -->
 <a id='snippet-seleniumpageusage'></a>
 ```cs
-await Verifier.Verify(driver);
+await Verify(driver);
 ```
 <sup><a href='/src/Tests/SeleniumTests.cs#L18-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -343,7 +343,7 @@ An element can be verified as follows:
 <a id='snippet-seleniumelementusage'></a>
 ```cs
 var element = driver.FindElement(By.Id("someId"));
-await Verifier.Verify(element);
+await Verify(element);
 ```
 <sup><a href='/src/Tests/SeleniumTests.cs#L28-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
