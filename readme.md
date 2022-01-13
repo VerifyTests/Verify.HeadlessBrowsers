@@ -278,7 +278,7 @@ VerifySelenium.Enable();
 <!-- snippet: SeleniumBuildDriver -->
 <a id='snippet-seleniumbuilddriver'></a>
 ```cs
-ChromeOptions options = new();
+var options = new ChromeOptions();
 options.AddArgument("--no-sandbox");
 options.AddArgument("--headless");
 Driver = new(options);
