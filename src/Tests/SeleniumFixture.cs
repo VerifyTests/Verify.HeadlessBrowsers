@@ -9,7 +9,7 @@ public class SeleniumFixture :
     {
         #region SeleniumBuildDriver
 
-        ChromeOptions options = new();
+        var options = new ChromeOptions();
         options.AddArgument("--no-sandbox");
         options.AddArgument("--headless");
         Driver = new(options);

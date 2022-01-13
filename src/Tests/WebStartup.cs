@@ -5,7 +5,7 @@ public static class WebStartup
     [ModuleInitializer]
     public static void Init()
     {
-        WebHostBuilder builder = new();
+        var builder = new WebHostBuilder();
         builder.UseStartup<Startup>();
         builder.UseKestrel();
         server = builder.Build();

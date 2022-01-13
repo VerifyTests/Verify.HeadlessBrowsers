@@ -5,7 +5,7 @@ static class SeleniumExtensions
 {
     public static void WaitForIsReady(this WebDriver driver)
     {
-        WebDriverWait wait = new(driver, TimeSpan.FromSeconds(10));
+        var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         wait.Until(_ =>
         {
             var readyState = driver.ExecuteScript("return document.readyState").ToString();
