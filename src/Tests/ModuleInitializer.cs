@@ -13,8 +13,7 @@ public static class ModuleInitializer
 
         #region PlaywrightEnable
 
-        VerifyPlaywright.Enable();
-        Microsoft.Playwright.Program.Main(new[] {"install"});
+        VerifyPlaywright.Enable(installPlaywright: true);
 
         #endregion
 

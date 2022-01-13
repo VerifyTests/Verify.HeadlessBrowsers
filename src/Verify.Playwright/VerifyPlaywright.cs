@@ -4,8 +4,13 @@ namespace VerifyTests;
 
 public static class VerifyPlaywright
 {
-    public static void Enable()
+    public static void Enable(bool installPlaywright = false)
     {
+        if (installPlaywright)
+        {
+            Program.Main(new[] { "install" });
+        }
+
         VerifierSettings.RegisterFileConverter<IPage>(PageToImage);
         VerifierSettings.RegisterFileConverter<IElementHandle>(ElementToImage);
     }
