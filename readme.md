@@ -28,10 +28,9 @@ Enable VerifyPlaywright once at assembly load time:
 <!-- snippet: PlaywrightEnable -->
 <a id='snippet-playwrightenable'></a>
 ```cs
-VerifyPlaywright.Enable();
-Microsoft.Playwright.Program.Main(new[] {"install"});
+VerifyPlaywright.Enable(installPlaywright: true);
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L14-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightenable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L14-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -149,7 +148,7 @@ Enable VerifyPuppeteer once at assembly load time:
 ```cs
 VerifyPuppeteer.Enable();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L21-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerenable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L20-L24' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
