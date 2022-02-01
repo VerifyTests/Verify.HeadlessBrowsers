@@ -42,7 +42,7 @@ VerifyPlaywright.Enable(installPlaywright: true);
 playwright = await Playwright.CreateAsync();
 browser = await playwright.Chromium.LaunchAsync();
 ```
-<sup><a href='/src/Tests/PlaywrightFixture.cs#L13-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightFixture.cs#L20-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -157,15 +157,18 @@ VerifyPuppeteer.Enable();
 <!-- snippet: PuppeteerBuild -->
 <a id='snippet-puppeteerbuild'></a>
 ```cs
-var browserFetcher = new BrowserFetcher(Product.Chrome);
-await browserFetcher.DownloadAsync();
+using (var fetcher = new BrowserFetcher(Product.Chrome))
+{
+    await fetcher.DownloadAsync();
+}
+
 browser = await Puppeteer.LaunchAsync(
     new()
     {
         Headless = true
     });
 ```
-<sup><a href='/src/Tests/PuppeteerFixture.cs#L11-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerbuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerFixture.cs#L18-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerbuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -284,7 +287,7 @@ Driver = new(options);
 Driver.Manage().Window.Size = new(1024, 768);
 Driver.Navigate().GoToUrl("http://localhost:5000");
 ```
-<sup><a href='/src/Tests/SeleniumFixture.cs#L10-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumbuilddriver' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumFixture.cs#L17-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumbuilddriver' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

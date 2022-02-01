@@ -1,5 +1,12 @@
 ﻿using OpenQA.Selenium.Chrome;
 
+[CollectionDefinition(Name)]
+public sealed class SeleniumCollection :
+    ICollectionFixture<SeleniumFixture>
+{
+    public const string Name = "Selenium";
+}
+
 public class SeleniumFixture :
     IAsyncLifetime
 {

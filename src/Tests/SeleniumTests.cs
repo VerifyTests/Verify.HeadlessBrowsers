@@ -2,8 +2,8 @@
 using OpenQA.Selenium.Chrome;
 
 [UsesVerify]
-public class SeleniumTests :
-    IClassFixture<SeleniumFixture>
+[Collection(SeleniumCollection.Name)]
+public class SeleniumTests
 {
     ChromeDriver driver;
 

@@ -1,8 +1,8 @@
 ﻿using PuppeteerSharp;
 
 [UsesVerify]
-public class PuppeteerTests :
-    IClassFixture<PuppeteerFixture>
+[Collection(PuppeteerCollection.Name)]
+public class PuppeteerTests
 {
     Browser browser;
 

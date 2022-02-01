@@ -1,5 +1,12 @@
 ﻿using Microsoft.Playwright;
 
+[CollectionDefinition(Name)]
+public sealed class PlaywrightCollection :
+    ICollectionFixture<PlaywrightFixture>
+{
+    public const string Name = "Playwright";
+}
+
 public class PlaywrightFixture :
     IAsyncLifetime
 {

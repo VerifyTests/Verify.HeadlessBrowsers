@@ -1,5 +1,12 @@
 ﻿using PuppeteerSharp;
 
+[CollectionDefinition(Name)]
+public sealed class PuppeteerCollection :
+    ICollectionFixture<PuppeteerFixture>
+{
+    public const string Name = "Puppeteer";
+}
+
 public class PuppeteerFixture :
     IAsyncLifetime
 {
@@ -10,8 +17,11 @@ public class PuppeteerFixture :
     {
         #region PuppeteerBuild
 
-        var browserFetcher = new BrowserFetcher(Product.Chrome);
-        await browserFetcher.DownloadAsync();
+        using (var fetcher = new BrowserFetcher(Product.Chrome))
+        {
+            await fetcher.DownloadAsync();
+        }
+
         browser = await Puppeteer.LaunchAsync(
             new()
             {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Playwright;
 
 [UsesVerify]
-public class PlaywrightTests :
-    IClassFixture<PlaywrightFixture>
+[Collection(PlaywrightCollection.Name)]
+public class PlaywrightTests
 {
     IBrowser browser;
 
