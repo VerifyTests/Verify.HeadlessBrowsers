@@ -24,6 +24,6 @@ public static class ModuleInitializer
         #endregion
 
         VerifyImageMagick.Initialize();
-        VerifyImageMagick.RegisterComparers(.05, ErrorMetric.Fuzz);
+        VerifyImageMagick.RegisterComparers(.05);
     }
 }
