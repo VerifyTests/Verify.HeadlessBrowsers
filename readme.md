@@ -28,7 +28,7 @@ Enable VerifyPlaywright once at assembly load time:
 ```cs
 VerifyPlaywright.Enable(installPlaywright: true);
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L14-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightenable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L12-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -59,7 +59,7 @@ await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 await page.GotoAsync("http://localhost:5000");
 await Verify(page);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L17-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L15-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -109,7 +109,7 @@ await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L33-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L31-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -146,7 +146,7 @@ Enable VerifyPuppeteer once at assembly load time:
 ```cs
 VerifyPuppeteer.Enable();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L20-L24' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerenable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L18-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -183,7 +183,7 @@ page.Viewport.Height = 768;
 await page.GoToAsync("http://localhost:5000");
 await Verify(page);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L17-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L15-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -232,7 +232,7 @@ await page.GoToAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L31-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L29-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -269,7 +269,7 @@ Enable VerifySelenium once at assembly load time:
 ```cs
 VerifySelenium.Enable();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L8-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumenable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L6-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -298,7 +298,7 @@ The current page state can be verified as follows:
 ```cs
 await Verify(driver);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L18-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L16-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -345,7 +345,7 @@ An element can be verified as follows:
 var element = driver.FindElement(By.Id("someId"));
 await Verify(element);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L28-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L26-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
