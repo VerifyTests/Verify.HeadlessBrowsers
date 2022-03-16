@@ -13,8 +13,6 @@ static class SeleniumExtensions
         });
     }
 
-    public static string GetSource(this IWebElement element)
-    {
-        return element.GetAttribute("outerHTML");
-    }
+    public static string GetSource(this IWebElement element) =>
+        element.GetAttribute("outerHTML");
 }

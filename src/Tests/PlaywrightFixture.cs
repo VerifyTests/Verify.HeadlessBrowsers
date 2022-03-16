@@ -13,7 +13,7 @@ public class PlaywrightFixture :
     IPlaywright? playwright;
     IBrowser? browser;
 
-    public IBrowser Browser { get => browser!; }
+    public IBrowser Browser => browser!;
 
     public async Task InitializeAsync()
     {

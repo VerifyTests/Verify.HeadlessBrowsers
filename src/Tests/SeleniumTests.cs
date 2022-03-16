@@ -7,10 +7,8 @@ public class SeleniumTests
 {
     ChromeDriver driver;
 
-    public SeleniumTests(SeleniumFixture fixture)
-    {
+    public SeleniumTests(SeleniumFixture fixture) =>
         driver = fixture.Driver;
-    }
 
     [Fact]
     public async Task PageUsage()

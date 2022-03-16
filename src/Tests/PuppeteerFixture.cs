@@ -11,7 +11,7 @@ public class PuppeteerFixture :
     IAsyncLifetime
 {
     Browser? browser;
-    public Browser Browser { get => browser!; }
+    public Browser Browser => browser!;
 
     public async Task InitializeAsync()
     {

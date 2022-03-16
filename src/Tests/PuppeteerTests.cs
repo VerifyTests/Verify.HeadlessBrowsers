@@ -6,10 +6,8 @@ public class PuppeteerTests
 {
     Browser browser;
 
-    public PuppeteerTests(PuppeteerFixture fixture)
-    {
+    public PuppeteerTests(PuppeteerFixture fixture) =>
         browser = fixture.Browser;
-    }
 
     [Fact]
     public async Task PageUsage()
