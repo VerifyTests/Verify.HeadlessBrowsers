@@ -73,22 +73,25 @@ With the state of the element being rendered as a verified files:
   <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="jumbotron">
-    <h1 class="display-4">The Awareness Of Relative Idealism</h1>
-    <p class="lead">
-      One hears it stated that a factor within the logical radical priority embodies the
-      key principles behind the best practice marginalised certification project. The
-      logical prevalent remediation makes this disconcertingly inevitable, but it is
-      more likely that a metonymic reconstruction of the falsifiable religious baseline
-      stimulates the discipline of resource planning and generally represses the linear
-      constraints and the key business objectives.
-    </p>
-    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </div>
-
-</body></html>
+<div class="jumbotron">
+  <h1 class="display-4">The Awareness Of Relative Idealism</h1>
+  <p class="lead">
+    One hears it stated that a factor within the logical radical priority embodies the
+    key principles behind the best practice marginalised certification project. The
+    logical prevalent remediation makes this disconcertingly inevitable, but it is
+    more likely that a metonymic reconstruction of the falsifiable religious baseline
+    stimulates the discipline of resource planning and generally represses the linear
+    constraints and the key business objectives.
+  </p>
+  <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+</body><style>
+  *:not(#playwright-aaaaaaaaaa.playwright-bbbbbbbbbbb.playwright-cccccccccc.playwright-dddddddddd.playwright-eeeeeeeee) {
+    caret-color: transparent !important;
+  }
+</style></html>
 ```
-<sup><a href='/src/Tests/PlaywrightTests.PageUsage.00.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.PageUsage.00.verified.html#L1-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [PlaywrightTests.PageUsage.01.verified.png](/src/Tests/PlaywrightTests.PageUsage.01.verified.png):
