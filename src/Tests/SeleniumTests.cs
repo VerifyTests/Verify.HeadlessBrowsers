@@ -3,7 +3,7 @@ using OpenQA.Selenium.Chrome;
 
 public class SeleniumTests
 {
-    ChromeDriver driver;
+    ChromeDriver driver = null!;
 
     [OneTimeSetUp]
     public void SetUp()
