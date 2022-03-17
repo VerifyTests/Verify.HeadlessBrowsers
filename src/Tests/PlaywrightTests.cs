@@ -1,15 +1,23 @@
 ﻿using Microsoft.Playwright;
 
-[UsesVerify]
-[Collection(PlaywrightCollection.Name)]
-public class PlaywrightTests
+public class PlaywrightTests :
+    IAsyncDisposable
 {
-    IBrowser browser;
+    IBrowser browser = null!;
+    IPlaywright playwright= null!;
 
-    public PlaywrightTests(PlaywrightFixture fixture) =>
-        browser = fixture.Browser;
+    [OneTimeSetUp]
+    public async Task Initialize()
+    {
+        #region PlaywrightBuild
 
-    [Fact]
+        playwright = await Playwright.CreateAsync();
+        browser = await playwright.Chromium.LaunchAsync();
+
+        #endregion
+    }
+
+    [Test]
     public async Task PageUsage()
     {
         #region PlaywrightPageUsage
@@ -25,7 +33,7 @@ public class PlaywrightTests
         #endregion
     }
 
-    [Fact]
+    [Test]
     public async Task ElementUsage()
     {
         #region PlaywrightElementUsage
@@ -37,5 +45,11 @@ public class PlaywrightTests
         await Verify(element);
 
         #endregion
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await browser.DisposeAsync();
+        playwright?.Dispose();
     }
 }

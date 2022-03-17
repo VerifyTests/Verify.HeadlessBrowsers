@@ -1,15 +1,30 @@
 ﻿using PuppeteerSharp;
 
-[UsesVerify]
-[Collection(PuppeteerCollection.Name)]
-public class PuppeteerTests
+public class PuppeteerTests :
+    IAsyncDisposable
 {
-    Browser browser;
+    Browser browser = null!;
 
-    public PuppeteerTests(PuppeteerFixture fixture) =>
-        browser = fixture.Browser;
+    [OneTimeSetUp]
+    public async Task InitializeAsync()
+    {
+        #region PuppeteerBuild
 
-    [Fact]
+        using (var fetcher = new BrowserFetcher(Product.Chrome))
+        {
+            await fetcher.DownloadAsync();
+        }
+
+        browser = await Puppeteer.LaunchAsync(
+            new()
+            {
+                Headless = true
+            });
+
+        #endregion
+    }
+
+    [Test]
     public async Task PageUsage()
     {
         #region PuppeteerPageUsage
@@ -23,7 +38,7 @@ public class PuppeteerTests
         #endregion
     }
 
-    [Fact]
+    [Test]
     public async Task ElementUsage()
     {
         #region PuppeteerElementUsage
@@ -34,5 +49,11 @@ public class PuppeteerTests
         await Verify(element);
 
         #endregion
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await browser.CloseAsync();
+        await browser.DisposeAsync();
     }
 }

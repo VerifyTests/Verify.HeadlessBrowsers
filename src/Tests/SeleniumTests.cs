@@ -1,16 +1,26 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-[UsesVerify]
-[Collection(SeleniumCollection.Name)]
-public class SeleniumTests
+public class SeleniumTests :
+    IDisposable
 {
     ChromeDriver driver;
 
-    public SeleniumTests(SeleniumFixture fixture) =>
-        driver = fixture.Driver;
+    public SeleniumTests()
+    {
+        #region SeleniumBuildDriver
 
-    [Fact]
+        var options = new ChromeOptions();
+        options.AddArgument("--no-sandbox");
+        options.AddArgument("--headless");
+        driver = new(options);
+        driver.Manage().Window.Size = new(1024, 768);
+        driver.Navigate().GoToUrl("http://localhost:5000");
+
+        #endregion
+    }
+
+    [Test]
     public async Task PageUsage()
     {
         #region SeleniumPageUsage
@@ -20,7 +30,7 @@ public class SeleniumTests
         #endregion
     }
 
-    [Fact]
+    [Test]
     public async Task ElementUsage()
     {
         #region SeleniumElementUsage
@@ -29,5 +39,11 @@ public class SeleniumTests
         await Verify(element);
 
         #endregion
+    }
+
+    public void Dispose()
+    {
+        driver.Quit();
+        driver.Dispose();
     }
 }
