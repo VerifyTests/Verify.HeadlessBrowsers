@@ -1,7 +1,6 @@
 ﻿using Microsoft.Playwright;
 
-public class PlaywrightTests :
-    IAsyncDisposable
+public class PlaywrightTests
 {
     IBrowser browser = null!;
     IPlaywright playwright= null!;
@@ -47,7 +46,8 @@ public class PlaywrightTests :
         #endregion
     }
 
-    public async ValueTask DisposeAsync()
+    [OneTimeTearDown]
+    public async Task DisposeAsync()
     {
         await browser.DisposeAsync();
         playwright?.Dispose();

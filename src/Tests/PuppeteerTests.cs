@@ -1,7 +1,6 @@
 ﻿using PuppeteerSharp;
 
-public class PuppeteerTests :
-    IAsyncDisposable
+public class PuppeteerTests
 {
     Browser browser = null!;
 
@@ -51,7 +50,8 @@ public class PuppeteerTests :
         #endregion
     }
 
-    public async ValueTask DisposeAsync()
+    [OneTimeTearDown]
+    public async Task DisposeAsync()
     {
         await browser.CloseAsync();
         await browser.DisposeAsync();

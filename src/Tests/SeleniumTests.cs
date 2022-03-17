@@ -1,12 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-public class SeleniumTests :
-    IDisposable
+public class SeleniumTests
 {
     ChromeDriver driver;
 
-    public SeleniumTests()
+    [OneTimeSetUp]
+    public void SetUp()
     {
         #region SeleniumBuildDriver
 
@@ -41,6 +41,7 @@ public class SeleniumTests :
         #endregion
     }
 
+    [OneTimeTearDown]
     public void Dispose()
     {
         driver.Quit();
