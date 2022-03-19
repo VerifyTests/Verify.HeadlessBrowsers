@@ -1,8 +1,3 @@
-# Auto detect text files and perform LF normalization
 * text
-.editorconfig -text
-*.sln.DotSettings -text
-
 *.snk binary
-*.json -text
 *.png binary
