@@ -8,7 +8,10 @@ public static class VerifyPlaywright
     {
         if (installPlaywright)
         {
-            Program.Main(new[] { "install" });
+            Program.Main(new[]
+            {
+                "install"
+            });
         }
 
         VerifierSettings.RegisterFileConverter<IPage>(PageToImage);
@@ -19,16 +22,24 @@ public static class VerifyPlaywright
     {
         await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         var bytes = page.ScreenshotAsync();
-        var html = page.ContentAsync();
+        var html = await page.ContentAsync();
+        html = html.Replace(playwrightStyle, "\n");
         return new(
             null,
             new List<Target>
             {
-                new("html", await html),
-                new("png", new MemoryStream(await bytes))
+                new("html", html, null),
+                new("png", new MemoryStream(await bytes), null)
             }
         );
     }
+
+    static string playwrightStyle = @"<style>
+            *:not(#playwright-aaaaaaaaaa.playwright-bbbbbbbbbbb.playwright-cccccccccc.playwright-dddddddddd.playwright-eeeeeeeee) {
+              caret-color: transparent !important;
+            }
+          </style>"
+        .Replace("\r\n", "\n");
 
     static async Task<ConversionResult> ElementToImage(IElementHandle element, IReadOnlyDictionary<string, object> context)
     {
@@ -38,8 +49,8 @@ public static class VerifyPlaywright
             null,
             new List<Target>
             {
-                new("html", await html),
-                new("png", new MemoryStream(await bytes))
+                new("html", await html, null),
+                new("png", new MemoryStream(await bytes), null)
             }
         );
     }

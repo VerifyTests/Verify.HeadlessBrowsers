@@ -20,8 +20,8 @@ public static class VerifySelenium
             null,
             new List<Target>
             {
-                new("html", element.GetSource()),
-                new("png", new MemoryStream(bytes))
+                new("html", element.GetSource(), null),
+                new("png", new MemoryStream(bytes), null)
             }
         );
     }
@@ -34,8 +34,8 @@ public static class VerifySelenium
             null,
             new List<Target>
             {
-                new("html", driver.PageSource),
-                new("png", new MemoryStream(bytes))
+                new("html", driver.PageSource, null),
+                new("png", new MemoryStream(bytes), null)
             }
         );
     }
