@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6</TargetFrameworks>
+    <TargetFramework>net6.0</TargetFramework>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
@@ -14,7 +14,7 @@
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="11.1.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
     <PackageReference Include="Verify.NUnit" Version="16.7.0" />
-    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.78" PrivateAssets="all" />
     <ProjectReference Include="..\Verify.Playwright\Verify.Playwright.csproj" />
