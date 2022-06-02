@@ -28,8 +28,8 @@ public static class VerifyPlaywright
             null,
             new List<Target>
             {
-                new("html", html, null),
-                new("png", new MemoryStream(await bytes), null)
+                new("html", html),
+                new("png", new MemoryStream(await bytes))
             }
         );
     }
@@ -49,8 +49,8 @@ public static class VerifyPlaywright
             null,
             new List<Target>
             {
-                new("html", await html, null),
-                new("png", new MemoryStream(await bytes), null)
+                new("html", await html),
+                new("png", new MemoryStream(await bytes))
             }
         );
     }

@@ -19,8 +19,8 @@ public static class VerifyPuppeteer
             null,
             new List<Target>
             {
-                new("html", await html, null),
-                new("png", await screenshot, null)
+                new("html", await html),
+                new("png", await screenshot)
             }
         );
     }
@@ -34,8 +34,8 @@ public static class VerifyPuppeteer
             null,
             new List<Target>
             {
-                new("html", html, null),
-                new("png", screenshot, null)
+                new("html", html),
+                new("png", screenshot)
             }
         );
     }
