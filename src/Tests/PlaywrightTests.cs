@@ -3,7 +3,7 @@
 public class PlaywrightTests
 {
     IBrowser browser = null!;
-    IPlaywright playwright= null!;
+    IPlaywright playwright = null!;
 
     [OneTimeSetUp]
     public async Task Initialize()
