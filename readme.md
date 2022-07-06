@@ -37,10 +37,13 @@ VerifyPlaywright.Enable(installPlaywright: true);
 <!-- snippet: PlaywrightBuild -->
 <a id='snippet-playwrightbuild'></a>
 ```cs
+// wait for target server to start
+await SocketWaiter.Wait(port: 5000);
+
 playwright = await Playwright.CreateAsync();
 browser = await playwright.Chromium.LaunchAsync();
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L11-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L12-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -59,7 +62,7 @@ await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 await page.GotoAsync("http://localhost:5000");
 await Verify(page);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L22-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L26-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -110,7 +113,7 @@ await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L42-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -156,6 +159,9 @@ VerifyPuppeteer.Enable();
 <!-- snippet: PuppeteerBuild -->
 <a id='snippet-puppeteerbuild'></a>
 ```cs
+// wait for target server to start
+await SocketWaiter.Wait(port: 5000);
+
 using (var fetcher = new BrowserFetcher(Product.Chrome))
 {
     await fetcher.DownloadAsync();
@@ -167,7 +173,7 @@ browser = await Puppeteer.LaunchAsync(
         Headless = true
     });
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L10-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerbuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L11-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerbuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -184,7 +190,7 @@ page.Viewport.Height = 768;
 await page.GoToAsync("http://localhost:5000");
 await Verify(page);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L29-L37' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L33-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -233,7 +239,7 @@ await page.GoToAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L43-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L47-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -279,6 +285,9 @@ VerifySelenium.Enable();
 <!-- snippet: SeleniumBuildDriver -->
 <a id='snippet-seleniumbuilddriver'></a>
 ```cs
+// wait for target server to start
+await SocketWaiter.Wait(port: 5000);
+
 var options = new ChromeOptions();
 options.AddArgument("--no-sandbox");
 options.AddArgument("--headless");
@@ -286,7 +295,7 @@ driver = new(options);
 driver.Manage().Window.Size = new(1024, 768);
 driver.Navigate().GoToUrl("http://localhost:5000");
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L11-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumbuilddriver' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L12-L24' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumbuilddriver' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -299,7 +308,7 @@ The current page state can be verified as follows:
 ```cs
 await Verify(driver);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L26-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L30-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -346,7 +355,7 @@ An element can be verified as follows:
 var element = driver.FindElement(By.Id("someId"));
 await Verify(element);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L36-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L40-L45' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:

@@ -1,4 +1,5 @@
 ﻿using PuppeteerSharp;
+using VerifyTests.Puppeteer;
 
 public class PuppeteerTests
 {
@@ -8,6 +9,9 @@ public class PuppeteerTests
     public async Task InitializeAsync()
     {
         #region PuppeteerBuild
+
+        // wait for target server to start
+        await SocketWaiter.Wait(port: 5000);
 
         using (var fetcher = new BrowserFetcher(Product.Chrome))
         {

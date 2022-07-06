@@ -1,14 +1,18 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using VerifyTests.Selenium;
 
 public class SeleniumTests
 {
     ChromeDriver driver = null!;
 
     [OneTimeSetUp]
-    public void SetUp()
+    public async Task InitializeAsync()
     {
         #region SeleniumBuildDriver
+
+        // wait for target server to start
+        await SocketWaiter.Wait(port: 5000);
 
         var options = new ChromeOptions();
         options.AddArgument("--no-sandbox");

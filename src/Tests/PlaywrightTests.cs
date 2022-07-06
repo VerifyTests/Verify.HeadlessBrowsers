@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using VerifyTests.Playwright;
 
 public class PlaywrightTests
 {
@@ -9,6 +10,9 @@ public class PlaywrightTests
     public async Task Initialize()
     {
         #region PlaywrightBuild
+
+        // wait for target server to start
+        await SocketWaiter.Wait(port: 5000);
 
         playwright = await Playwright.CreateAsync();
         browser = await playwright.Chromium.LaunchAsync();
