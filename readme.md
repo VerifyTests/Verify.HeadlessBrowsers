@@ -43,7 +43,7 @@ await SocketWaiter.Wait(port: 5000);
 playwright = await Playwright.CreateAsync();
 browser = await playwright.Chromium.LaunchAsync();
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L13-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L12-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -58,7 +58,7 @@ var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
 await Verify(page);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L27-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L26-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -111,7 +111,7 @@ await Verify(page)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L39-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-pagescreenshotoptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-pagescreenshotoptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -127,7 +127,7 @@ await page.GotoAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L57-L64' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L56-L63' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -161,7 +161,7 @@ await Verify(element)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L70-L83' title='Snippet source file'>snippet source</a> | <a href='#snippet-elementscreenshotoptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L69-L82' title='Snippet source file'>snippet source</a> | <a href='#snippet-elementscreenshotoptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
