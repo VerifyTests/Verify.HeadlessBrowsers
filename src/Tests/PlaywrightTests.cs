@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Server.HttpSys;
-using Microsoft.Playwright;
+﻿using Microsoft.Playwright;
 using VerifyTests.Playwright;
 
 public class PlaywrightTests
