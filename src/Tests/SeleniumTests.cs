@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿#if DEBUG
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using VerifyTests.Selenium;
 
@@ -52,3 +53,4 @@ public class SeleniumTests
         driver.Dispose();
     }
 }
+#endif
