@@ -43,7 +43,7 @@ await SocketWaiter.Wait(port: 5000);
 playwright = await Playwright.CreateAsync();
 browser = await playwright.Chromium.LaunchAsync();
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L12-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L13-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightbuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -55,14 +55,10 @@ The current page state can be verified as follows:
 <a id='snippet-playwrightpageusage'></a>
 ```cs
 var page = await browser.NewPageAsync();
-var size = page.ViewportSize!;
-size.Height = 768;
-size.Width = 1024;
-await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 await page.GotoAsync("http://localhost:5000");
 await Verify(page);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L26-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L27-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightpageusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -100,6 +96,25 @@ With the state of the element being rendered as a verified files:
 <img src="/src/Tests/PlaywrightTests.PageUsage.01.verified.png" width="400px">
 
 
+#### PageScreenshotOptions
+
+<!-- snippet: PageScreenshotOptions -->
+<a id='snippet-pagescreenshotoptions'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+await Verify(page)
+    .PageScreenshotOptions(
+        new()
+        {
+            Quality = 50,
+            Type = ScreenshotType.Jpeg
+        });
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L39-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-pagescreenshotoptions' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+
 ### Element test
 
 An element can be verified as follows:
@@ -109,11 +124,10 @@ An element can be verified as follows:
 ```cs
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
-await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L42-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L57-L64' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -129,6 +143,26 @@ Learn more
 [PlaywrightTests.ElementUsage.01.verified.png](/src/Tests/PlaywrightTests.ElementUsage.01.verified.png):
 
 <img src="/src/Tests/PlaywrightTests.ElementUsage.01.verified.png">
+
+
+#### ElementScreenshotOptions
+
+<!-- snippet: ElementScreenshotOptions -->
+<a id='snippet-elementscreenshotoptions'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+var element = await page.QuerySelectorAsync("#someId");
+await Verify(element)
+    .ElementScreenshotOptions(
+        new()
+        {
+            Quality = 50,
+            Type = ScreenshotType.Jpeg
+        });
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L70-L83' title='Snippet source file'>snippet source</a> | <a href='#snippet-elementscreenshotoptions' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 
 ## Puppeteer Usage

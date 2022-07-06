@@ -1,4 +1,5 @@
-﻿using Microsoft.Playwright;
+﻿using Microsoft.AspNetCore.Server.HttpSys;
+using Microsoft.Playwright;
 using VerifyTests.Playwright;
 
 public class PlaywrightTests
@@ -26,12 +27,26 @@ public class PlaywrightTests
         #region PlaywrightPageUsage
 
         var page = await browser.NewPageAsync();
-        var size = page.ViewportSize!;
-        size.Height = 768;
-        size.Width = 1024;
-        await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         await page.GotoAsync("http://localhost:5000");
         await Verify(page);
+
+        #endregion
+    }
+
+    [Test]
+    public async Task PageScreenshotOptions()
+    {
+        #region PageScreenshotOptions
+
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        await Verify(page)
+            .PageScreenshotOptions(
+                new()
+                {
+                    Quality = 50,
+                    Type = ScreenshotType.Jpeg
+                });
 
         #endregion
     }
@@ -43,9 +58,27 @@ public class PlaywrightTests
 
         var page = await browser.NewPageAsync();
         await page.GotoAsync("http://localhost:5000");
-        await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         var element = await page.QuerySelectorAsync("#someId");
         await Verify(element);
+
+        #endregion
+    }
+
+    [Test]
+    public async Task ElementScreenshotOptions()
+    {
+        #region ElementScreenshotOptions
+
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        var element = await page.QuerySelectorAsync("#someId");
+        await Verify(element)
+            .ElementScreenshotOptions(
+                new()
+                {
+                    Quality = 50,
+                    Type = ScreenshotType.Jpeg
+                });
 
         #endregion
     }
