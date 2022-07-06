@@ -98,16 +98,25 @@ public static class VerifyPlaywright
         return settings;
     }
 
-    internal static bool GetPageScreenshotOptions(this IReadOnlyDictionary<string, object> context, [NotNullWhen(true)] out PageScreenshotOptions? options)
+    static bool GetPageScreenshotOptions(this IReadOnlyDictionary<string, object> context, [NotNullWhen(true)] out PageScreenshotOptions? options)
     {
         if (context.TryGetValue("Playwright.PageScreenshotOptions", out var value))
         {
             options = (PageScreenshotOptions) value;
+            ValidateNoPath(options.Path);
             return true;
         }
 
         options = null;
         return false;
+    }
+
+    static void ValidateNoPath(string? path)
+    {
+        if (path != null)
+        {
+            throw new("ScreenshotOptions Path not supported.");
+        }
     }
 
     public static void ElementScreenshotOptions(this VerifySettings settings, ElementHandleScreenshotOptions options) =>
@@ -119,11 +128,12 @@ public static class VerifyPlaywright
         return settings;
     }
 
-    internal static bool GetElementScreenshotOptions(this IReadOnlyDictionary<string, object> context, [NotNullWhen(true)] out ElementHandleScreenshotOptions? options)
+    static bool GetElementScreenshotOptions(this IReadOnlyDictionary<string, object> context, [NotNullWhen(true)] out ElementHandleScreenshotOptions? options)
     {
         if (context.TryGetValue("Playwright.ElementScreenshotOptions", out var value))
         {
             options = (ElementHandleScreenshotOptions) value;
+            ValidateNoPath(options.Path);
             return true;
         }
 
