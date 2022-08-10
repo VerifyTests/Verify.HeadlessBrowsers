@@ -39,6 +39,7 @@ public static class VerifyPlaywright
                 new()
                 {
                     FullPage = true,
+                    Type = ScreenshotType.Png
                 });
         }
 
@@ -75,7 +76,11 @@ public static class VerifyPlaywright
         }
         else
         {
-            bytes = element.ScreenshotAsync();
+            bytes = element.ScreenshotAsync(
+                new()
+                {
+                    Type = ScreenshotType.Png
+                });
         }
 
         var html = element.InnerHTMLAsync();
