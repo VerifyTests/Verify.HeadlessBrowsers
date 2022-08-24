@@ -39,6 +39,7 @@ VerifyPlaywright.Enable(installPlaywright: true);
 ```cs
 // wait for target server to start
 await SocketWaiter.Wait(port: 5000);
+
 playwright = await Playwright.CreateAsync();
 browser = await playwright.Chromium.LaunchAsync();
 ```
@@ -194,10 +195,12 @@ VerifyPuppeteer.Enable();
 ```cs
 // wait for target server to start
 await SocketWaiter.Wait(port: 5000);
+
 using (var fetcher = new BrowserFetcher(Product.Chrome))
 {
     await fetcher.DownloadAsync();
 }
+
 browser = await Puppeteer.LaunchAsync(
     new()
     {
@@ -318,6 +321,7 @@ VerifySelenium.Enable();
 ```cs
 // wait for target server to start
 await SocketWaiter.Wait(port: 5000);
+
 var options = new ChromeOptions();
 options.AddArgument("--no-sandbox");
 options.AddArgument("--headless");
