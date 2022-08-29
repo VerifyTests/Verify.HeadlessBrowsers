@@ -21,6 +21,7 @@
 
         #endregion
 
+        VerifyDiffPlex.Initialize();
         VerifyImageMagick.Initialize();
         VerifyImageMagick.RegisterComparers(.05);
     }
