@@ -63,8 +63,8 @@ await Verify(page);
 
 With the state of the element being rendered as a verified files:
 
-<!-- snippet: PlaywrightTests.PageUsage.00.verified.html -->
-<a id='snippet-PlaywrightTests.PageUsage.00.verified.html'></a>
+<!-- snippet: PlaywrightTests.PageUsage.verified.html -->
+<a id='snippet-PlaywrightTests.PageUsage.verified.html'></a>
 ```html
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="utf-8">
@@ -88,12 +88,12 @@ With the state of the element being rendered as a verified files:
 </body>
 </html>
 ```
-<sup><a href='/src/Tests/PlaywrightTests.PageUsage.00.verified.html#L1-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.PageUsage.verified.html#L1-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[PlaywrightTests.PageUsage.01.verified.png](/src/Tests/PlaywrightTests.PageUsage.01.verified.png):
+[PlaywrightTests.PageUsage.01.verified.png](/src/Tests/PlaywrightTests.PageUsage.verified.png):
 
-<img src="/src/Tests/PlaywrightTests.PageUsage.01.verified.png" width="400px">
+<img src="/src/Tests/PlaywrightTests.PageUsage.verified.png" width="400px">
 
 
 #### PageScreenshotOptions
@@ -132,17 +132,17 @@ await Verify(element);
 
 With the state of the element being rendered as a verified files:
 
-<!-- snippet: PlaywrightTests.ElementUsage.00.verified.html -->
-<a id='snippet-PlaywrightTests.ElementUsage.00.verified.html'></a>
+<!-- snippet: PlaywrightTests.ElementUsage.verified.html -->
+<a id='snippet-PlaywrightTests.ElementUsage.verified.html'></a>
 ```html
 Learn more
 ```
-<sup><a href='/src/Tests/PlaywrightTests.ElementUsage.00.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.ElementUsage.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.ElementUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[PlaywrightTests.ElementUsage.01.verified.png](/src/Tests/PlaywrightTests.ElementUsage.01.verified.png):
+[PlaywrightTests.ElementUsage.01.verified.png](/src/Tests/PlaywrightTests.ElementUsage.verified.png):
 
-<img src="/src/Tests/PlaywrightTests.ElementUsage.01.verified.png">
+<img src="/src/Tests/PlaywrightTests.ElementUsage.verified.png">
 
 
 #### ElementScreenshotOptions
@@ -229,8 +229,8 @@ await Verify(page);
 
 With the state of the element being rendered as a verified files:
 
-<!-- snippet: PuppeteerTests.PageUsage.00.verified.html -->
-<a id='snippet-PuppeteerTests.PageUsage.00.verified.html'></a>
+<!-- snippet: PuppeteerTests.PageUsage.verified.html -->
+<a id='snippet-PuppeteerTests.PageUsage.verified.html'></a>
 ```html
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="utf-8">
@@ -253,12 +253,12 @@ With the state of the element being rendered as a verified files:
 
 </body></html>
 ```
-<sup><a href='/src/Tests/PuppeteerTests.PageUsage.00.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.PageUsage.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerTests.PageUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[PuppeteerTests.PageUsage.01.verified.png](/src/Tests/PuppeteerTests.PageUsage.01.verified.png):
+[PuppeteerTests.PageUsage.01.verified.png](/src/Tests/PuppeteerTests.PageUsage.verified.png):
 
-<img src="/src/Tests/PuppeteerTests.PageUsage.01.verified.png" width="400px">
+<img src="/src/Tests/PuppeteerTests.PageUsage.verified.png" width="400px">
 
 
 ### Element test
@@ -278,17 +278,17 @@ await Verify(element);
 
 With the state of the element being rendered as a verified files:
 
-<!-- snippet: PuppeteerTests.ElementUsage.00.verified.html -->
-<a id='snippet-PuppeteerTests.ElementUsage.00.verified.html'></a>
+<!-- snippet: PuppeteerTests.ElementUsage.verified.html -->
+<a id='snippet-PuppeteerTests.ElementUsage.verified.html'></a>
 ```html
 Learn more
 ```
-<sup><a href='/src/Tests/PuppeteerTests.ElementUsage.00.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.ElementUsage.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerTests.ElementUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[PuppeteerTests.ElementUsage.01.verified.png](/src/Tests/PuppeteerTests.ElementUsage.01.verified.png):
+[PuppeteerTests.ElementUsage.01.verified.png](/src/Tests/PuppeteerTests.ElementUsage.verified.png):
 
-<img src="/src/Tests/PuppeteerTests.ElementUsage.01.verified.png">
+<img src="/src/Tests/PuppeteerTests.ElementUsage.verified.png">
 
 
 ## Selenium Usage
@@ -347,8 +347,8 @@ await Verify(driver);
 
 With the state of the element being rendered as a verified files:
 
-<!-- snippet: SeleniumTests.PageUsage.00.verified.html -->
-<a id='snippet-SeleniumTests.PageUsage.00.verified.html'></a>
+<!-- snippet: SeleniumTests.PageUsage.verified.html -->
+<a id='snippet-SeleniumTests.PageUsage.verified.html'></a>
 ```html
 <html lang="en"><head>
   <meta charset="utf-8">
@@ -371,12 +371,12 @@ With the state of the element being rendered as a verified files:
 
 </body></html>
 ```
-<sup><a href='/src/Tests/SeleniumTests.PageUsage.00.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.PageUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.PageUsage.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.PageUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[SeleniumTests.PageUsage.01.verified.png](/src/Tests/SeleniumTests.PageUsage.01.verified.png):
+[SeleniumTests.PageUsage.01.verified.png](/src/Tests/SeleniumTests.PageUsage.verified.png):
 
-<img src="/src/Tests/SeleniumTests.PageUsage.01.verified.png" width="400px">
+<img src="/src/Tests/SeleniumTests.PageUsage.verified.png" width="400px">
 
 
 ### Element test
@@ -394,23 +394,22 @@ await Verify(element);
 
 With the state of the element being rendered as a verified files:
 
-<!-- snippet: SeleniumTests.ElementUsage.00.verified.html -->
-<a id='snippet-SeleniumTests.ElementUsage.00.verified.html'></a>
+<!-- snippet: SeleniumTests.ElementUsage.verified.html -->
+<a id='snippet-SeleniumTests.ElementUsage.verified.html'></a>
 ```html
 <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 ```
-<sup><a href='/src/Tests/SeleniumTests.ElementUsage.00.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.ElementUsage.00.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.ElementUsage.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.ElementUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[SeleniumTests.ElementUsage.01.verified.png](/src/Tests/SeleniumTests.ElementUsage.01.verified.png):
+[SeleniumTests.ElementUsage.01.verified.png](/src/Tests/SeleniumTests.ElementUsage.verified.png):
 
-<img src="/src/Tests/SeleniumTests.ElementUsage.01.verified.png">
+<img src="/src/Tests/SeleniumTests.ElementUsage.verified.png">
 
 
 ## OS specific rendering
 
 The rendering can very slightly between different OS versions. This can make verification on different machines (eg CI) problematic. A [custom comparer](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md) can to mitigate this.
-
 
 
 ## Icon
