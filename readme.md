@@ -125,7 +125,7 @@ An element can be verified as follows:
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
-await Verify(element);
+await Verify(element!);
 ```
 <sup><a href='/src/Tests/PlaywrightTests.cs#L56-L63' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -153,7 +153,7 @@ Learn more
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
-await Verify(element)
+await Verify(element!)
     .ElementScreenshotOptions(
         new()
         {

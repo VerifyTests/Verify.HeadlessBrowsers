@@ -58,7 +58,7 @@ public class PlaywrightTests
         var page = await browser.NewPageAsync();
         await page.GotoAsync("http://localhost:5000");
         var element = await page.QuerySelectorAsync("#someId");
-        await Verify(element);
+        await Verify(element!);
 
         #endregion
     }
@@ -71,7 +71,7 @@ public class PlaywrightTests
         var page = await browser.NewPageAsync();
         await page.GotoAsync("http://localhost:5000");
         var element = await page.QuerySelectorAsync("#someId");
-        await Verify(element)
+        await Verify(element!)
             .ElementScreenshotOptions(
                 new()
                 {
