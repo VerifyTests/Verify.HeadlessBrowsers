@@ -56,10 +56,10 @@ public static class VerifyPlaywright
     }
 
     static string playwrightStyle = @"<style>
-            *:not(#playwright-aaaaaaaaaa.playwright-bbbbbbbbbbb.playwright-cccccccccc.playwright-dddddddddd.playwright-eeeeeeeee) {
-              caret-color: transparent !important;
-            }
-          </style>"
+        *:not(#playwright-aaaaaaaaaa.playwright-bbbbbbbbbbb.playwright-cccccccccc.playwright-dddddddddd.playwright-eeeeeeeee) {
+          caret-color: transparent !important;
+        }
+      </style>"
         .Replace("\r\n", "\n");
 
     static async Task<ConversionResult> ElementToImage(IElementHandle element, IReadOnlyDictionary<string, object> context)
