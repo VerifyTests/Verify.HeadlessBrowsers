@@ -3,7 +3,7 @@ using VerifyTests.Puppeteer;
 
 public class PuppeteerTests
 {
-    Browser browser = null!;
+    IBrowser browser = null!;
 
     [OneTimeSetUp]
     public async Task InitializeAsync()
