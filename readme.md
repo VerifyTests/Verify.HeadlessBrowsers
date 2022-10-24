@@ -85,10 +85,9 @@ With the state of the element being rendered as a verified files:
     <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </div>
 
-</body>
-</html>
+</body></html>
 ```
-<sup><a href='/src/Tests/PlaywrightTests.PageUsage.verified.html#L1-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.PageUsage.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [PlaywrightTests.PageUsage.01.verified.png](/src/Tests/PlaywrightTests.PageUsage.verified.png):

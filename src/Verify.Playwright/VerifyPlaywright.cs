@@ -43,8 +43,8 @@ public static class VerifyPlaywright
                 });
         }
 
+        await RemovePlaywrightStyle(page);
         var html = await page.ContentAsync();
-        html = html.Replace(playwrightStyle, "\n");
         return new(
             null,
             new List<Target>
@@ -55,12 +55,18 @@ public static class VerifyPlaywright
         );
     }
 
-    static string playwrightStyle = @"<style>
-        *:not(#playwright-aaaaaaaaaa.playwright-bbbbbbbbbbb.playwright-cccccccccc.playwright-dddddddddd.playwright-eeeeeeeee) {
-          caret-color: transparent !important;
+    static async Task RemovePlaywrightStyle(IPage page)
+    {
+        var elements = await page.QuerySelectorAllAsync("style");
+        foreach (var element in elements)
+        {
+            var value = await element.InnerHTMLAsync();
+            if (value.Contains("*:not(#playwright"))
+            {
+                await element.EvaluateAsync("element => element.remove()", element);
+            }
         }
-      </style>"
-        .Replace("\r\n", "\n");
+    }
 
     static async Task<ConversionResult> ElementToImage(IElementHandle element, IReadOnlyDictionary<string, object> context)
     {
