@@ -7,6 +7,7 @@ public static class VerifyPlaywright
 {
     public static void Enable(bool installPlaywright = false)
     {
+        InnerVerifier.ThrowIfVerifyHasBeenRun();
         if (installPlaywright)
         {
             Program.Main(new[]

@@ -6,6 +6,7 @@ public static class VerifyPuppeteer
 {
     public static void Enable()
     {
+        InnerVerifier.ThrowIfVerifyHasBeenRun();
         VerifierSettings.RegisterFileConverter<ElementHandle>(ElementToImage);
         VerifierSettings.RegisterFileConverter<Page>(PageToImage);
     }

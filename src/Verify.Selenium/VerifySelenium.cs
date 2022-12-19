@@ -6,6 +6,7 @@ public static class VerifySelenium
 {
     public static void Enable()
     {
+        InnerVerifier.ThrowIfVerifyHasBeenRun();
         VerifierSettings.RegisterFileConverter<WebDriver>(DriverToImage);
         VerifierSettings.RegisterFileConverter<IWebElement>(ElementToImage);
     }
