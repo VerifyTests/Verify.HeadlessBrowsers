@@ -1,26 +1,32 @@
 ﻿public static class ModuleInitializer
 {
-    [ModuleInitializer]
-    public static void Init()
-    {
-        #region SeleniumEnable
+    #region SeleniumEnable
 
+    [ModuleInitializer]
+    public static void InitSelenium() =>
         VerifySelenium.Enable();
 
-        #endregion
+    #endregion
 
-        #region PlaywrightEnable
+    #region PlaywrightEnable
 
+    [ModuleInitializer]
+    public static void InitPlaywright() =>
         VerifyPlaywright.Enable(installPlaywright: true);
 
-        #endregion
+    #endregion
 
-        #region PuppeteerEnable
+    #region PuppeteerEnable
 
+    [ModuleInitializer]
+    public static void InitPuppeteer() =>
         VerifyPuppeteer.Enable();
 
-        #endregion
+    #endregion
 
+    [ModuleInitializer]
+    public static void InitOther()
+    {
         VerifyDiffPlex.Initialize();
         VerifyImageMagick.Initialize();
         VerifyImageMagick.RegisterComparers(.05);
