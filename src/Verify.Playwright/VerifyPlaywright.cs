@@ -5,8 +5,21 @@ namespace VerifyTests;
 
 public static class VerifyPlaywright
 {
-    public static void Enable(bool installPlaywright = false)
+    public static bool Initialized { get; private set; }
+
+    [Obsolete("Use Initialize()")]
+    public static void Enable(bool installPlaywright = false) =>
+        Initialize(installPlaywright);
+
+    public static void Initialize(bool installPlaywright = false)
     {
+        if (Initialized)
+        {
+            throw new("Already Initialized");
+        }
+
+        Initialized = true;
+
         InnerVerifier.ThrowIfVerifyHasBeenRun();
         if (installPlaywright)
         {

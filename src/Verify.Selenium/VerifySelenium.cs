@@ -4,8 +4,21 @@ namespace VerifyTests;
 
 public static class VerifySelenium
 {
-    public static void Enable()
+    public static bool Initialized { get; private set; }
+
+    [Obsolete("Use Initialize()")]
+    public static void Enable() =>
+        Initialize();
+
+    public static void Initialize()
     {
+        if (Initialized)
+        {
+            throw new("Already Initialized");
+        }
+
+        Initialized = true;
+
         InnerVerifier.ThrowIfVerifyHasBeenRun();
         VerifierSettings.RegisterFileConverter<WebDriver>(DriverToImage);
         VerifierSettings.RegisterFileConverter<IWebElement>(ElementToImage);

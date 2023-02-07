@@ -4,7 +4,7 @@
 
     [ModuleInitializer]
     public static void InitSelenium() =>
-        VerifySelenium.Enable();
+        VerifySelenium.Initialize();
 
     #endregion
 
@@ -12,7 +12,7 @@
 
     [ModuleInitializer]
     public static void InitPlaywright() =>
-        VerifyPlaywright.Enable(installPlaywright: true);
+        VerifyPlaywright.Initialize(installPlaywright: true);
 
     #endregion
 
@@ -20,7 +20,7 @@
 
     [ModuleInitializer]
     public static void InitPuppeteer() =>
-        VerifyPuppeteer.Enable();
+        VerifyPuppeteer.Initialize();
 
     #endregion
 
