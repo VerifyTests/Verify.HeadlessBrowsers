@@ -28,7 +28,7 @@ Enable VerifyPlaywright once at assembly load time:
 ```cs
 [ModuleInitializer]
 public static void InitPlaywright() =>
-    VerifyPlaywright.Enable(installPlaywright: true);
+    VerifyPlaywright.Initialize(installPlaywright: true);
 ```
 <sup><a href='/src/Tests/ModuleInitializer.cs#L11-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -185,7 +185,7 @@ Enable VerifyPuppeteer once at assembly load time:
 ```cs
 [ModuleInitializer]
 public static void InitPuppeteer() =>
-    VerifyPuppeteer.Enable();
+    VerifyPuppeteer.Initialize();
 ```
 <sup><a href='/src/Tests/ModuleInitializer.cs#L19-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-puppeteerenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -313,7 +313,7 @@ Enable VerifySelenium once at assembly load time:
 ```cs
 [ModuleInitializer]
 public static void InitSelenium() =>
-    VerifySelenium.Enable();
+    VerifySelenium.Initialize();
 ```
 <sup><a href='/src/Tests/ModuleInitializer.cs#L3-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-seleniumenable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
