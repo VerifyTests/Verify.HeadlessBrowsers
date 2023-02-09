@@ -1,5 +1,6 @@
 # <img src="/src/icon.png" height="30px"> Verify Headless Browsers
 
+[![Discussions](https://img.shields.io/badge/Verify-Discussions-yellow?svg=true&label=)](https://github.com/orgs/VerifyTests/discussions)
 [![Build status](https://ci.appveyor.com/api/projects/status/n4q42hbpf32jwafg?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-headlessbrowsers)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Playwright.svg?label=Verify.Playwright)](https://www.nuget.org/packages/Verify.Playwright/)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Puppeteer.svg?label=Verify.Puppeteer)](https://www.nuget.org/packages/Verify.Puppeteer/)
