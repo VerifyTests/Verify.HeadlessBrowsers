@@ -8,7 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Argon" Version="0.7.1" />
     <PackageReference Include="PuppeteerSharp" Version="9.1.0" />
-    <PackageReference Include="Verify" Version="20.1.1" />
+    <PackageReference Include="Verify" Version="20.3.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
     <PackageReference Include="ProjectDefaults" Version="1.0.90" PrivateAssets="all" />
     <Compile Include="..\Verify.Playwright\InnerSocketWaiter.cs" />
