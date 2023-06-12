@@ -175,10 +175,10 @@ An element can be verified as follows:
 ```cs
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
-var element = await page.Locator("#someId");
+var element = page.Locator("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L68-L75' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightelementusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L68-L75' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightlocatorusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -188,7 +188,7 @@ With the state of the element being rendered as a verified files:
 ```html
 Learn more
 ```
-<sup><a href='/src/Tests/PlaywrightTests.LocatorUsage.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.ElementUsage.verified.html' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.LocatorUsage.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.LocatorUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [PlaywrightTests.LocatorUsage.01.verified.png](/src/Tests/PlaywrightTests.LocatorUsage.verified.png):
@@ -203,7 +203,7 @@ Learn more
 ```cs
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
-var element = await page.Locator("#someId");
+var element = page.Locator("#someId");
 await Verify(element)
     .LocatorScreenshotOptions(
         new()
