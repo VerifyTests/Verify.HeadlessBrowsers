@@ -185,7 +185,8 @@ public static class VerifyPlaywright
     }
     static void LocatorScreenshotOptions(this VerifySettings settings, LocatorScreenshotOptions options) =>
         settings.Context["Playwright.LocatorScreenshotOptions"] = options;
-    private static async Task<ConversionResult> LocatorToImageAsync(ILocator locator, IReadOnlyDictionary<string, object> context)
+
+    static async Task<ConversionResult> LocatorToImageAsync(ILocator locator, IReadOnlyDictionary<string, object> context)
     {
         Task<byte[]> bytes;
         var imageType = "png";
