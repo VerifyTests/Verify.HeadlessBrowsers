@@ -29,12 +29,12 @@ public static class VerifyPlaywright
             });
         }
 
-        VerifierSettings.RegisterFileConverter<IPage>(PageToImage);
-        VerifierSettings.RegisterFileConverter<IElementHandle>(ElementToImage);
+        VerifierSettings.RegisterFileConverter<IPage>(PageToImageAsync);
+        VerifierSettings.RegisterFileConverter<IElementHandle>(ElementToImageAsync);
         VerifierSettings.RegisterFileConverter<ILocator>(LocatorToImageAsync);
     }
 
-    static async Task<ConversionResult> PageToImage(IPage page, IReadOnlyDictionary<string, object> context)
+    static async Task<ConversionResult> PageToImageAsync(IPage page, IReadOnlyDictionary<string, object> context)
     {
         await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 
@@ -58,7 +58,7 @@ public static class VerifyPlaywright
                 });
         }
 
-        await RemovePlaywrightStyle(page);
+        await RemovePlaywrightStyleAsync(page);
         var html = await page.ContentAsync();
         return new(
             null,
@@ -70,7 +70,7 @@ public static class VerifyPlaywright
         );
     }
 
-    static async Task RemovePlaywrightStyle(IPage page)
+    static async Task RemovePlaywrightStyleAsync(IPage page)
     {
         var elements = await page.QuerySelectorAllAsync("style");
         foreach (var element in elements)
@@ -83,7 +83,7 @@ public static class VerifyPlaywright
         }
     }
 
-    static async Task<ConversionResult> ElementToImage(IElementHandle element, IReadOnlyDictionary<string, object> context)
+    static async Task<ConversionResult> ElementToImageAsync(IElementHandle element, IReadOnlyDictionary<string, object> context)
     {
         Task<byte[]> bytes;
         var imageType = "png";
