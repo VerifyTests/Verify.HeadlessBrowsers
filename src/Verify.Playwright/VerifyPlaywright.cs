@@ -31,6 +31,7 @@ public static class VerifyPlaywright
 
         VerifierSettings.RegisterFileConverter<IPage>(PageToImage);
         VerifierSettings.RegisterFileConverter<IElementHandle>(ElementToImage);
+        VerifierSettings.RegisterFileConverter<ILocator>(LocatorToImageAsync);
     }
 
     static async Task<ConversionResult> PageToImage(IPage page, IReadOnlyDictionary<string, object> context)
@@ -164,6 +165,55 @@ public static class VerifyPlaywright
 
         options = null;
         return false;
+    }
+    public static SettingsTask LocatorScreenshotOptions(this SettingsTask settings, LocatorScreenshotOptions options)
+    {
+        settings.CurrentSettings.LocatorScreenshotOptions(options);
+        return settings;
+    }
+    private static bool GetLocatorScreenshotOptions(this IReadOnlyDictionary<string, object> context, [NotNullWhen(true)] out LocatorScreenshotOptions? options)
+    {
+        if (context.TryGetValue("Playwright.LocatorScreenshotOptions", out var value))
+        {
+            options = (LocatorScreenshotOptions)value;
+            ValidateNoPath(options.Path);
+            return true;
+        }
+
+        options = null;
+        return false;
+    }
+    static void LocatorScreenshotOptions(this VerifySettings settings, LocatorScreenshotOptions options) =>
+        settings.Context["Playwright.LocatorScreenshotOptions"] = options;
+    private static async Task<ConversionResult> LocatorToImageAsync(ILocator locator, IReadOnlyDictionary<string, object> context)
+    {
+        Task<byte[]> bytes;
+        var imageType = "png";
+        if (context.GetLocatorScreenshotOptions(out var options))
+        {
+            bytes = locator.ScreenshotAsync(options);
+            if (options.Type == ScreenshotType.Jpeg)
+            {
+                imageType = "jpg";
+            }
+        }
+        else
+        {
+            bytes = locator.ScreenshotAsync(
+                new()
+                {
+                    Type = ScreenshotType.Png
+                });
+        }
+
+        var html = await locator.InnerHTMLAsync();
+        return new(
+            null,
+            new List<Target>
+            {
+                new("html", html),
+                new(imageType, new MemoryStream(await bytes))
+            });
     }
 
 }

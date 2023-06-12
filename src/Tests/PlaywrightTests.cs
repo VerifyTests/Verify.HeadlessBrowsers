@@ -62,7 +62,18 @@ public class PlaywrightTests
 
         #endregion
     }
+    [Test]
+    public async Task LocatorUsage()
+    {
+        #region PlaywrightLocatorUsage
 
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        var element = page.Locator("#someId");
+        await Verify(element);
+
+        #endregion
+    }
     [Test]
     public async Task ElementScreenshotOptions()
     {
@@ -82,6 +93,24 @@ public class PlaywrightTests
         #endregion
     }
 
+    [Test]
+    public async Task LocatorScreenshotOptions()
+    {
+        #region LocatorScreenshotOptions
+
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        var element = page.Locator("#someId");
+        await Verify(element)
+            .LocatorScreenshotOptions(
+                new()
+                {
+                    Quality = 50,
+                    Type = ScreenshotType.Jpeg
+                });
+
+        #endregion
+    }
     [OneTimeTearDown]
     public async Task DisposeAsync()
     {
