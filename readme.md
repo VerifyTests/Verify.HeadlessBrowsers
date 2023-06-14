@@ -163,7 +163,56 @@ await Verify(element!)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L69-L82' title='Snippet source file'>snippet source</a> | <a href='#snippet-elementscreenshotoptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L80-L93' title='Snippet source file'>snippet source</a> | <a href='#snippet-elementscreenshotoptions' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+### Element test using ILocator
+
+An element can be verified as follows:
+
+<!-- snippet: PlaywrightLocatorUsage -->
+<a id='snippet-playwrightlocatorusage'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+var element = page.Locator("#someId");
+await Verify(element);
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L68-L75' title='Snippet source file'>snippet source</a> | <a href='#snippet-playwrightlocatorusage' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+With the state of the element being rendered as a verified files:
+
+<!-- snippet: PlaywrightTests.LocatorUsage.verified.html -->
+<a id='snippet-PlaywrightTests.LocatorUsage.verified.html'></a>
+```html
+Learn more
+```
+<sup><a href='/src/Tests/PlaywrightTests.LocatorUsage.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.LocatorUsage.verified.html' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+[PlaywrightTests.LocatorUsage.01.verified.png](/src/Tests/PlaywrightTests.LocatorUsage.verified.png):
+
+<img src="/src/Tests/PlaywrightTests.LocatorUsage.verified.png">
+
+
+#### LocatorScreenshotOptions
+
+<!-- snippet: LocatorScreenshotOptions -->
+<a id='snippet-locatorscreenshotoptions'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+var element = page.Locator("#someId");
+await Verify(element)
+    .LocatorScreenshotOptions(
+        new()
+        {
+            Quality = 50,
+            Type = ScreenshotType.Jpeg
+        });
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L99-L112' title='Snippet source file'>snippet source</a> | <a href='#snippet-locatorscreenshotoptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

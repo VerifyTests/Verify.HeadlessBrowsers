@@ -29,11 +29,12 @@ public static class VerifyPlaywright
             });
         }
 
-        VerifierSettings.RegisterFileConverter<IPage>(PageToImage);
-        VerifierSettings.RegisterFileConverter<IElementHandle>(ElementToImage);
+        VerifierSettings.RegisterFileConverter<IPage>(PageToImageAsync);
+        VerifierSettings.RegisterFileConverter<IElementHandle>(ElementToImageAsync);
+        VerifierSettings.RegisterFileConverter<ILocator>(LocatorToImageAsync);
     }
 
-    static async Task<ConversionResult> PageToImage(IPage page, IReadOnlyDictionary<string, object> context)
+    static async Task<ConversionResult> PageToImageAsync(IPage page, IReadOnlyDictionary<string, object> context)
     {
         await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 
@@ -57,7 +58,7 @@ public static class VerifyPlaywright
                 });
         }
 
-        await RemovePlaywrightStyle(page);
+        await RemovePlaywrightStyleAsync(page);
         var html = await page.ContentAsync();
         return new(
             null,
@@ -69,7 +70,7 @@ public static class VerifyPlaywright
         );
     }
 
-    static async Task RemovePlaywrightStyle(IPage page)
+    static async Task RemovePlaywrightStyleAsync(IPage page)
     {
         var elements = await page.QuerySelectorAllAsync("style");
         foreach (var element in elements)
@@ -82,7 +83,7 @@ public static class VerifyPlaywright
         }
     }
 
-    static async Task<ConversionResult> ElementToImage(IElementHandle element, IReadOnlyDictionary<string, object> context)
+    static async Task<ConversionResult> ElementToImageAsync(IElementHandle element, IReadOnlyDictionary<string, object> context)
     {
         Task<byte[]> bytes;
         var imageType = "png";
@@ -164,6 +165,56 @@ public static class VerifyPlaywright
 
         options = null;
         return false;
+    }
+    public static SettingsTask LocatorScreenshotOptions(this SettingsTask settings, LocatorScreenshotOptions options)
+    {
+        settings.CurrentSettings.LocatorScreenshotOptions(options);
+        return settings;
+    }
+    private static bool GetLocatorScreenshotOptions(this IReadOnlyDictionary<string, object> context, [NotNullWhen(true)] out LocatorScreenshotOptions? options)
+    {
+        if (context.TryGetValue("Playwright.LocatorScreenshotOptions", out var value))
+        {
+            options = (LocatorScreenshotOptions)value;
+            ValidateNoPath(options.Path);
+            return true;
+        }
+
+        options = null;
+        return false;
+    }
+    static void LocatorScreenshotOptions(this VerifySettings settings, LocatorScreenshotOptions options) =>
+        settings.Context["Playwright.LocatorScreenshotOptions"] = options;
+
+    static async Task<ConversionResult> LocatorToImageAsync(ILocator locator, IReadOnlyDictionary<string, object> context)
+    {
+        Task<byte[]> bytes;
+        var imageType = "png";
+        if (context.GetLocatorScreenshotOptions(out var options))
+        {
+            bytes = locator.ScreenshotAsync(options);
+            if (options.Type == ScreenshotType.Jpeg)
+            {
+                imageType = "jpg";
+            }
+        }
+        else
+        {
+            bytes = locator.ScreenshotAsync(
+                new()
+                {
+                    Type = ScreenshotType.Png
+                });
+        }
+
+        var html = await locator.InnerHTMLAsync();
+        return new(
+            null,
+            new List<Target>
+            {
+                new("html", html),
+                new(imageType, new MemoryStream(await bytes))
+            });
     }
 
 }
