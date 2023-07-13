@@ -3,7 +3,7 @@ environment:
   DOTNET_NOLOGO: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-init:
+install:
   - npx playwright install
 build_script:
 - pwsh: |
