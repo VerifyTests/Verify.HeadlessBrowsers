@@ -4,11 +4,7 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 install:
-  - Install-Product node $env:nodejs_version x64
-  - set PATH=%APPDATA%\npm;%PATH%
-  - npm install
-  - npm install --no-save playwright@1.35.0
-  - npx playwright install --with-deps
+  - yarn create playwright
 build_script:
 - pwsh: |
     Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile "./dotnet-install.ps1"
