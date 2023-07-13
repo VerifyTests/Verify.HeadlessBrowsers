@@ -3,8 +3,16 @@ environment:
   DOTNET_NOLOGO: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-init:
-  - npm init playwright@latest
+install:
+  - ps: >
+      if ($env:nodejs_version -eq "18") {
+        Install-Product node $env:nodejs_version x64
+      } else {
+        Install-Product node $env:nodejs_version
+      }
+  - set PATH=%APPDATA%\npm;%PATH%
+  - npm install
+  - npm install --no-save playwright
 build_script:
 - pwsh: |
     Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile "./dotnet-install.ps1"
