@@ -5,7 +5,6 @@ environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 init:
   - npm i -g npx
-  - npm install @playwright/test
   - npx playwright@1.35.1 install
 build_script:
 - pwsh: |
