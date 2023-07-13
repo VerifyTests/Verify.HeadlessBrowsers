@@ -4,7 +4,10 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 install:
-  - npm ci
+  - Install-Product node $env:nodejs_version x64
+  - set PATH=%APPDATA%\npm;%PATH%
+  - npm install
+  - npm install --no-save playwright@1.35.0
   - npx playwright install --with-deps
 build_script:
 - pwsh: |
