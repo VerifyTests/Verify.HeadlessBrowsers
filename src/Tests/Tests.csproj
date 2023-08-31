@@ -6,13 +6,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Playwright" Version="1.37.1" />
     <PackageReference Include="Argon" Version="0.7.2" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.5.1" />
-    <PackageReference Include="Selenium.WebDriver" Version="4.11.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="114.0.5735.9000" />
+    <PackageReference Include="MarkdownSnippets.MsBuild" Version="25.1.0" PrivateAssets="all" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.12.1" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="116.0.5845.9600" />
     <PackageReference Include="Verify.ImageMagick" Version="3.2.2" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.2.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
-    <PackageReference Include="Verify.NUnit" Version="20.8.2" />
+    <PackageReference Include="Verify.NUnit" Version="21.0.0" />
     <PackageReference Include="Verify.DiffPlex" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="7.0.10" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
