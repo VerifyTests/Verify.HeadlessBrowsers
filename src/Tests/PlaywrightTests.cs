@@ -115,6 +115,7 @@ public class PlaywrightTests
     public async Task DisposeAsync()
     {
         await browser.DisposeAsync();
+        // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
         playwright?.Dispose();
     }
 }

@@ -249,7 +249,7 @@ public static void InitPuppeteer() =>
 // wait for target server to start
 await SocketWaiter.Wait(port: 5000);
 
-using (var fetcher = new BrowserFetcher(Product.Chrome))
+using (var fetcher = new BrowserFetcher(SupportedBrowser.Chrome))
 {
     await fetcher.DownloadAsync();
 }
