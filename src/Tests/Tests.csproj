@@ -16,7 +16,7 @@
     <PackageReference Include="Verify.DiffPlex" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="7.0.11" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.97" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.99" PrivateAssets="all" />
     <ProjectReference Include="..\Verify.Playwright\Verify.Playwright.csproj" />
     <ProjectReference Include="..\Verify.Puppeteer\Verify.Puppeteer.csproj" />
     <ProjectReference Include="..\Verify.Selenium\Verify.Selenium.csproj" />
