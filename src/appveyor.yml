@@ -5,7 +5,7 @@ environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 init:
   - npm i -g npx
-  - npx playwright@1.35.1 install
+  - npx playwright@1.39.0 install
 build_script:
 - pwsh: |
     Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile "./dotnet-install.ps1"
