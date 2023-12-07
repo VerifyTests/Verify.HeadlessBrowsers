@@ -11,7 +11,6 @@ Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of
 **See [Milestones](../../milestones?state=closed) for release notes.**
 
 
-
 ## Playwright Usage
 
 Verification of Web UIs via [Playwright](https://github.com/microsoft/playwright-sharp).
