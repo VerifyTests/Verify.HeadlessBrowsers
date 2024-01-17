@@ -19,10 +19,7 @@ public static class VerifyPlaywright
         InnerVerifier.ThrowIfVerifyHasBeenRun();
         if (installPlaywright)
         {
-            Program.Main(new[]
-            {
-                "install"
-            });
+            Program.Main(["install"]);
         }
 
         VerifierSettings.RegisterFileConverter<IPage>(PageToImage);
