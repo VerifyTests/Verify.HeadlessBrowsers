@@ -7,7 +7,7 @@
     <PackageReference Include="Microsoft.Playwright" Version="1.41.2" />
     <PackageReference Include="Argon" Version="0.15.0" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="26.0.1" PrivateAssets="all" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="120.0.6099.10900" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="121.0.6167.8500" />
     <PackageReference Include="Selenium.WebDriver" Version="4.17.0" />
     <PackageReference Include="Verify.ImageMagick" Version="3.2.2" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.5.0" />
