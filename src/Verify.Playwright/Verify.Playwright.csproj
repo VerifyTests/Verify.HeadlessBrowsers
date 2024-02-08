@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Argon" Version="0.15.0" />
     <PackageReference Include="Microsoft.Playwright" Version="1.41.2" />
-    <PackageReference Include="Verify" Version="23.0.1" />
+    <PackageReference Include="Verify" Version="23.1.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.109" PrivateAssets="all" />
   </ItemGroup>
 </Project>
