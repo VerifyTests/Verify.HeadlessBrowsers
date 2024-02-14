@@ -5,9 +5,9 @@
     <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow verification of Web UIs via Playwright (https://github.com/microsoft/playwright-sharp)</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Argon" Version="0.15.0" />
+    <PackageReference Include="Argon" Version="0.17.0" />
     <PackageReference Include="Microsoft.Playwright" Version="1.41.2" />
     <PackageReference Include="Verify" Version="23.1.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.109" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.110" PrivateAssets="all" />
   </ItemGroup>
 </Project>
