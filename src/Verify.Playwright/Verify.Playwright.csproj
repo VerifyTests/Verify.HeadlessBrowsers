@@ -8,6 +8,6 @@
     <PackageReference Include="Argon" Version="0.17.0" />
     <PackageReference Include="Microsoft.Playwright" Version="1.41.2" />
     <PackageReference Include="Verify" Version="23.2.2" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.118" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.125" PrivateAssets="all" />
   </ItemGroup>
 </Project>
