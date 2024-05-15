@@ -8,7 +8,7 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="27.0.2" PrivateAssets="all" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="124.0.6367.20700" />
     <PackageReference Include="Selenium.WebDriver" Version="4.20.0" />
-    <PackageReference Include="Verify.ImageMagick" Version="3.4.0" />
+    <PackageReference Include="Verify.ImageMagick" Version="3.4.2" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.8.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageReference Include="Verify.Nunit" Version="24.2.0" />
