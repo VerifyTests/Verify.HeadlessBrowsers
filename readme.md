@@ -250,10 +250,8 @@ public static void InitPuppeteer() =>
 // wait for target server to start
 await SocketWaiter.Wait(port: 5000);
 
-using (var fetcher = new BrowserFetcher(SupportedBrowser.Chrome))
-{
-    await fetcher.DownloadAsync();
-}
+var fetcher = new BrowserFetcher(SupportedBrowser.Chrome);
+await fetcher.DownloadAsync();
 
 browser = await Puppeteer.LaunchAsync(
     new()
@@ -261,7 +259,7 @@ browser = await Puppeteer.LaunchAsync(
         Headless = true
     });
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L11-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerBuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L11-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerBuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -278,7 +276,7 @@ page.Viewport.Height = 768;
 await page.GoToAsync("http://localhost:5000");
 await Verify(page);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L33-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerPageUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L31-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerPageUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -327,7 +325,7 @@ await page.GoToAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PuppeteerTests.cs#L47-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerElementUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PuppeteerTests.cs#L45-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-PuppeteerElementUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:

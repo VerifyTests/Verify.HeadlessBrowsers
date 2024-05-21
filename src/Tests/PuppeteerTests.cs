@@ -13,10 +13,8 @@ public class PuppeteerTests
         // wait for target server to start
         await SocketWaiter.Wait(port: 5000);
 
-        using (var fetcher = new BrowserFetcher(SupportedBrowser.Chrome))
-        {
-            await fetcher.DownloadAsync();
-        }
+        var fetcher = new BrowserFetcher(SupportedBrowser.Chrome);
+        await fetcher.DownloadAsync();
 
         browser = await Puppeteer.LaunchAsync(
             new()
