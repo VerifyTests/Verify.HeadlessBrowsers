@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace VerifyTests;
+﻿namespace VerifyTests;
 
 public static class VerifySelenium
 {

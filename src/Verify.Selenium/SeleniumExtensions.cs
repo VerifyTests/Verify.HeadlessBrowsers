@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-
-static class SeleniumExtensions
+﻿static class SeleniumExtensions
 {
     public static void WaitForIsReady(this WebDriver driver)
     {

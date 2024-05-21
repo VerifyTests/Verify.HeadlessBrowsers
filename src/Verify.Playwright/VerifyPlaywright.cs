@@ -1,7 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Microsoft.Playwright;
-
-namespace VerifyTests;
+﻿namespace VerifyTests;
 
 public static class VerifyPlaywright
 {

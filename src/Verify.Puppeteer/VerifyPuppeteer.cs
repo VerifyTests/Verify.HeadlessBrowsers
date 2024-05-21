@@ -1,6 +1,4 @@
-﻿using PuppeteerSharp;
-
-namespace VerifyTests;
+﻿namespace VerifyTests;
 
 public static class VerifyPuppeteer
 {

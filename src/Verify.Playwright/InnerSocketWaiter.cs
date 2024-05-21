@@ -1,6 +1,3 @@
-using System.Net;
-using System.Net.Sockets;
-
 static class InnerSocketWaiter
 {
     public static async Task Wait(int port)
