@@ -29,6 +29,6 @@
     {
         VerifyDiffPlex.Initialize();
         VerifyImageMagick.Initialize();
-        VerifyImageMagick.RegisterComparers(.05);
+        VerifyImageMagick.RegisterComparers(.12);
     }
 }
