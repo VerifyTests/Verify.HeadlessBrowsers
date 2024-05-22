@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Playwright" Version="1.44.0" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="27.0.2" PrivateAssets="all" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="125.0.6422.6000" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="125.0.6422.7600" />
     <PackageReference Include="Selenium.WebDriver" Version="4.21.0" />
     <PackageReference Include="Verify.ImageMagick" Version="3.4.2" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.8.0" />
