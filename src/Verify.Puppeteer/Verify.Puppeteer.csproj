@@ -6,9 +6,9 @@
     <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow verification of Web UIs via Puppeteer (https://github.com/hardkoded/puppeteer-sharp)</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="PuppeteerSharp" Version="18.0.0" />
-    <PackageReference Include="Verify" Version="24.2.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.127" PrivateAssets="all" />
+    <PackageReference Include="PuppeteerSharp" />
+    <PackageReference Include="Verify" />
+    <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
     <Compile Include="..\Verify.Playwright\InnerSocketWaiter.cs" />
   </ItemGroup>
 </Project>
