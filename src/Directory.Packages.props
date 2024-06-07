@@ -11,7 +11,7 @@
     <PackageVersion Include="Microsoft.Playwright" Version="1.44.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.127" />
-    <PackageVersion Include="PuppeteerSharp" Version="18.0.0" />
+    <PackageVersion Include="PuppeteerSharp" Version="18.0.1" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.21.0" />
     <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="125.0.6422.14100" />
     <PackageVersion Include="Verify" Version="25.0.1" />
