@@ -17,6 +17,6 @@
     <PackageVersion Include="Verify" Version="25.0.4" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.0.0" />
     <PackageVersion Include="Verify.ImageMagick" Version="3.4.4" />
-    <PackageVersion Include="Verify.Nunit" Version="25.0.3" />
+    <PackageVersion Include="Verify.Nunit" Version="25.0.4" />
   </ItemGroup>
 </Project>
