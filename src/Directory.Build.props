@@ -2,13 +2,12 @@
 <Project>
   <PropertyGroup>
     <NoWarn>CS1591;CS0649;CS8632</NoWarn>
-    <Version>3.0.0</Version>
+    <Version>3.1.0</Version>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <LangVersion>preview</LangVersion>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
-    <NuGetAuditMode>all</NuGetAuditMode>
-    <NuGetAuditLevel>low</NuGetAuditLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
   </PropertyGroup>
 </Project>
