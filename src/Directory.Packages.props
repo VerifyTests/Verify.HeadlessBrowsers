@@ -13,11 +13,11 @@
     <PackageVersion Include="ProjectDefaults" Version="1.0.144" />
     <PackageVersion Include="PuppeteerSharp" Version="20.0.5" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.27.0" />
-    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="131.0.6778.6900" />
+    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="131.0.6778.8700" />
     <PackageVersion Include="Verify" Version="28.4.0" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
     <PackageVersion Include="Verify.ImageMagick" Version="3.6.0" />
-    <PackageVersion Include="Verify.Nunit" Version="28.3.2" />
+    <PackageVersion Include="Verify.Nunit" Version="28.4.0" />
     <!-- explicit to avoid a cve -->
     <PackageVersion Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
