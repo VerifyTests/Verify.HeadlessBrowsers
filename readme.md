@@ -451,7 +451,7 @@ With the state of the element being rendered as a verified files:
 <!-- snippet: SeleniumTests.ElementUsage.verified.html -->
 <a id='snippet-SeleniumTests.ElementUsage.verified.html'></a>
 ```html
-<a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
 ```
 <sup><a href='/src/Tests/SeleniumTests.ElementUsage.verified.html#L1-L1' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumTests.ElementUsage.verified.html' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
