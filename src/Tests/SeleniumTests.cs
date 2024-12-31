@@ -26,14 +26,12 @@ public class SeleniumTests
     }
 
     [Test]
-    public async Task PageUsage()
-    {
+    public async Task PageUsage() =>
         #region SeleniumPageUsage
 
         await Verify(driver);
 
         #endregion
-    }
 
     [Test]
     public async Task ElementUsage()

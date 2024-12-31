@@ -11,5 +11,5 @@
     }
 
     public static string GetSource(this IWebElement element) =>
-        element.GetAttribute("outerHTML");
+        element.GetDomAttribute("outerHTML");
 }
