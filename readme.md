@@ -396,7 +396,7 @@ The current page state can be verified as follows:
 ```cs
 await Verify(driver);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L30-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumPageUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L31-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumPageUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -443,7 +443,7 @@ An element can be verified as follows:
 var element = driver.FindElement(By.Id("someId"));
 await Verify(element);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L39-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumElementUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L41-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumElementUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
