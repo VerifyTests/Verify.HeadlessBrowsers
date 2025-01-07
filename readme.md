@@ -381,9 +381,9 @@ options.AddArgument("--no-sandbox");
 options.AddArgument("--headless");
 driver = new(options);
 driver.Manage().Window.Size = new(1024, 768);
-driver.Navigate().GoToUrl("http://localhost:5000");
+await driver.Navigate().GoToUrlAsync("http://localhost:5000");
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L13-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumBuildDriver' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L14-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumBuildDriver' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -396,7 +396,7 @@ The current page state can be verified as follows:
 ```cs
 await Verify(driver);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L31-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumPageUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L33-L37' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumPageUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -443,7 +443,7 @@ An element can be verified as follows:
 var element = driver.FindElement(By.Id("someId"));
 await Verify(element);
 ```
-<sup><a href='/src/Tests/SeleniumTests.cs#L41-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumElementUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SeleniumTests.cs#L43-L48' title='Snippet source file'>snippet source</a> | <a href='#snippet-SeleniumElementUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:

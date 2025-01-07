@@ -1,4 +1,5 @@
 ﻿#if DEBUG
+using System.Diagnostics.CodeAnalysis;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using VerifyTests.Selenium;
@@ -20,12 +21,13 @@ public class SeleniumTests
         options.AddArgument("--headless");
         driver = new(options);
         driver.Manage().Window.Size = new(1024, 768);
-        driver.Navigate().GoToUrl("http://localhost:5000");
+        await driver.Navigate().GoToUrlAsync("http://localhost:5000");
 
         #endregion
     }
 
     [Test]
+    [SuppressMessage("Style", "IDE0022:Use expression body for method")]
     public async Task PageUsage()
     {
         #region SeleniumPageUsage
