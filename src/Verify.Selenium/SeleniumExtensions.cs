@@ -11,5 +11,7 @@
     }
 
     public static string GetSource(this IWebElement element) =>
+#pragma warning disable CS0618 // Type or member is obsolete
         element.GetAttribute("outerHTML");
+#pragma warning restore CS0618 // Type or member is obsolete
 }
