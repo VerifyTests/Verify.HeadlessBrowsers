@@ -24,14 +24,14 @@ public static class VerifySelenium
         var driver = (WebDriver)element.WrappedDriver;
         driver.WaitForIsReady();
         var bytes = element.GetScreenshot().AsByteArray;
-        return new(
-            null,
-            new List<Target>
-            {
-                new("html", element.GetSource()),
-                new("png", new MemoryStream(bytes))
-            }
-        );
+        var targets = new List<Target>();
+        var source = element.GetSource();
+        if (source != null)
+        {
+            targets.Add(new("html", source));
+        }
+        targets.Add(new("png", new MemoryStream(bytes)));
+        return new(null, targets);
     }
 
     static ConversionResult DriverToImage(WebDriver driver, IReadOnlyDictionary<string, object> context)
