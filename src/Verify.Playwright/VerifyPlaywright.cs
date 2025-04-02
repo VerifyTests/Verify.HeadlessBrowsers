@@ -1,4 +1,6 @@
-﻿namespace VerifyTests;
+﻿using System.Xml.Linq;
+
+namespace VerifyTests;
 
 public static class VerifyPlaywright
 {
@@ -49,15 +51,19 @@ public static class VerifyPlaywright
         }
 
         await RemovePlaywrightStyle(page);
-        var html = await page.ContentAsync();
-        return new(
-            null,
-            new List<Target>
+
+
+        var targets = new List<Target>();
+        if (!context.GetScreenshotOnlyOption())
             {
-                new("html", html),
-                new(imageType, new MemoryStream(await bytes))
+            var html = await page.ContentAsync();
+            targets.Add(new Target("html", html));
             }
-        );
+        targets.Add(new Target(imageType, new MemoryStream(await bytes)));
+
+        return new ConversionResult(null, targets);
+
+    
     }
 
     static async Task RemovePlaywrightStyle(IPage page)
@@ -94,23 +100,26 @@ public static class VerifyPlaywright
                 });
         }
 
-        var html = element.InnerHTMLAsync();
-        return new(
-            null,
-            new List<Target>
+        var targets = new List<Target>();
+        if (!context.GetScreenshotOnlyOption())
             {
-                new("html", await html),
-                new(imageType, new MemoryStream(await bytes))
+            var html = await element.InnerHTMLAsync();
+            targets.Add(new Target("html", html));
             }
-        );
+        targets.Add(new Target(imageType, new MemoryStream(await bytes)));
+
+        return new ConversionResult(null, targets);
+
+      
     }
 
     public static void PageScreenshotOptions(this VerifySettings settings, PageScreenshotOptions options) =>
         settings.Context["Playwright.PageScreenshotOptions"] = options;
 
-    public static SettingsTask PageScreenshotOptions(this SettingsTask settings, PageScreenshotOptions options)
+    public static SettingsTask PageScreenshotOptions(this SettingsTask settings, PageScreenshotOptions options, bool screenshotOnly = false)
     {
         settings.CurrentSettings.PageScreenshotOptions(options);
+        settings.CurrentSettings.Context["Playwright.ScreenshotOnly"] = screenshotOnly;
         return settings;
     }
 
@@ -138,9 +147,10 @@ public static class VerifyPlaywright
     public static void ElementScreenshotOptions(this VerifySettings settings, ElementHandleScreenshotOptions options) =>
         settings.Context["Playwright.ElementScreenshotOptions"] = options;
 
-    public static SettingsTask ElementScreenshotOptions(this SettingsTask settings, ElementHandleScreenshotOptions options)
+    public static SettingsTask ElementScreenshotOptions(this SettingsTask settings, ElementHandleScreenshotOptions options, bool screenshotOnly = false)
     {
         settings.CurrentSettings.ElementScreenshotOptions(options);
+        settings.CurrentSettings.Context["Playwright.ScreenshotOnly"] = screenshotOnly;
         return settings;
     }
 
@@ -156,6 +166,23 @@ public static class VerifyPlaywright
         options = null;
         return false;
     }
+
+    public static SettingsTask LocatorScreenshotOptions(this SettingsTask settings, LocatorScreenshotOptions options, bool screenshotOnly = false)
+        {
+        settings.CurrentSettings.LocatorScreenshotOptions(options);
+        settings.CurrentSettings.Context["Playwright.ScreenshotOnly"] = screenshotOnly;
+        return settings;
+        }
+
+    static bool GetScreenshotOnlyOption(this IReadOnlyDictionary<string, object> context)
+        {
+        if (context.TryGetValue("Playwright.ScreenshotOnly", out var value))
+            {
+            return (bool)value;
+            }
+
+        return false;
+        }
 
     public static SettingsTask LocatorScreenshotOptions(this SettingsTask settings, LocatorScreenshotOptions options)
     {
@@ -200,13 +227,14 @@ public static class VerifyPlaywright
                 });
         }
 
-        var html = await locator.InnerHTMLAsync();
-        return new(
-            null,
-            new List<Target>
+        var targets = new List<Target>();
+        if (!context.GetScreenshotOnlyOption())
             {
-                new("html", html),
-                new(imageType, new MemoryStream(await bytes))
-            });
-    }
+            var html = await locator.InnerHTMLAsync();
+            targets.Add(new Target("html", html));
+            }
+        targets.Add(new Target(imageType, new MemoryStream(await bytes)));
+
+        return new ConversionResult(null, targets);
+        }
 }
