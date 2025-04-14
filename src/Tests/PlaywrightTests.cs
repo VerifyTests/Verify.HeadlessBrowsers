@@ -52,7 +52,7 @@ public class PlaywrightTests
     [Test]
     public async Task PageScreenshotOptionsOnly()
     {
-        #region PageScreenshotOptions
+        #region PageScreenshotOnlyOptions
 
         var page = await browser.NewPageAsync();
         await page.GotoAsync("http://localhost:5000");
@@ -149,7 +149,7 @@ public class PlaywrightTests
     [Test]
     public async Task LocatorScreenshotOptionsOnly()
     {
-        #region LocatorScreenshotOptions
+        #region LocatorScreenshotOnlyOptions
 
         var page = await browser.NewPageAsync();
         await page.GotoAsync("http://localhost:5000");

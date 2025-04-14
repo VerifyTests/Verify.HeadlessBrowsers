@@ -114,6 +114,26 @@ await Verify(page)
             Type = ScreenshotType.Jpeg
         },screenshotOnly:true);
 ```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+#### Page screenshot only option
+
+Passing in a true into the to the screenshotOnly option will discard Page HTML from being included in the Verify. producing only a verification for the Page image
+
+<!-- snippet: PageScreenshotOptions -->
+<a id='snippet-PageScreenshotOptions'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+await Verify(page)
+    .PageScreenshotOptions(
+        new()
+        {
+            Quality = 50,
+            Type = ScreenshotType.Jpeg
+        }, screenshotOnly:true);
+```
 <sup><a href='/src/Tests/PlaywrightTests.cs#L55-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
@@ -212,7 +232,29 @@ await Verify(element)
         {
             Quality = 50,
             Type = ScreenshotType.Jpeg
-        },screenshotOnly:true);
+        });
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L134-L147' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+#### Locator screenshot only option
+
+Passing in a true into the to the screenshotOnly option will discard Locator HTML from being included in the Verify. producing only a verification for the Locator image
+
+<!-- snippet: LocatorScreenshotOptions -->
+<a id='snippet-LocatorScreenshotOptions'></a>
+
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+var element = page.Locator("#someId");
+await Verify(element)
+    .LocatorScreenshotOptions(
+        new()
+        {
+            Quality = 50,
+            Type = ScreenshotType.Jpeg
+        }, screenshotOnly:true);
 ```
 <sup><a href='/src/Tests/PlaywrightTests.cs#L152-L165' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
