@@ -1,4 +1,4 @@
-﻿using Microsoft.Playwright;
+using Microsoft.Playwright;
 using VerifyTests.Playwright;
 
 public class PlaywrightTests
@@ -49,6 +49,23 @@ public class PlaywrightTests
 
         #endregion
     }
+    [Test]
+    public async Task PageScreenshotOptionsOnly()
+    {
+        #region PageScreenshotOnlyOptions
+
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        await Verify(page)
+            .PageScreenshotOptions(
+                new()
+                {
+                    Quality = 50,
+                    Type = ScreenshotType.Jpeg
+                },screenshotOnly:true);
+
+        #endregion
+    }
 
     [Test]
     public async Task ElementUsage()
@@ -92,6 +109,24 @@ public class PlaywrightTests
 
         #endregion
     }
+    [Test]
+    public async Task ElementScreenshotOptionsOnly()
+    {
+        #region ElementScreenshotOptions
+
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        var element = await page.QuerySelectorAsync("#someId");
+        await Verify(element!)
+            .ElementScreenshotOptions(
+                new()
+                {
+                    Quality = 50,
+                    Type = ScreenshotType.Jpeg
+                },screenshotOnly:true);
+
+        #endregion
+    }
 
     [Test]
     public async Task LocatorScreenshotOptions()
@@ -108,6 +143,24 @@ public class PlaywrightTests
                     Quality = 50,
                     Type = ScreenshotType.Jpeg
                 });
+
+        #endregion
+    }
+    [Test]
+    public async Task LocatorScreenshotOptionsOnly()
+    {
+        #region LocatorScreenshotOnlyOptions
+
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        var element = page.Locator("#someId");
+        await Verify(element)
+            .LocatorScreenshotOptions(
+                new()
+                {
+                    Quality = 50,
+                    Type = ScreenshotType.Jpeg
+                },screenshotOnly:true);
 
         #endregion
     }

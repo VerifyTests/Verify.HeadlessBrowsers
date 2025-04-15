@@ -112,9 +112,29 @@ await Verify(page)
         {
             Quality = 50,
             Type = ScreenshotType.Jpeg
-        });
+        },screenshotOnly:true);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+#### Page screenshot only option
+
+Passing in a true into the to the screenshotOnly option will discard Page HTML from being included in the Verify. producing only a verification for the Page image
+
+<!-- snippet: PageScreenshotOptions -->
+<a id='snippet-PageScreenshotOptions'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+await Verify(page)
+    .PageScreenshotOptions(
+        new()
+        {
+            Quality = 50,
+            Type = ScreenshotType.Jpeg
+        }, screenshotOnly:true);
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L55-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -130,7 +150,7 @@ await page.GotoAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element!);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L56-L63' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightElementUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L73-L80' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightElementUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -162,9 +182,9 @@ await Verify(element!)
         {
             Quality = 50,
             Type = ScreenshotType.Jpeg
-        });
+        },screenshotOnly:true);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L80-L93' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L115-L128' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Element test using ILocator
@@ -179,7 +199,7 @@ await page.GotoAsync("http://localhost:5000");
 var element = page.Locator("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L68-L75' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightLocatorUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L85-L92' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightLocatorUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -201,6 +221,7 @@ Learn more
 
 <!-- snippet: LocatorScreenshotOptions -->
 <a id='snippet-LocatorScreenshotOptions'></a>
+
 ```cs
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
@@ -213,7 +234,29 @@ await Verify(element)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L99-L112' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L134-L147' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+#### Locator screenshot only option
+
+Passing in a true into the to the screenshotOnly option will discard Locator HTML from being included in the Verify. producing only a verification for the Locator image
+
+<!-- snippet: LocatorScreenshotOptions -->
+<a id='snippet-LocatorScreenshotOptions'></a>
+
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+var element = page.Locator("#someId");
+await Verify(element)
+    .LocatorScreenshotOptions(
+        new()
+        {
+            Quality = 50,
+            Type = ScreenshotType.Jpeg
+        }, screenshotOnly:true);
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L152-L165' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
