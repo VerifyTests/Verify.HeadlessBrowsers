@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace VerifyTests;
+﻿namespace VerifyTests;
 
 public static class VerifyPlaywright
 {
@@ -52,18 +50,16 @@ public static class VerifyPlaywright
 
         await RemovePlaywrightStyle(page);
 
-
         var targets = new List<Target>();
         if (!context.GetScreenshotOnlyOption())
-            {
+        {
             var html = await page.ContentAsync();
-            targets.Add(new Target("html", html));
-            }
-        targets.Add(new Target(imageType, new MemoryStream(await bytes)));
+            targets.Add(new("html", html));
+        }
 
-        return new ConversionResult(null, targets);
+        targets.Add(new(imageType, new MemoryStream(await bytes)));
 
-    
+        return new(null, targets);
     }
 
     static async Task RemovePlaywrightStyle(IPage page)
@@ -102,15 +98,14 @@ public static class VerifyPlaywright
 
         var targets = new List<Target>();
         if (!context.GetScreenshotOnlyOption())
-            {
+        {
             var html = await element.InnerHTMLAsync();
-            targets.Add(new Target("html", html));
-            }
-        targets.Add(new Target(imageType, new MemoryStream(await bytes)));
+            targets.Add(new("html", html));
+        }
 
-        return new ConversionResult(null, targets);
+        targets.Add(new(imageType, new MemoryStream(await bytes)));
 
-      
+        return new(null, targets);
     }
 
     public static void PageScreenshotOptions(this VerifySettings settings, PageScreenshotOptions options) =>
@@ -168,21 +163,21 @@ public static class VerifyPlaywright
     }
 
     public static SettingsTask LocatorScreenshotOptions(this SettingsTask settings, LocatorScreenshotOptions options, bool screenshotOnly = false)
-        {
+    {
         settings.CurrentSettings.LocatorScreenshotOptions(options);
         settings.CurrentSettings.Context["Playwright.ScreenshotOnly"] = screenshotOnly;
         return settings;
-        }
+    }
 
     static bool GetScreenshotOnlyOption(this IReadOnlyDictionary<string, object> context)
-        {
+    {
         if (context.TryGetValue("Playwright.ScreenshotOnly", out var value))
-            {
-            return (bool)value;
-            }
+        {
+            return (bool) value;
+        }
 
         return false;
-        }
+    }
 
     public static SettingsTask LocatorScreenshotOptions(this SettingsTask settings, LocatorScreenshotOptions options)
     {
@@ -194,7 +189,7 @@ public static class VerifyPlaywright
     {
         if (context.TryGetValue("Playwright.LocatorScreenshotOptions", out var value))
         {
-            options = (LocatorScreenshotOptions)value;
+            options = (LocatorScreenshotOptions) value;
             ValidateNoPath(options.Path);
             return true;
         }
@@ -229,12 +224,13 @@ public static class VerifyPlaywright
 
         var targets = new List<Target>();
         if (!context.GetScreenshotOnlyOption())
-            {
+        {
             var html = await locator.InnerHTMLAsync();
-            targets.Add(new Target("html", html));
-            }
-        targets.Add(new Target(imageType, new MemoryStream(await bytes)));
-
-        return new ConversionResult(null, targets);
+            targets.Add(new("html", html));
         }
+
+        targets.Add(new(imageType, new MemoryStream(await bytes)));
+
+        return new(null, targets);
+    }
 }

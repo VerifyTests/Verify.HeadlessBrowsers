@@ -49,6 +49,7 @@ public class PlaywrightTests
 
         #endregion
     }
+
     [Test]
     public async Task PageScreenshotOptionsOnly()
     {
@@ -62,7 +63,8 @@ public class PlaywrightTests
                 {
                     Quality = 50,
                     Type = ScreenshotType.Jpeg
-                },screenshotOnly:true);
+                },
+                screenshotOnly: true);
 
         #endregion
     }
@@ -79,6 +81,7 @@ public class PlaywrightTests
 
         #endregion
     }
+
     [Test]
     public async Task LocatorUsage()
     {
@@ -91,6 +94,7 @@ public class PlaywrightTests
 
         #endregion
     }
+
     [Test]
     public async Task ElementScreenshotOptions()
     {
@@ -109,6 +113,7 @@ public class PlaywrightTests
 
         #endregion
     }
+
     [Test]
     public async Task ElementScreenshotOptionsOnly()
     {
@@ -123,7 +128,8 @@ public class PlaywrightTests
                 {
                     Quality = 50,
                     Type = ScreenshotType.Jpeg
-                },screenshotOnly:true);
+                },
+                screenshotOnly: true);
 
         #endregion
     }
@@ -146,6 +152,7 @@ public class PlaywrightTests
 
         #endregion
     }
+
     [Test]
     public async Task LocatorScreenshotOptionsOnly()
     {
@@ -160,10 +167,12 @@ public class PlaywrightTests
                 {
                     Quality = 50,
                     Type = ScreenshotType.Jpeg
-                },screenshotOnly:true);
+                },
+                screenshotOnly: true);
 
         #endregion
     }
+
     [OneTimeTearDown]
     public async Task DisposeAsync()
     {
