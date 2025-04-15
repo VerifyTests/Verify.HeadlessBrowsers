@@ -112,9 +112,9 @@ await Verify(page)
         {
             Quality = 50,
             Type = ScreenshotType.Jpeg
-        },screenshotOnly:true);
+        });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Page screenshot only option
@@ -132,9 +132,9 @@ await Verify(page)
         {
             Quality = 50,
             Type = ScreenshotType.Jpeg
-        }, screenshotOnly:true);
+        });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L55-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -172,6 +172,20 @@ Learn more
 
 <!-- snippet: ElementScreenshotOptions -->
 <a id='snippet-ElementScreenshotOptions'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+var element = await page.QuerySelectorAsync("#someId");
+await Verify(element!)
+    .ElementScreenshotOptions(
+        new()
+        {
+            Quality = 50,
+            Type = ScreenshotType.Jpeg
+        });
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L97-L110' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-ElementScreenshotOptions-1'></a>
 ```cs
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
@@ -221,7 +235,6 @@ Learn more
 
 <!-- snippet: LocatorScreenshotOptions -->
 <a id='snippet-LocatorScreenshotOptions'></a>
-
 ```cs
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
@@ -234,7 +247,7 @@ await Verify(element)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L134-L147' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L134-L147' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 #### Locator screenshot only option
@@ -243,7 +256,6 @@ Passing in a true into the to the screenshotOnly option will discard Locator HTM
 
 <!-- snippet: LocatorScreenshotOptions -->
 <a id='snippet-LocatorScreenshotOptions'></a>
-
 ```cs
 var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
@@ -254,9 +266,9 @@ await Verify(element)
         {
             Quality = 50,
             Type = ScreenshotType.Jpeg
-        }, screenshotOnly:true);
+        });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L152-L165' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L134-L147' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
