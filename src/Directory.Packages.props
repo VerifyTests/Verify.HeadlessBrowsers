@@ -13,7 +13,7 @@
     <PackageVersion Include="ProjectDefaults" Version="1.0.150" />
     <PackageVersion Include="PuppeteerSharp" Version="20.1.3" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.31.0" />
-    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="135.0.7049.11400" />
+    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="136.0.7103.4900" />
     <PackageVersion Include="Verify" Version="30.0.0" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
     <PackageVersion Include="Verify.ImageMagick" Version="3.6.0" />
