@@ -11,14 +11,16 @@ Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of
 **See [Milestones](../../milestones?state=closed) for release notes.**
 
 
+## NuGet
+
+ * https://nuget.org/packages/Verify.Playwright
+ * https://nuget.org/packages/Verify.Puppeteer
+ * https://nuget.org/packages/Verify.Selenium
+
+
 ## Playwright Usage
 
 Verification of Web UIs via [Playwright](https://github.com/microsoft/playwright-sharp).
-
-
-### NuGet package
-
-https://nuget.org/packages/Verify.Playwright/
 
 
 ### Enable
@@ -283,11 +285,6 @@ await Verify(element)
 Verification of Web UIs via [Puppeteer](https://github.com/hardkoded/puppeteer-sharp)
 
 
-### NuGet package
-
-https://nuget.org/packages/Verify.Puppeteer/
-
-
 ### Enable
 
 Enable VerifyPuppeteer once at assembly load time:
@@ -407,11 +404,6 @@ Learn more
 ## Selenium Usage
 
 Verification of Web UIs via [Selenium](https://www.selenium.dev).
-
-
-### NuGet package
-
-https://nuget.org/packages/Verify.Selenium/
 
 
 ### Enable
