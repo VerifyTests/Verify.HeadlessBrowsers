@@ -8,6 +8,7 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" PrivateAssets="all" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" />
     <PackageReference Include="Selenium.WebDriver" />
+    <PackageReference Include="Verify.AngleSharp" />
     <PackageReference Include="Verify.ImageMagick" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" />
     <PackageReference Include="NUnit3TestAdapter" />

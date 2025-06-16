@@ -59,7 +59,7 @@ await SocketWaiter.Wait(port: 5000);
 playwright = await Playwright.CreateAsync();
 browser = await playwright.Chromium.LaunchAsync();
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L12-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightBuild' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L13-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightBuild' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -74,7 +74,7 @@ var page = await browser.NewPageAsync();
 await page.GotoAsync("http://localhost:5000");
 await Verify(page);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L26-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightPageUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L27-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightPageUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -126,7 +126,7 @@ await Verify(page)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L52-L64' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -148,7 +148,7 @@ await Verify(page)
         },
         screenshotOnly: true);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L56-L69' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOnlyOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L70-L83' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageScreenshotOnlyOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -164,7 +164,7 @@ await page.GotoAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element!);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L75-L82' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightElementUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L89-L96' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightElementUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -198,7 +198,7 @@ await Verify(element!)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L101-L114' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L115-L128' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <a id='snippet-ElementScreenshotOptions-1'></a>
 ```cs
 var page = await browser.NewPageAsync();
@@ -213,7 +213,7 @@ await Verify(element!)
         },
         screenshotOnly: true);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L120-L134' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L134-L148' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -229,7 +229,7 @@ await page.GotoAsync("http://localhost:5000");
 var element = page.Locator("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L88-L95' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightLocatorUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L102-L109' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightLocatorUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -263,7 +263,7 @@ await Verify(element)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L140-L153' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L154-L167' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -286,7 +286,7 @@ await Verify(element)
         },
         screenshotOnly: true);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L159-L173' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOnlyOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L173-L187' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOnlyOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -528,6 +528,78 @@ With the state of the element being rendered as a verified files:
 
 The rendering can very slightly between different OS versions. This can make verification on different machines (eg CI) problematic. A [custom comparer](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md) can to mitigate this.
 
+
+## Compatibility with other Verify plugins
+
+This projects is designed to be compatible with other Verify plugins. One common scenario for combining plugins is using [Verify.AngleSharp](https://github.com/VerifyTests/Verify.AngleSharp) to manipulate the verified html.
+
+For example using the Verify.AngleSharp [Pretty Print](https://github.com/VerifyTests/Verify.AngleSharp?tab=readme-ov-file#pretty-print) extension.
+
+<!-- snippet: UsageWithAngleSharp -->
+<a id='snippet-UsageWithAngleSharp'></a>
+```cs
+var page = await browser.NewPageAsync();
+await page.GotoAsync("http://localhost:5000");
+await Verify(page)
+    .PrettyPrintHtml();
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L39-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-UsageWithAngleSharp' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Without the `.PrettyPrintHtml()` the result is:
+
+<!-- snippet: PlaywrightTests.PageUsage.verified.html -->
+<a id='snippet-PlaywrightTests.PageUsage.verified.html'></a>
+```html
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>The Title</title>
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="jumbotron">
+    <h1 class="display-4">The Awareness Of Relative Idealism</h1>
+    <p class="lead">
+      One hears it stated that a factor within the logical radical priority embodies the
+      key principles behind the best practice marginalised certification project. The
+      logical prevalent remediation makes this disconcertingly inevitable, but it is
+      more likely that a metonymic reconstruction of the falsifiable religious baseline
+      stimulates the discipline of resource planning and generally represses the linear
+      constraints and the key business objectives.
+    </p>
+    <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+
+</body></html>
+```
+<sup><a href='/src/Tests/PlaywrightTests.PageUsage.verified.html#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.PageUsage.verified.html' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+but with it added, the result is:
+
+<!-- snippet: PlaywrightTests.UsageWithAngleSharp.verified.html -->
+<a id='snippet-PlaywrightTests.UsageWithAngleSharp.verified.html'></a>
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Title</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-4">The Awareness Of Relative Idealism</h1>
+      <p class="lead">
+        One hears it stated that a factor within the logical radical priority embodies the       key principles behind the best practice marginalised certification project. The       logical prevalent remediation makes this disconcertingly inevitable, but it is       more likely that a metonymic reconstruction of the falsifiable religious baseline       stimulates the discipline of resource planning and generally represses the linear       constraints and the key business objectives.
+      </p>
+      <a id="someId" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+  </body>
+</html>
+```
+<sup><a href='/src/Tests/PlaywrightTests.UsageWithAngleSharp.verified.html#L1-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightTests.UsageWithAngleSharp.verified.html' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 ## Icon
 

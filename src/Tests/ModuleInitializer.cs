@@ -27,8 +27,7 @@
     [ModuleInitializer]
     public static void InitOther()
     {
-        VerifyDiffPlex.Initialize();
-        VerifyImageMagick.Initialize();
         VerifyImageMagick.RegisterComparers(.12);
+        VerifierSettings.InitializePlugins();
     }
 }

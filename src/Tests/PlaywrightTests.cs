@@ -1,4 +1,5 @@
 using Microsoft.Playwright;
+using VerifyTests.AngleSharp;
 using VerifyTests.Playwright;
 
 public class PlaywrightTests
@@ -28,6 +29,19 @@ public class PlaywrightTests
         var page = await browser.NewPageAsync();
         await page.GotoAsync("http://localhost:5000");
         await Verify(page);
+
+        #endregion
+    }
+
+    [Test]
+    public async Task UsageWithAngleSharp()
+    {
+        #region UsageWithAngleSharp
+
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        await Verify(page)
+            .PrettyPrintHtml();
 
         #endregion
     }
