@@ -6,7 +6,7 @@
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Puppeteer.svg?label=Verify.Puppeteer)](https://www.nuget.org/packages/Verify.Puppeteer/)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Selenium.svg?label=Verify.Selenium)](https://www.nuget.org/packages/Verify.Selenium/)
 
-Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs using headless browsers.
+Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of Web UIs using headless browsers.<!-- singleLineInclude: intro. path: /docs/intro.include.md -->
 
 **See [Milestones](../../milestones?state=closed) for release notes.**
 
@@ -16,9 +16,9 @@ Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of
 
 ### Entity Framework Extensions<!-- include: zzz. path: /docs/zzz.include.md -->
 
-[Entity Framework Extensions](https://entityframework-extensions.net/) is a major sponsor and is proud to contribute to the development this project.
+[Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=simoncropp&utm_medium=Verify.HeadlessBrowsers) is a major sponsor and is proud to contribute to the development this project.
 
-[![Entity Framework Extensions](docs/zzz.png)](https://entityframework-extensions.net)<!-- endInclude -->
+[![Entity Framework Extensions](https://raw.githubusercontent.com/VerifyTests/Verify.HeadlessBrowsers/refs/heads/main/docs/zzz.png)](https://entityframework-extensions.net/?utm_source=simoncropp&utm_medium=Verify.HeadlessBrowsers)<!-- endInclude -->
 
 
 ## NuGet
