@@ -4,25 +4,9 @@
     {
         await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 
-        Task<byte[]> bytes;
-        var imageType = "png";
-        if (context.GetPageScreenshotOptions(out var options))
-        {
-            bytes = page.ScreenshotAsync(options);
-            if (options.Type == ScreenshotType.Jpeg)
-            {
-                imageType = "jpg";
-            }
-        }
-        else
-        {
-            bytes = page.ScreenshotAsync(
-                new()
-                {
-                    FullPage = true,
-                    Type = ScreenshotType.Png
-                });
-        }
+        var options = context.GetPageScreenshotOptions();
+        var bytes = page.ScreenshotAsync(options);
+        var imageType = options.Type == ScreenshotType.Jpeg ? "jpg" : "png";
 
         await page.RemovePlaywrightStyle();
 
