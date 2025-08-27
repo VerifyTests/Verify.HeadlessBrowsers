@@ -1,6 +1,6 @@
-﻿static class ImageBuilder
+﻿static class ElementConverter
 {
-    public static async Task<ConversionResult> PageToImage(IPage page, IReadOnlyDictionary<string, object> context)
+    public static async Task<ConversionResult> ConvertPage(IPage page, IReadOnlyDictionary<string, object> context)
     {
         await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
 
@@ -38,7 +38,7 @@
         return new(null, targets);
     }
 
-    public static async Task<ConversionResult> ElementToImage(IElementHandle element, IReadOnlyDictionary<string, object> context)
+    public static async Task<ConversionResult> ConvertElement(IElementHandle element, IReadOnlyDictionary<string, object> context)
     {
         Task<byte[]> bytes;
         var imageType = "png";
@@ -71,7 +71,7 @@
         return new(null, targets);
     }
 
-    public static async Task<ConversionResult> LocatorToImage(ILocator locator, IReadOnlyDictionary<string, object> context)
+    public static async Task<ConversionResult> ConvertLocator(ILocator locator, IReadOnlyDictionary<string, object> context)
     {
         Task<byte[]> bytes;
         var imageType = "png";

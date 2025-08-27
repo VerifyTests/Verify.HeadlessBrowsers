@@ -19,9 +19,9 @@ public static partial class VerifyPlaywright
             Program.Main(["install"]);
         }
 
-        VerifierSettings.RegisterFileConverter<IPage>(ImageBuilder.PageToImage);
-        VerifierSettings.RegisterFileConverter<IElementHandle>(ImageBuilder.ElementToImage);
-        VerifierSettings.RegisterFileConverter<ILocator>(ImageBuilder.LocatorToImage);
+        VerifierSettings.RegisterFileConverter<IPage>(ElementConverter.ConvertPage);
+        VerifierSettings.RegisterFileConverter<IElementHandle>(ElementConverter.ConvertElement);
+        VerifierSettings.RegisterFileConverter<ILocator>(ElementConverter.ConvertLocator);
     }
 
     static void ValidateNoPath(string? path)
