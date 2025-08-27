@@ -12,16 +12,18 @@ public static partial class VerifyPlaywright
         return settings;
     }
 
-    internal static bool GetElementScreenshotOptions(this IReadOnlyDictionary<string, object> context, [NotNullWhen(true)] out ElementHandleScreenshotOptions? options)
+    internal static ElementHandleScreenshotOptions GetElementScreenshotOptions(this IReadOnlyDictionary<string, object> context)
     {
         if (context.TryGetValue("Playwright.ElementScreenshotOptions", out var value))
         {
-            options = (ElementHandleScreenshotOptions) value;
+            var options = (ElementHandleScreenshotOptions) value;
             ValidateNoPath(options.Path);
-            return true;
+            return options;
         }
 
-        options = null;
-        return false;
+        return new()
+        {
+            Type = ScreenshotType.Png
+        };
     }
 }

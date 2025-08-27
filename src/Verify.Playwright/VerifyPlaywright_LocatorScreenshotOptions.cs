@@ -8,17 +8,19 @@ public static partial class VerifyPlaywright
         return settings;
     }
 
-    internal static bool GetLocatorScreenshotOptions(this IReadOnlyDictionary<string, object> context, [NotNullWhen(true)] out LocatorScreenshotOptions? options)
+    internal static LocatorScreenshotOptions GetLocatorScreenshotOptions(this IReadOnlyDictionary<string, object> context)
     {
         if (context.TryGetValue("Playwright.LocatorScreenshotOptions", out var value))
         {
-            options = (LocatorScreenshotOptions)value;
+            var options = (LocatorScreenshotOptions)value;
             ValidateNoPath(options.Path);
-            return true;
+            return options;
         }
 
-        options = null;
-        return false;
+        return new()
+        {
+            Type = ScreenshotType.Png
+        };
     }
 
     static void LocatorScreenshotOptions(this VerifySettings settings, LocatorScreenshotOptions options) =>

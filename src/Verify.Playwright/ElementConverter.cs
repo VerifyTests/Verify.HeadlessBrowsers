@@ -6,7 +6,6 @@
 
         var options = context.GetPageScreenshotOptions();
         var bytes = page.ScreenshotAsync(options);
-        var imageType = options.Type == ScreenshotType.Jpeg ? "jpg" : "png";
 
         await page.RemovePlaywrightStyle();
 
@@ -17,31 +16,15 @@
             targets.Add(new("html", html));
         }
 
-        targets.Add(new(imageType, new MemoryStream(await bytes)));
+        targets.Add(new(options.ToExtension(), new MemoryStream(await bytes)));
 
         return new(null, targets);
     }
 
     public static async Task<ConversionResult> ConvertElement(IElementHandle element, IReadOnlyDictionary<string, object> context)
     {
-        Task<byte[]> bytes;
-        var imageType = "png";
-        if (context.GetElementScreenshotOptions(out var options))
-        {
-            bytes = element.ScreenshotAsync(options);
-            if (options.Type == ScreenshotType.Jpeg)
-            {
-                imageType = "jpg";
-            }
-        }
-        else
-        {
-            bytes = element.ScreenshotAsync(
-                new()
-                {
-                    Type = ScreenshotType.Png
-                });
-        }
+        var options = context.GetElementScreenshotOptions();
+        var bytes = element.ScreenshotAsync(options);
 
         var targets = new List<Target>();
         if (!context.GetScreenshotOnlyOption())
@@ -50,31 +33,15 @@
             targets.Add(new("html", html));
         }
 
-        targets.Add(new(imageType, new MemoryStream(await bytes)));
+        targets.Add(new(options.ToExtension(), new MemoryStream(await bytes)));
 
         return new(null, targets);
     }
 
     public static async Task<ConversionResult> ConvertLocator(ILocator locator, IReadOnlyDictionary<string, object> context)
     {
-        Task<byte[]> bytes;
-        var imageType = "png";
-        if (context.GetLocatorScreenshotOptions(out var options))
-        {
-            bytes = locator.ScreenshotAsync(options);
-            if (options.Type == ScreenshotType.Jpeg)
-            {
-                imageType = "jpg";
-            }
-        }
-        else
-        {
-            bytes = locator.ScreenshotAsync(
-                new()
-                {
-                    Type = ScreenshotType.Png
-                });
-        }
+        var options = context.GetLocatorScreenshotOptions();
+        var bytes = locator.ScreenshotAsync(options);
 
         var targets = new List<Target>();
         if (!context.GetScreenshotOnlyOption())
@@ -83,8 +50,17 @@
             targets.Add(new("html", html));
         }
 
-        targets.Add(new(imageType, new MemoryStream(await bytes)));
+        targets.Add(new(options.ToExtension(), new MemoryStream(await bytes)));
 
         return new(null, targets);
     }
+
+    static string ToExtension(this PageScreenshotOptions options) =>
+        options.Type == ScreenshotType.Jpeg ? "jpg" : "png";
+
+    static string ToExtension(this ElementHandleScreenshotOptions options) =>
+        options.Type == ScreenshotType.Jpeg ? "jpg" : "png";
+
+    static string ToExtension(this LocatorScreenshotOptions options) =>
+        options.Type == ScreenshotType.Jpeg ? "jpg" : "png";
 }
