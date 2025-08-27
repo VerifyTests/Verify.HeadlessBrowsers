@@ -40,11 +40,10 @@ public static class VerifySelenium
         var bytes = driver.GetScreenshot().AsByteArray;
         return new(
             null,
-            new List<Target>
-            {
+            [
                 new("html", driver.PageSource),
                 new("png", new MemoryStream(bytes))
-            }
+            ]
         );
     }
 }

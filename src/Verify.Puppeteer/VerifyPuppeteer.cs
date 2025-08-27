@@ -25,11 +25,10 @@ public static class VerifyPuppeteer
 
         return new(
             null,
-            new List<Target>
-            {
+            [
                 new("html", await html),
                 new("png", await screenshot)
-            }
+            ]
         );
     }
 
@@ -40,11 +39,10 @@ public static class VerifyPuppeteer
 
         return new(
             null,
-            new List<Target>
-            {
+            [
                 new("html", html),
                 new("png", screenshot)
-            }
+            ]
         );
     }
 }
