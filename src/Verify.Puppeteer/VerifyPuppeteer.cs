@@ -14,35 +14,7 @@ public static class VerifyPuppeteer
         Initialized = true;
 
         InnerVerifier.ThrowIfVerifyHasBeenRun();
-        VerifierSettings.RegisterFileConverter<ElementHandle>(ElementToImage);
-        VerifierSettings.RegisterFileConverter<Page>(PageToImage);
-    }
-
-    static async Task<ConversionResult> PageToImage(Page page, IReadOnlyDictionary<string, object> context)
-    {
-        var screenshot = page.ScreenshotStreamAsync();
-        var html = page.GetContentAsync();
-
-        return new(
-            null,
-            [
-                new("html", await html),
-                new("png", await screenshot)
-            ]
-        );
-    }
-
-    static async Task<ConversionResult> ElementToImage(ElementHandle element, IReadOnlyDictionary<string, object> context)
-    {
-        var screenshot = await element.ScreenshotStreamAsync();
-        var html = await element.EvaluateFunctionAsync<string>("element => element.innerHTML");
-
-        return new(
-            null,
-            [
-                new("html", html),
-                new("png", screenshot)
-            ]
-        );
+        VerifierSettings.RegisterFileConverter<ElementHandle>(ElementConverter.ConvertElement);
+        VerifierSettings.RegisterFileConverter<Page>(ElementConverter.ConvertPage);
     }
 }
