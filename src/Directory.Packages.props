@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="14.8.2" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.0-beta.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="9.0.8" />
+    <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="9.0.9" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="Microsoft.Playwright" Version="1.55.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="5.1.0" />
