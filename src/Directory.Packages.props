@@ -12,7 +12,7 @@
     <PackageVersion Include="NUnit3TestAdapter" Version="5.1.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.161" />
     <PackageVersion Include="PuppeteerSharp" Version="20.2.2" />
-    <PackageVersion Include="Selenium.WebDriver" Version="4.35.0" />
+    <PackageVersion Include="Selenium.WebDriver" Version="4.36.0" />
     <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="141.0.7390.5400" />
     <PackageVersion Include="Verify" Version="30.20.0" />
     <PackageVersion Include="Verify.AngleSharp" Version="4.7.0" />
