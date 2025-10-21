@@ -1,4 +1,4 @@
-namespace VerifyTests.Playwright;
+namespace VerifyTestsPlaywright;
 
 public static class SocketWaiter
 {

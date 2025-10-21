@@ -1,6 +1,6 @@
 using Microsoft.Playwright;
 using VerifyTests.AngleSharp;
-using VerifyTests.Playwright;
+using VerifyTestsPlaywright;
 
 public class PlaywrightTests
 {
