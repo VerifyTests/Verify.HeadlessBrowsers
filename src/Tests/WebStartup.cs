@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
-
+﻿#pragma warning disable ASPDEPR008
+#pragma warning disable ASPDEPR004
 public static class WebStartup
 {
     [ModuleInitializer]
