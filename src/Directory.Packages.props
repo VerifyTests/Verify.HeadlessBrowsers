@@ -10,7 +10,7 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="Microsoft.Playwright" Version="1.56.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="5.2.0" />
-    <PackageVersion Include="ProjectDefaults" Version="1.0.162" />
+    <PackageVersion Include="ProjectDefaults" Version="1.0.163" />
     <PackageVersion Include="PuppeteerSharp" Version="20.2.4" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.38.0" />
     <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="142.0.7444.17500" />
