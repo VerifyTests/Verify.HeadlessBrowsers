@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Remove-Item -Recurse -Force \"C:\\Users\\simon\\.nuget\\packages\\magick.net.core\\14.10.0\")",
+      "Bash(powershell -Command \"Remove-Item -Recurse -Force ''C:\\Users\\simon\\.nuget\\packages\\magick.net.core\\14.10.0''\")",
+      "Bash(dotnet restore:*)"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-<Solution>
+﻿<Solution>
   <Configurations>
     <Platform Name="Any CPU" />
     <Platform Name="ARM" />
@@ -12,7 +12,7 @@
     <File Path="../docs/zzz.include.md" />
     <File Path="../readme.md" />
     <File Path=".editorconfig" />
-    <File Path=".gitattributes" />
+    <File Path="../.gitattributes" />
     <File Path="appveyor.yml" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
