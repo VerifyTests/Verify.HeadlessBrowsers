@@ -13,12 +13,12 @@
     <PackageVersion Include="ProjectDefaults" Version="1.0.170" />
     <PackageVersion Include="PuppeteerSharp" Version="20.2.5" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.40.0" />
-    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="144.0.7559.9600" />
-    <PackageVersion Include="Verify" Version="31.9.4" />
+    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="144.0.7559.10900" />
+    <PackageVersion Include="Verify" Version="31.10.0" />
     <PackageVersion Include="Verify.AngleSharp" Version="4.7.0" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
     <PackageVersion Include="Verify.ImageMagick" Version="3.8.3" />
-    <PackageVersion Include="Verify.NUnit" Version="31.9.4" />
+    <PackageVersion Include="Verify.NUnit" Version="31.10.0" />
     <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.5" />
     <!-- explicit to avoid a cve -->
     <PackageVersion Include="System.Text.Json" Version="10.0.2" />
