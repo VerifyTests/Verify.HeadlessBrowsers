@@ -9,7 +9,7 @@
     <PackageReference Include="PuppeteerSharp" />
     <PackageReference Include="Verify" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Sbom.Targets" PrivateAssets="all" Condition="$(Configuration)=='Release'" />
+    <PackageReference Include="Microsoft.Sbom.Targets" PrivateAssets="all" Condition="'$(CI)' == 'true'" />
     <Compile Include="..\Verify.Playwright\InnerSocketWaiter.cs" />
   </ItemGroup>
 </Project>
