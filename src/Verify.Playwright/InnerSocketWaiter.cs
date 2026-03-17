@@ -1,3 +1,5 @@
+using ProtocolType = System.Net.Sockets.ProtocolType;
+
 static class InnerSocketWaiter
 {
     public static async Task Wait(int port)
