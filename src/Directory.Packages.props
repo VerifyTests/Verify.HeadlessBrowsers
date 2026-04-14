@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="14.12.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.1.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.5" />
+    <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.6" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
     <PackageVersion Include="Microsoft.Playwright" Version="1.59.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="6.2.0" />
@@ -21,7 +21,7 @@
     <PackageVersion Include="Verify.NUnit" Version="31.15.0" />
     <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.5" />
     <!-- explicit to avoid a cve -->
-    <PackageVersion Include="System.Text.Json" Version="10.0.5" />
+    <PackageVersion Include="System.Text.Json" Version="10.0.6" />
     <PackageVersion Include="Argon" Version="0.33.5" />
     <PackageVersion Include="DiffEngine" Version="19.1.2" />
     <PackageVersion Include="EmptyFiles" Version="8.17.2" />
