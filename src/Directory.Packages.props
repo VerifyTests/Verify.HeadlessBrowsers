@@ -6,13 +6,13 @@
   <ItemGroup>
     <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="14.13.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.2.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.8" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.5.1" />
     <PackageVersion Include="Microsoft.Playwright" Version="1.59.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="6.2.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.174" />
     <PackageVersion Include="PuppeteerSharp" Version="24.42.0" />
-    <PackageVersion Include="Selenium.WebDriver" Version="4.43.0" />
+    <PackageVersion Include="Selenium.WebDriver" Version="4.44.0" />
     <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="148.0.7778.9700" />
     <PackageVersion Include="Verify" Version="31.16.3" />
     <PackageVersion Include="Verify.AngleSharp" Version="4.7.0" />
@@ -21,7 +21,7 @@
     <PackageVersion Include="Verify.NUnit" Version="31.16.3" />
     <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.5" />
     <!-- explicit to avoid a cve -->
-    <PackageVersion Include="System.Text.Json" Version="10.0.7" />
+    <PackageVersion Include="System.Text.Json" Version="10.0.8" />
     <PackageVersion Include="Argon" Version="0.33.5" />
     <PackageVersion Include="DiffEngine" Version="19.2.0" />
     <PackageVersion Include="EmptyFiles" Version="8.18.1" />
