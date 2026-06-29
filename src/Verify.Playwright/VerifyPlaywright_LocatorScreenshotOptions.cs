@@ -2,12 +2,6 @@
 
 public static partial class VerifyPlaywright
 {
-    public static SettingsTask LocatorScreenshotOptions(this SettingsTask settings, LocatorScreenshotOptions options)
-    {
-        settings.CurrentSettings.LocatorScreenshotOptions(options);
-        return settings;
-    }
-
     internal static LocatorScreenshotOptions GetLocatorScreenshotOptions(this IReadOnlyDictionary<string, object> context)
     {
         if (context.TryGetValue("Playwright.LocatorScreenshotOptions", out var value))
@@ -23,7 +17,7 @@ public static partial class VerifyPlaywright
         };
     }
 
-    static void LocatorScreenshotOptions(this VerifySettings settings, LocatorScreenshotOptions options) =>
+    public static void LocatorScreenshotOptions(this VerifySettings settings, LocatorScreenshotOptions options) =>
         settings.Context["Playwright.LocatorScreenshotOptions"] = options;
 
     public static SettingsTask LocatorScreenshotOptions(this SettingsTask settings, LocatorScreenshotOptions options, bool screenshotOnly = false)
