@@ -8,7 +8,10 @@ static class ElementConverter
         return new(
             null,
             [
-                new("html", await html),
+                new("html", await html)
+                {
+                    BypassComparersForSubsequentOnDifference = true
+                },
                 new("png", await screenshot)
             ]
         );
@@ -22,7 +25,10 @@ static class ElementConverter
         return new(
             null,
             [
-                new("html", await html),
+                new("html", await html)
+                {
+                    BypassComparersForSubsequentOnDifference = true
+                },
                 new("png", await screenshot)
             ]
         );

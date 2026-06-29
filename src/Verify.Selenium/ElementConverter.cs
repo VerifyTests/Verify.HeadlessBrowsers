@@ -10,7 +10,11 @@ static class ElementConverter
         var source = element.GetSource();
         if (source != null)
         {
-            targets.Add(new("html", source));
+            targets.Add(
+                new("html", source)
+                {
+                    BypassComparersForSubsequentOnDifference = true
+                });
         }
 
         targets.Add(new("png", new MemoryStream(bytes)));
@@ -24,7 +28,10 @@ static class ElementConverter
         return new(
             null,
             [
-                new("html", driver.PageSource),
+                new("html", driver.PageSource)
+                {
+                    BypassComparersForSubsequentOnDifference = true
+                },
                 new("png", new MemoryStream(bytes))
             ]
         );

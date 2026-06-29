@@ -13,7 +13,11 @@
         if (!context.GetScreenshotOnlyOption())
         {
             var html = await page.ContentAsync();
-            targets.Add(new("html", html));
+            targets.Add(
+                new("html", html)
+                {
+                    BypassComparersForSubsequentOnDifference = true
+                });
         }
 
         targets.Add(new(options.ToExtension(), new MemoryStream(await bytes)));
@@ -30,7 +34,11 @@
         if (!context.GetScreenshotOnlyOption())
         {
             var html = await element.InnerHTMLAsync();
-            targets.Add(new("html", html));
+            targets.Add(
+                new("html", html)
+                {
+                    BypassComparersForSubsequentOnDifference = true
+                });
         }
 
         targets.Add(new(options.ToExtension(), new MemoryStream(await bytes)));
@@ -47,7 +55,11 @@
         if (!context.GetScreenshotOnlyOption())
         {
             var html = await locator.InnerHTMLAsync();
-            targets.Add(new("html", html));
+            targets.Add(
+                new("html", html)
+                {
+                    BypassComparersForSubsequentOnDifference = true
+                });
         }
 
         targets.Add(new(options.ToExtension(), new MemoryStream(await bytes)));
