@@ -1,15 +1,14 @@
 ﻿static class StyleHelper
 {
-    public static async Task RemovePlaywrightStyle(this IPage page)
-    {
-        var elements = await page.QuerySelectorAllAsync("style");
-        foreach (var element in elements)
-        {
-            var value = await element.InnerHTMLAsync();
-            if (value.Contains("*:not(#playwright"))
-            {
-                await element.EvaluateAsync("element => element.remove()", element);
+    public static Task RemovePlaywrightStyle(this IPage page) =>
+        page.EvaluateAsync(
+            """
+            () => {
+                for (const style of document.querySelectorAll('style')) {
+                    if (style.innerHTML.includes('*:not(#playwright')) {
+                        style.remove();
+                    }
+                }
             }
-        }
-    }
+            """);
 }
