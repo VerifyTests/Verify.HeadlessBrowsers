@@ -9,7 +9,7 @@ static class InnerSocketWaiter
             using var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
             {
-                using var cancellation = new CancellationTokenSource(TimeSpan.FromMilliseconds(100));
+                using var cancellation = new CancelSource(TimeSpan.FromMilliseconds(100));
                 await socket.ConnectAsync(new DnsEndPoint("localhost", port), cancellation.Token);
                 return;
             }

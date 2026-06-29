@@ -1,5 +1,3 @@
-using System.Net;
-using System.Net.Sockets;
 using VerifyTestsPlaywright;
 
 public class SocketWaiterTests
