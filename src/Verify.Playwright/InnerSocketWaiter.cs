@@ -4,18 +4,18 @@ static class InnerSocketWaiter
 {
     public static async Task Wait(int port)
     {
-        using var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        socket.ReceiveTimeout = 100;
         for (var i = 0; i < 100; i++)
         {
+            using var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
             {
-                await socket.ConnectAsync(new DnsEndPoint("localhost", port));
+                using var cancellation = new CancellationTokenSource(TimeSpan.FromMilliseconds(100));
+                await socket.ConnectAsync(new DnsEndPoint("localhost", port), cancellation.Token);
                 return;
             }
-            catch (SocketException)
+            catch (Exception exception) when (exception is SocketException or OperationCanceledException)
             {
-                //no op
+                await Task.Delay(100);
             }
         }
 
