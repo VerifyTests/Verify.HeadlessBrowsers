@@ -528,9 +528,18 @@ With the state of the element being rendered as a verified files:
 <img src="/src/Tests/SeleniumTests.ElementUsage.verified.png">
 
 
+## Subpixel text rendering
+
+Chromium antialiases text using LCD subpixel rendering by default. The resulting color fringing is not stable between browser sessions: text on a composited layer falls back to grayscale antialiasing, and layer promotion is opportunistic, so the same page on the same machine can rasterize an element one way in one run of a test suite and another way in the next. The glyphs are identical, so the difference is invisible to a reader, but it fails a screenshot comparison.
+
+Launching the browser with the `--disable-lcd-text` argument renders text in grayscale instead, which is reproducible. For Playwright that is `Args = ["--disable-lcd-text"]` on the launch options; the same argument applies to Puppeteer and to Selenium driving Chrome.
+
+It changes how every glyph is rendered, so existing verified screenshots need to be accepted once after enabling it.
+
+
 ## OS specific rendering
 
-The rendering can very slightly between different OS versions. This can make verification on different machines (eg CI) problematic. A [custom comparer](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md) can to mitigate this.
+The rendering can vary slightly between different OS versions. This can make verification on different machines (eg CI) problematic. A [custom comparer](https://github.com/VerifyTests/Verify/blob/master/docs/comparer.md) can be used to mitigate this.
 
 
 ## Compatibility with other Verify plugins
