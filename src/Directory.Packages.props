@@ -7,13 +7,13 @@
     <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="14.16.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.4.2" />
     <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.11" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.9.0" />
     <PackageVersion Include="Microsoft.Playwright" Version="1.62.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="6.2.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.176" />
-    <PackageVersion Include="PuppeteerSharp" Version="25.5.0" />
+    <PackageVersion Include="PuppeteerSharp" Version="25.7.0" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.47.0" />
-    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="151.0.7922.7700" />
+    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="151.0.7922.13800" />
     <PackageVersion Include="Verify" Version="31.28.0" />
     <PackageVersion Include="Verify.AngleSharp" Version="5.1.2" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.3.1" />
