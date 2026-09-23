@@ -1,7 +1,7 @@
 # <img src="/src/icon.png" height="30px"> Verify Headless Browsers
 
 [![Discussions](https://img.shields.io/badge/Verify-Discussions-yellow?svg=true&label=)](https://github.com/orgs/VerifyTests/discussions)
-[![Build status](https://img.shields.io/appveyor/build/SimonCropp/verify-headlessbrowsers)](https://ci.appveyor.com/project/SimonCropp/verify-headlessbrowsers)
+[![Build status](https://github.com/VerifyTests/Verify.HeadlessBrowsers/actions/workflows/build.yml/badge.svg)](https://github.com/VerifyTests/Verify.HeadlessBrowsers/actions/workflows/build.yml)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Playwright.svg?label=Verify.Playwright)](https://www.nuget.org/packages/Verify.Playwright/)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Puppeteer.svg?label=Verify.Puppeteer)](https://www.nuget.org/packages/Verify.Puppeteer/)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Selenium.svg?label=Verify.Selenium)](https://www.nuget.org/packages/Verify.Selenium/)
