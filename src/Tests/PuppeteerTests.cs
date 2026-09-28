@@ -3,10 +3,10 @@ using VerifyTests.Puppeteer;
 
 public class PuppeteerTests
 {
-    IBrowser browser = null!;
+    static IBrowser browser = null!;
 
-    [OneTimeSetUp]
-    public async Task InitializeAsync()
+    [Before(Class)]
+    public static async Task InitializeAsync()
     {
         #region PuppeteerBuild
 
@@ -52,8 +52,8 @@ public class PuppeteerTests
         #endregion
     }
 
-    [OneTimeTearDown]
-    public async Task DisposeAsync()
+    [After(Class)]
+    public static async Task DisposeAsync()
     {
         await browser.CloseAsync();
         await browser.DisposeAsync();

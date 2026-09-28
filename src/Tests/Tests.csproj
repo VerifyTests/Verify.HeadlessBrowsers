@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
@@ -11,8 +12,8 @@
     <PackageReference Include="Verify.AngleSharp" />
     <PackageReference Include="Verify.ImageMagick" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" />
-    <PackageReference Include="NUnit3TestAdapter" />
-    <PackageReference Include="Verify.Nunit" />
+    <PackageReference Include="Verify.TUnit" />
+    <PackageReference Include="TUnit" />
     <PackageReference Include="Argon" />
     <PackageReference Include="DiffEngine" />
     <PackageReference Include="EmptyFiles" />
@@ -20,7 +21,6 @@
     <PackageReference Include="Verify" />
     <PackageReference Include="Verify.DiffPlex" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
     <ProjectReference Include="..\Verify.Playwright\Verify.Playwright.csproj" />
     <ProjectReference Include="..\Verify.Puppeteer\Verify.Puppeteer.csproj" />

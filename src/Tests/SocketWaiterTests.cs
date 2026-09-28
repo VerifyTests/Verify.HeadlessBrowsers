@@ -24,7 +24,7 @@ public class SocketWaiterTests
         // connection is refused, so Wait should still be retrying rather than
         // giving up (the pre-fix code burned through every attempt in a few ms)
         await Task.Delay(300);
-        Assert.That(waitTask.IsCompleted, Is.False);
+        await Assert.That(waitTask.IsCompleted).IsFalse();
 
         // bring the server up; Wait should connect on a subsequent retry
         listener.Start();
@@ -42,9 +42,9 @@ public class SocketWaiterTests
         var waitTask = SocketWaiter.Wait(port);
 
         var finished = await Task.WhenAny(waitTask, Task.Delay(TimeSpan.FromSeconds(45)));
-        Assert.That(finished, Is.SameAs(waitTask), "Wait blocked too long before giving up");
+        await Assert.That(finished).IsSameReferenceAs(waitTask).Because("Wait blocked too long before giving up");
 
-        Assert.ThrowsAsync<TimeoutException>(() => waitTask);
+        await Assert.ThrowsExactlyAsync<TimeoutException>(() => waitTask);
     }
 
     static int FreePort()

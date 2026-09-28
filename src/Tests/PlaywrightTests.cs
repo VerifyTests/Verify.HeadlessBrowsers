@@ -1,14 +1,14 @@
-using Microsoft.Playwright;
+﻿using Microsoft.Playwright;
 using VerifyTests.AngleSharp;
 using VerifyTestsPlaywright;
 
 public class PlaywrightTests
 {
-    IBrowser browser = null!;
-    IPlaywright playwright = null!;
+    static IBrowser browser = null!;
+    static IPlaywright playwright = null!;
 
-    [OneTimeSetUp]
-    public async Task Initialize()
+    [Before(Class)]
+    public static async Task Initialize()
     {
         #region PlaywrightBuild
 
@@ -187,8 +187,8 @@ public class PlaywrightTests
         #endregion
     }
 
-    [OneTimeTearDown]
-    public async Task DisposeAsync()
+    [After(Class)]
+    public static async Task DisposeAsync()
     {
         await browser.DisposeAsync();
         // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract

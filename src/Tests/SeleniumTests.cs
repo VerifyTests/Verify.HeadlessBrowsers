@@ -6,10 +6,10 @@ using VerifyTests.Selenium;
 
 public class SeleniumTests
 {
-    ChromeDriver driver = null!;
+    static ChromeDriver driver = null!;
 
-    [OneTimeSetUp]
-    public async Task InitializeAsync()
+    [Before(Class)]
+    public static async Task InitializeAsync()
     {
         #region SeleniumBuildDriver
 
@@ -48,8 +48,8 @@ public class SeleniumTests
         #endregion
     }
 
-    [OneTimeTearDown]
-    public void Dispose()
+    [After(Class)]
+    public static void Dispose()
     {
         driver.Quit();
         driver.Dispose();

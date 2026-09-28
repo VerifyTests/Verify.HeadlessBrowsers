@@ -1,5 +1,4 @@
-﻿[TestFixture]
-public class VerifyChecksTests
+﻿public class VerifyChecksTests
 {
     [Test]
     public Task Run() =>
