@@ -1,6 +1,7 @@
 ﻿using PuppeteerSharp;
 using VerifyTests.Puppeteer;
 
+[NotInParallel]
 public class PuppeteerTests
 {
     static IBrowser browser = null!;

@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using VerifyTests.Selenium;
 
+[NotInParallel]
 public class SeleniumTests
 {
     static ChromeDriver driver = null!;
