@@ -12,16 +12,16 @@
     <PackageVersion Include="PuppeteerSharp" Version="25.12.0" />
     <PackageVersion Include="Sbom" Version="0.3.1" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.50.0" />
-    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="154.0.8037.9200" />
-    <PackageVersion Include="Verify" Version="33.3.2-beta.1" />
+    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="155.0.8059.3900" />
+    <PackageVersion Include="Verify" Version="33.3.2" />
     <PackageVersion Include="Verify.AngleSharp" Version="5.1.2" />
     <PackageVersion Include="Verify.ImageMagick" Version="4.0.0" />
-    <PackageVersion Include="Verify.TUnit" Version="33.3.2-beta.1" />
+    <PackageVersion Include="Verify.TUnit" Version="33.3.2" />
     <PackageVersion Include="TUnit" Version="1.73.5" />
     <!-- explicit to avoid a cve -->
     <PackageVersion Include="System.Text.Json" Version="10.0.12" />
     <PackageVersion Include="Argon" Version="0.38.2" />
-    <PackageVersion Include="DiffEngine" Version="20.7.1" />
+    <PackageVersion Include="DiffEngine" Version="20.7.2" />
     <PackageVersion Include="EmptyFiles" Version="8.20.1" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.1" />
   </ItemGroup>
