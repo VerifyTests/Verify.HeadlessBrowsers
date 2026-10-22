@@ -9,7 +9,7 @@
     <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.13" />
     <PackageVersion Include="Microsoft.Playwright" Version="1.63.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.184" />
-    <PackageVersion Include="PuppeteerSharp" Version="25.14.0" />
+    <PackageVersion Include="PuppeteerSharp" Version="25.15.0" />
     <PackageVersion Include="Sbom" Version="0.3.1" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.51.0" />
     <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="155.0.8059.8400" />
