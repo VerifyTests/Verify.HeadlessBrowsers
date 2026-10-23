@@ -7,7 +7,7 @@
     <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="15.0.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.5.1" />
     <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.13" />
-    <PackageVersion Include="Microsoft.Playwright" Version="1.64.0" />
+    <PackageVersion Include="Microsoft.Playwright" Version="1.64.1" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.184" />
     <PackageVersion Include="PuppeteerSharp" Version="25.15.0" />
     <PackageVersion Include="Sbom" Version="0.3.1" />
