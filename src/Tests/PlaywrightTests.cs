@@ -83,6 +83,63 @@ public class PlaywrightTests
         #endregion
     }
 
+    // A fetch that is never answered, so the page never reaches NetworkIdle.
+    static async Task<IPage> NeverIdlePage()
+    {
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("http://localhost:5000");
+        await page.RouteAsync("**/never", _ => Task.CompletedTask);
+        await page.EvaluateAsync("() => { fetch('/never'); }");
+        return page;
+    }
+
+    [Test]
+    public async Task PageLoadState()
+    {
+        var page = await NeverIdlePage();
+
+        #region PageLoadState
+
+        await Verify(page)
+            .PageLoadState(
+                LoadState.Load,
+                new()
+                {
+                    Timeout = 10000
+                });
+
+        #endregion
+    }
+
+    [Test]
+    public async Task PageLoadStateSkip()
+    {
+        var page = await NeverIdlePage();
+
+        #region PageLoadStateSkip
+
+        await Verify(page)
+            .PageLoadState(null);
+
+        #endregion
+    }
+
+    [Test]
+    public async Task PageLoadStateTimeout()
+    {
+        var page = await NeverIdlePage();
+
+        await Assert.That(
+                async () => await Verify(page)
+                    .PageLoadState(
+                        LoadState.NetworkIdle,
+                        new()
+                        {
+                            Timeout = 1000
+                        }))
+            .Throws<TimeoutException>();
+    }
+
     [Test]
     public async Task ElementUsage()
     {
