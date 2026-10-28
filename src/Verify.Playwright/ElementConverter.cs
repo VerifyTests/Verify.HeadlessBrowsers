@@ -2,7 +2,7 @@
 {
     public static async Task<ConversionResult> ConvertPage(IPage page, IReadOnlyDictionary<string, object> context)
     {
-        await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+        await context.WaitForLoadState(page);
 
         var options = context.GetPageScreenshotOptions();
         var bytes = page.ScreenshotAsync(options);

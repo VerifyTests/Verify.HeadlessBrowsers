@@ -156,6 +156,36 @@ await Verify(page)
 <!-- endSnippet -->
 
 
+#### PageLoadState
+
+Before capturing a page, Verify waits for it to reach `LoadState.NetworkIdle`, with Playwright's default timeout. A page that never stops making requests (polling, a long-lived connection, a request that never completes) times out there. `PageLoadState` waits for a different load state, or with different options, instead:
+
+<!-- snippet: PageLoadState -->
+<a id='snippet-PageLoadState'></a>
+```cs
+await Verify(page)
+    .PageLoadState(
+        LoadState.Load,
+        new()
+        {
+            Timeout = 10000
+        });
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L101-L111' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageLoadState' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Passing null skips the wait, for a test that has already waited for what it needs:
+
+<!-- snippet: PageLoadStateSkip -->
+<a id='snippet-PageLoadStateSkip'></a>
+```cs
+await Verify(page)
+    .PageLoadState(null);
+```
+<sup><a href='/src/Tests/PlaywrightTests.cs#L119-L124' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageLoadStateSkip' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+
 ### Element test
 
 An element can be verified as follows:
@@ -168,7 +198,7 @@ await page.GotoAsync("http://localhost:5000");
 var element = await page.QuerySelectorAsync("#someId");
 await Verify(element!);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L89-L96' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightElementUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L146-L153' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightElementUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -202,7 +232,7 @@ await Verify(element!)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L115-L128' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L172-L185' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <a id='snippet-ElementScreenshotOptions-1'></a>
 ```cs
 var page = await browser.NewPageAsync();
@@ -217,7 +247,7 @@ await Verify(element!)
         },
         screenshotOnly: true);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L134-L148' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L191-L205' title='Snippet source file'>snippet source</a> | <a href='#snippet-ElementScreenshotOptions-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -233,7 +263,7 @@ await page.GotoAsync("http://localhost:5000");
 var element = page.Locator("#someId");
 await Verify(element);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L102-L109' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightLocatorUsage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L159-L166' title='Snippet source file'>snippet source</a> | <a href='#snippet-PlaywrightLocatorUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 With the state of the element being rendered as a verified files:
@@ -267,7 +297,7 @@ await Verify(element)
             Type = ScreenshotType.Jpeg
         });
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L154-L167' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L211-L224' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -290,7 +320,7 @@ await Verify(element)
         },
         screenshotOnly: true);
 ```
-<sup><a href='/src/Tests/PlaywrightTests.cs#L173-L187' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOnlyOptions' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/PlaywrightTests.cs#L230-L244' title='Snippet source file'>snippet source</a> | <a href='#snippet-LocatorScreenshotOnlyOptions' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
