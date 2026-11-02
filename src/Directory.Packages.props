@@ -8,7 +8,7 @@
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.5.1" />
     <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="10.0.14" />
     <PackageVersion Include="Microsoft.Playwright" Version="1.64.1" />
-    <PackageVersion Include="ProjectDefaults" Version="1.0.184" />
+    <PackageVersion Include="ProjectDefaults" Version="1.0.187" />
     <PackageVersion Include="PuppeteerSharp" Version="25.15.0" />
     <PackageVersion Include="Sbom" Version="0.3.1" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.52.0" />
