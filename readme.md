@@ -21,6 +21,7 @@ Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of
 
 [![Entity Framework Extensions](https://raw.githubusercontent.com/VerifyTests/Verify.HeadlessBrowsers/refs/heads/main/docs/zzz.png)](https://entityframework-extensions.net/?utm_source=simoncropp&utm_medium=Verify.HeadlessBrowsers)
 
+
 ### Developed using JetBrains IDEs
 
 [![JetBrains logo.](https://raw.githubusercontent.com/VerifyTests/Verify.HeadlessBrowsers/main/docs/jetbrains.png)](https://jb.gg/OpenSourceSupport)<!-- endInclude -->
