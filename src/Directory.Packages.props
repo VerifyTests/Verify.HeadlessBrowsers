@@ -10,7 +10,7 @@
     <PackageVersion Include="Microsoft.Playwright" Version="1.65.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.190" />
     <PackageVersion Include="PuppeteerSharp" Version="25.17.1" />
-    <PackageVersion Include="Sbom" Version="0.3.1" />
+    <PackageVersion Include="Sbom" Version="1.0.0" />
     <PackageVersion Include="Selenium.WebDriver" Version="4.53.0" />
     <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="157.0.8103.7800" />
     <PackageVersion Include="Verify" Version="33.5.0" />
